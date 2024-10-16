@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CLIENT_ID</key>
+    <string>613496694871-aufd4nusvapba2e7aonp0i490mgpqr6h.apps.googleusercontent.com</string>
+    <key>REVERSED_CLIENT_ID</key>
+    <string>com.googleusercontent.apps.613496694871-aufd4nusvapba2e7aonp0i490mgpqr6h</string>
+    <key>API_KEY</key>
+    <string>AIzaSyCgI5lQt5ymeqUxbtcvGWF5ZxOyERV7GCM</string>
+    <key>GCM_SENDER_ID</key>
+    <string>613496694871</string>
+    <key>PLIST_VERSION</key>
+    <string>1</string>
+    <key>BUNDLE_ID</key>
+    <string>kh.gamo.samkok</string>
+    <key>PROJECT_ID</key>
+    <string>gamo-samkok</string>
+    <key>STORAGE_BUCKET</key>
+    <string>gamo-samkok.appspot.com</string>
+    <key>IS_ADS_ENABLED</key>
+    <false></false>
+    <key>IS_ANALYTICS_ENABLED</key>
+    <false></false>
+    <key>IS_APPINVITE_ENABLED</key>
+    <true></true>
+    <key>IS_GCM_ENABLED</key>
+    <true></true>
+    <key>IS_SIGNIN_ENABLED</key>
+    <true></true>
+    <key>GOOGLE_APP_ID</key>
+    <string>1:613496694871:ios:5cb9c974d932f46989db12</string>
+    <key>DATABASE_URL</key>
+    <string>https://gamo-samkok.firebaseio.com</string>
+</dict>
+</plist>

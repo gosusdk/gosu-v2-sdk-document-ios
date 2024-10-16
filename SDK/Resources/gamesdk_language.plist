@@ -1,0 +1,1633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>t_alert_001</key>
+		<dict>
+			<key>vi</key>
+			<string>Thông báo!</string>
+			<key>thb</key>
+			<string>ประกาศ!</string>
+			<key>en</key>
+			<string>Alert!</string>
+			<key>tw</key>
+			<string>通知</string>
+			<key>khmer</key>
+			<string>ព័ត៌មាន!</string>
+		</dict>
+		<key>t_alert_002</key>
+		<dict>
+			<key>vi</key>
+			<string>* Sau khi liên kết tất cả dữ liệu sẽ được chuyển qua tài khoản mới.</string>
+			<key>thb</key>
+			<string>* หลังจากเชื่อมโยงข้อมูลทั้งหมดจะถูกย้ายไปยังบัญชีใหม่.</string>
+			<key>en</key>
+			<string>* After linking, all your data will be transferred to the new account</string>
+			<key>tw</key>
+			<string>綁定後，所有數據將會轉移到新賬號。</string>
+			<key>khmer</key>
+			<string>* បន្ទាប់ពីបានភ្ជាប់ ទិន្នន័យទាំងអស់នឹងបានផ្ទេរឆ្លងគនណីថ្មី។</string>
+		</dict>
+		<key>t_alert_003</key>
+		<dict>
+			<key>vi</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt;Xin chào, &lt;/font&gt;&lt;font face='HelveticaNeue' size=15 color='#E99215'&gt;%@&lt;/font&gt;</string>
+			<key>thb</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt;สวัสดี, &lt;/font&gt;&lt;font face='HelveticaNeue' size=15 color='#E99215'&gt;%@&lt;/font&gt;</string>
+			<key>en</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt;Welcome, &lt;/font&gt;&lt;font face='HelveticaNeue' size=15 color='#E99215'&gt;%@&lt;/font&gt;</string>
+			<key>tw</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt;您好, &lt;/font&gt;&lt;font face='HelveticaNeue' size=15 color='#E99215'&gt;%@&lt;/font&gt;</string>
+			<key>khmer</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt;សួស្ដី &lt;/font&gt;&lt;font face='HelveticaNeue' size=15 color='#E99215'&gt;%@&lt;/font&gt;</string>
+		</dict>
+		<key>t_alert_004</key>
+		<dict>
+			<key>vi</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt;Xin chào, &lt;/font&gt;&lt;font face='HelveticaNeue' size=15 color='#E99215'&gt;%@&lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt; hãy liên kết để bảo vệ tài khoản.&lt;/font&gt;</string>
+			<key>thb</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt;สวัสดี, &lt;/font&gt;&lt;font face='HelveticaNeue' size=15 color='#E99215'&gt;%@&lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt; โปรดเชื่อมโยงเพื่อช่วยปกป้องบัญชี.&lt;/font&gt;</string>
+			<key>en</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt;Welcome, &lt;/font&gt;&lt;font face='HelveticaNeue' size=15 color='#E99215'&gt;%@&lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt; bind account to save your progress.&lt;/font&gt;</string>
+			<key>tw</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt;您好, &lt;/font&gt;&lt;font face='HelveticaNeue' size=15 color='#E99215'&gt;%@&lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt; 請綁定賬號以保護您的賬號。&lt;/font&gt;</string>
+			<key>khmer</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt;សួស្ដី &lt;/font&gt;&lt;font face='HelveticaNeue' size=15 color='#E99215'&gt;%@&lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=15 color='#222222'&gt; សូមភ្ជាប់ដើម្បីការពារគណនី។&lt;/font&gt;</string>
+		</dict>
+		<key>t_alert_005</key>
+		<dict>
+			<key>vi</key>
+			<string>&lt;font face='HelveticaNeue' size=13 color='#222222'&gt;* Chúng tôi đã gửi mã OTP tới email &lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=13 color='#e99215'&gt; %@&lt;/font&gt;</string>
+			<key>thb</key>
+			<string>&lt;font face='HelveticaNeue' size=13 color='#222222'&gt;* เราได้ส่งรหัส OTP ไปที่อีเมลแล้ว &lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=13 color='#e99215'&gt; %@&lt;/font&gt;</string>
+			<key>en</key>
+			<string>&lt;font face='HelveticaNeue' size=13 color='#222222'&gt;* We have sent an OTP code to email &lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=13 color='#e99215'&gt; %@&lt;/font&gt;</string>
+			<key>tw</key>
+			<string>&lt;font face='HelveticaNeue' size=13 color='#222222'&gt;* 我們已經發OTP驗證碼到您的郵件 &lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=13 color='#e99215'&gt; %@&lt;/font&gt;</string>
+			<key>khmer</key>
+			<string>&lt;font face='HelveticaNeue' size=13 color='#222222'&gt;* យើងខ្ញុំបានផ្ញើកូដ OTP ចូល Email រួចហើយ &lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=13 color='#e99215'&gt; %@&lt;/font&gt;</string>
+		</dict>
+		<key>t_alert_006</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản chưa đăng ký email hoặc bị lỗi. (error_code: %i)</string>
+			<key>thb</key>
+			<string>บัญชียังไม่ได้ลงทะเบียนอีเมลหรืออาจมีข้อผิดพลาด. (error_code: %i)</string>
+			<key>en</key>
+			<string>Your account is not registered with email or something wrong. (error_code: %i)</string>
+			<key>tw</key>
+			<string>您的賬號未註冊郵件或其他無效。 (error_code: %i)</string>
+			<key>khmer</key>
+			<string>គណនីមិនទាន់ចុះឈ្មោះ Email ឬមានកំហុស (error_code: %i)</string>
+		</dict>
+		<key>t_alert_007</key>
+		<dict>
+			<key>vi</key>
+			<string>Thông báo</string>
+			<key>thb</key>
+			<string>ประกาศ</string>
+			<key>en</key>
+			<string>Warning!</string>
+			<key>tw</key>
+			<string>提醒！</string>
+			<key>khmer</key>
+			<string>ព័ត៌មាន</string>
+		</dict>
+		<key>t_alert_008</key>
+		<dict>
+			<key>vi</key>
+			<string>Mật khẩu phải có ít nhất 8 ký tự.</string>
+			<key>thb</key>
+			<string>รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร.</string>
+			<key>en</key>
+			<string>Password should be consist of 8-30 characters. Inclues letters and numbers</string>
+			<key>tw</key>
+			<string>密碼必須至少有8個字符。</string>
+			<key>khmer</key>
+			<string>ពាក្យសម្ងាត់មានយ៉ាងហោចណាស់ 8 តួអក្សរ។</string>
+		</dict>
+		<key>t_alert_009</key>
+		<dict>
+			<key>vi</key>
+			<string>Mật khẩu xác nhận không đúng, vui lòng thử lại.</string>
+			<key>thb</key>
+			<string>รหัสยืนยันไม่ถูกต้อง โปรดลองใหม่อีกครั้ง.</string>
+			<key>en</key>
+			<string>Confirm password incorrect, please try again.</string>
+			<key>tw</key>
+			<string>确认密码错误，请重试</string>
+			<key>khmer</key>
+			<string>ពាក្យសម្ងាត់បញ្ជាក់មិនត្រឹមត្រូវទេ សូមព្យាយាមម្ដងទៀត។</string>
+		</dict>
+		<key>t_alert_010</key>
+		<dict>
+			<key>vi</key>
+			<string>Mã OTP không hợp lệ, vui lòng kiểm tra lại hoặc soạn tin nhắn theo cú pháp \"XN DT %@\" gửi 6058.</string>
+			<key>thb</key>
+			<string>รหัส OTP ไม่ถูกต้อง โปรดตรวจสอบอีกครั้งหรือป้อนข้อความตามไวยากรณ์ \"XN DT %@\" gửi 6058.</string>
+			<key>en</key>
+			<string>OTP code incorrect, please check your OTP code or send SMS by form \"XN DT %@\" send 6058.</string>
+			<key>tw</key>
+			<string>OTP驗證碼無效，請重新查看您的OTP驗證碼碼或將 \"XN DT %@\" 內容發送6058.</string>
+			<key>khmer</key>
+			<string>កូដ OTP មិនត្រឹមត្រូវទេ សូមពិនិត្យឡើងវិញឬផ្ញើសារតាមគម្រោង \"XN DT %@\" ផ្ញើ 6058។</string>
+		</dict>
+        <key>t_alert_010_1</key>
+        <dict>
+            <key>vi</key>
+            <string>Mã OTP không hợp lệ</string>
+            <key>thb</key>
+            <string>รหัส OTP ไม่ถูกต้อง.</string>
+            <key>en</key>
+            <string>OTP code incorrect</string>
+            <key>tw</key>
+            <string>OTP驗證碼無效.</string>
+            <key>khmer</key>
+            <string>កូដ OTP មិនត្រឹមត្រូវទេ</string>
+        </dict>
+		<key>t_alert_011</key>
+		<dict>
+			<key>vi</key>
+			<string>Chức năng chỉ hỗ trợ cho thiết bị iOS 13 trở lên!</string>
+			<key>thb</key>
+			<string>ฟังก์ชันรองรับเฉพาะอุปกรณ์ iOS 13 ขึ้นไป!</string>
+			<key>en</key>
+			<string>Sorry, this feature is available on iOS13 and newer!</string>
+			<key>tw</key>
+			<string>此功能僅提供給iOS 13以上的設備！</string>
+			<key>khmer</key>
+			<string>មុខងារនេះជំនួយតែឧបករណ៍ iOS 13 ឡើងទៅ!</string>
+		</dict>
+		<key>t_common_001</key>
+		<dict>
+			<key>vi</key>
+			<string>Thoát</string>
+			<key>thb</key>
+			<string>ออก</string>
+			<key>en</key>
+			<string>Logout</string>
+			<key>tw</key>
+			<string>退出</string>
+			<key>khmer</key>
+			<string>ចាកចេញ</string>
+		</dict>
+		<key>t_common_002</key>
+		<dict>
+			<key>vi</key>
+			<string>Liên kết</string>
+			<key>thb</key>
+			<string>เชื่อมต่อ</string>
+			<key>en</key>
+			<string>Bind</string>
+			<key>tw</key>
+			<string>綁定</string>
+			<key>khmer</key>
+			<string>ភ្ជាប់</string>
+		</dict>
+		<key>t_common_003</key>
+		<dict>
+			<key>vi</key>
+			<string>Gửi</string>
+			<key>thb</key>
+			<string>ส่ง</string>
+			<key>en</key>
+			<string>Send</string>
+			<key>tw</key>
+			<string>發送</string>
+			<key>khmer</key>
+			<string>ផ្ញើ</string>
+		</dict>
+		<key>t_common_004</key>
+		<dict>
+			<key>vi</key>
+			<string>Nhận lại</string>
+			<key>thb</key>
+			<string>รับใหม่</string>
+			<key>en</key>
+			<string>Resend</string>
+			<key>tw</key>
+			<string>重發</string>
+			<key>khmer</key>
+			<string>ទទួលម្ដងទៀត</string>
+		</dict>
+		<key>t_account_policy_001</key>
+		<dict>
+			<key>en</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=13 color='#222222'&gt;By registering, You agree to the &lt;/font&gt;&lt;font face='HelveticaNeue' size=13 color='#1a83fb'&gt;&lt;a href='http://terms'&gt;Terms of service&lt;/a&gt;&lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=13 color='#222222'&gt; and &lt;/font&gt;&lt;font face='HelveticaNeue' size=13 color='#1a83fb'&gt;&lt;a href='http://policy'&gt;Privacy Policy&lt;/a&gt;&lt;/font&gt;</string>
+			<key>thb</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=13 color='#222222'&gt;ตกลงที่จะลงทะเบียนบัญชีกับ &lt;/font&gt;&lt;font face='HelveticaNeue' size=13 color='#1a83fb'&gt;&lt;a href='http://terms'&gt;ข้อกำหนดการใช้งาน&lt;/a&gt;&lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=13 color='#222222'&gt; và &lt;/font&gt;&lt;font face='HelveticaNeue' size=13 color='#1a83fb'&gt;&lt;a href='http://policy'&gt;นโยบายความเป็นส่วนตัว&lt;/a&gt;&lt;/font&gt;</string>
+			<key>vi</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=13 color='#222222'&gt;Đồng ý đăng ký tài khoản với các &lt;/font&gt;&lt;font face='HelveticaNeue' size=13 color='#1a83fb'&gt;&lt;a href='http://terms'&gt;điều khoản sử dụng&lt;/a&gt;&lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=13 color='#222222'&gt; và &lt;/font&gt;&lt;font face='HelveticaNeue' size=13 color='#1a83fb'&gt;&lt;a href='http://policy'&gt;chính sách bảo mật&lt;/a&gt;&lt;/font&gt;</string>
+			<key>tw</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=13 color='#222222'&gt;通過註冊，您同意 &lt;/font&gt;&lt;font face='HelveticaNeue' size=13 color='#1a83fb'&gt;&lt;a href='http://terms'&gt;服務條款&lt;/a&gt;&lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=13 color='#222222'&gt; 和 &lt;/font&gt;&lt;font face='HelveticaNeue' size=13 color='#1a83fb'&gt;&lt;a href='http://policy'&gt;隱私權政策&lt;/a&gt;&lt;/font&gt;</string>
+			<key>khmer</key>
+			<string>&lt;font face='HelveticaNeue-Italic' size=13 color='#222222'&gt;យល់ព្រមចុះឈ្មោះគណនីជាមួយនឹងបណ្ដា &lt;/font&gt;&lt;font face='HelveticaNeue' size=13 color='#1a83fb'&gt;&lt;a href='http://terms'&gt;លក្ខខណ្ឌប្រើប្រាស់&lt;/a&gt;&lt;/font&gt;&lt;font face='HelveticaNeue-Italic' size=13 color='#222222'&gt; និង &lt;/font&gt;&lt;font face='HelveticaNeue' size=13 color='#1a83fb'&gt;&lt;a href='http://policy'&gt;គោលការណ៍​ភាព​ឯកជន&lt;/a&gt;&lt;/font&gt;</string>
+		</dict>
+		<key>t_account_001</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản không hợp lệ, vui lòng thử lại.</string>
+			<key>thb</key>
+			<string>บัญชีไม่ถูกต้อง โปรดลองใหม่อีกครั้ง.</string>
+			<key>en</key>
+			<string>Username incorrect, please try again.</string>
+			<key>tw</key>
+			<string>賬號錯誤，請重試</string>
+			<key>khmer</key>
+			<string>គណនីនេះមិនត្រឹមត្រូវទេ  សូម​ព្យាយាម​ម្តង​ទៀត។</string>
+		</dict>
+		<key>t_account_002</key>
+		<dict>
+			<key>en</key>
+			<string>Password incorrect, please try again.</string>
+			<key>thb</key>
+			<string>รหัสผ่านไม่ถูกต้อง โปรดลองใหม่อีกครั้ง.</string>
+			<key>vi</key>
+			<string>Mật khẩu không hợp lệ, vui lòng thử lại.</string>
+			<key>tw</key>
+			<string>密碼錯誤，請重試</string>
+			<key>khmer</key>
+			<string>ពាក្យសម្ងាត់មិនត្រឹមត្រូវទេ សូម​ព្យាយាម​ម្តង​ទៀត។</string>
+		</dict>
+		<key>t_account_003</key>
+		<dict>
+			<key>vi</key>
+			<string>Đăng Nhập</string>
+			<key>thb</key>
+			<string>เข้าสู่ระบบ</string>
+			<key>en</key>
+			<string>Login</string>
+			<key>tw</key>
+			<string>登錄</string>
+			<key>khmer</key>
+			<string>ចូល</string>
+		</dict>
+		<key>t_account_004</key>
+		<dict>
+			<key>vi</key>
+			<string>Đăng nhập với Facebook</string>
+			<key>thb</key>
+			<string>เข้าสู่ระบบด้วย Facebook</string>
+			<key>en</key>
+			<string>Sign In With Facebook</string>
+			<key>tw</key>
+			<string>使用Facebook進行登錄</string>
+			<key>khmer</key>
+			<string>ចូលជាមួយនឹង Facebook</string>
+		</dict>
+        <key>t_account_004_2</key>
+        <dict>
+            <key>vi</key>
+            <string>Không thể truy cập thông tin tài khoản Facebook, vui lòng liên hệ nhân viên CSKH để được hỗ trợ</string>
+            <key>thb</key>
+            <string>ไม่สามารถเข้าถึงข้อมูลบัญชี Facebook ได้ กรุณาติดต่อเจ้าหน้าที่บริการลูกค้าเพื่อขอความช่วยเหลือ</string>
+            <key>en</key>
+            <string>Cannot access Facebook account information, please contact customer service for assistance.</string>
+            <key>tw</key>
+            <string>無法訪問Facebook帳戶信息，請聯繫客戶服務人員以獲取幫助。</string>
+            <key>khmer</key>
+            <string>មិនអាចចូលទៅកាន់ព័ត៌មានគណនី Facebook បានទេ, សូមទាក់ទងនឹងបុគ្គលិកសេវាកម្មអតិថិជនដើម្បីទទួលបានជំនួយ។</string>
+        </dict>
+		<key>t_account_005</key>
+		<dict>
+			<key>vi</key>
+			<string>Đăng nhập với Google</string>
+			<key>thb</key>
+			<string>เข้าสู่ระบบด้วย Google</string>
+			<key>en</key>
+			<string>Sign In With Google</string>
+			<key>tw</key>
+			<string>使用Google進行登錄</string>
+			<key>khmer</key>
+			<string>ចូលជាមួយនឹង Google</string>
+		</dict>
+		<key>t_account_006</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản ID</string>
+			<key>thb</key>
+			<string>เข้าสู่ระบบด้วย ID</string>
+			<key>en</key>
+			<string>Login With ID</string>
+			<key>tw</key>
+			<string>使用ID進行登錄</string>
+			<key>khmer</key>
+			<string>គណនី ID</string>
+		</dict>
+		<key>t_account_007</key>
+		<dict>
+			<key>vi</key>
+			<string>Chơi Ngay</string>
+			<key>thb</key>
+			<string>เล่นเลย</string>
+			<key>en</key>
+			<string>Play now</string>
+			<key>tw</key>
+			<string>立即開始</string>
+			<key>khmer</key>
+			<string>លេងភ្លាម</string>
+		</dict>
+		<key>t_account_008</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản</string>
+			<key>thb</key>
+			<string>บัญชี</string>
+			<key>en</key>
+			<string>Account</string>
+			<key>tw</key>
+			<string>賬號</string>
+			<key>khmer</key>
+			<string>គណនី</string>
+		</dict>
+		<key>t_account_009</key>
+		<dict>
+			<key>vi</key>
+			<string>Mật khẩu</string>
+			<key>thb</key>
+			<string>รหัสผ่าน</string>
+			<key>en</key>
+			<string>Password</string>
+			<key>tw</key>
+			<string>密碼</string>
+			<key>khmer</key>
+			<string>ពាក្យសម្ងាត់</string>
+		</dict>
+		<key>t_account_010</key>
+		<dict>
+			<key>vi</key>
+			<string>Đăng ký</string>
+			<key>thb</key>
+			<string>ลงทะเบียน</string>
+			<key>en</key>
+			<string>Register</string>
+			<key>tw</key>
+			<string>註冊</string>
+			<key>khmer</key>
+			<string>ចុះឈ្មោះ</string>
+		</dict>
+		<key>t_account_011</key>
+		<dict>
+			<key>vi</key>
+			<string>Quên mật khẩu?</string>
+			<key>thb</key>
+			<string>ลืมรหัสผ่าน?</string>
+			<key>en</key>
+			<string>Forgot Password?</string>
+			<key>tw</key>
+			<string>是否忘記密碼？</string>
+			<key>khmer</key>
+			<string>ភ្លេចពាក្យសម្ងាត់?</string>
+		</dict>
+		<key>t_account_012</key>
+		<dict>
+			<key>vi</key>
+			<string>Bảo Vệ Tài Khoản</string>
+			<key>thb</key>
+			<string>การป้องกันบัญชี</string>
+			<key>en</key>
+			<string></string>
+			<key>tw</key>
+			<string>保護賬號</string>
+			<key>khmer</key>
+			<string>ការពារពាក្យសម្ងាត់</string>
+		</dict>
+		<key>t_account_013</key>
+		<dict>
+			<key>vi</key>
+			<string>Số điện thoại</string>
+			<key>thb</key>
+			<string>หมายเลขโทรศัพท์</string>
+			<key>tw</key>
+			<string>電話號碼</string>
+			<key>khmer</key>
+			<string>លេខទូរស័ព្ទ</string>
+		</dict>
+		<key>t_account_014</key>
+		<dict>
+			<key>vi</key>
+			<string>Mã OTP</string>
+			<key>thb</key>
+			<string>รหัส OTP</string>
+			<key>en</key>
+			<string>OTP code</string>
+			<key>tw</key>
+			<string>OTP驗證碼</string>
+			<key>khmer</key>
+			<string>កូដ OTP</string>
+		</dict>
+		<key>t_account_015</key>
+		<dict>
+			<key>vi</key>
+			<string>Liên Kết Tài Khoản</string>
+			<key>thb</key>
+			<string>เชื่อมโยงบัญชี</string>
+			<key>en</key>
+			<string>Link Your Account</string>
+			<key>tw</key>
+			<string>綁定賬號</string>
+			<key>khmer</key>
+			<string>ភ្ជាប់គណនី</string>
+		</dict>
+		<key>t_account_016</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản mới</string>
+			<key>thb</key>
+			<string>บัญชีใหม่</string>
+			<key>en</key>
+			<string>Username</string>
+			<key>tw</key>
+			<string>用戶名</string>
+			<key>khmer</key>
+			<string>គណនីថ្មី</string>
+		</dict>
+		<key>t_account_017</key>
+		<dict>
+			<key>vi</key>
+			<string>Email</string>
+			<key>thb</key>
+			<string>Email</string>
+			<key>en</key>
+			<string>Email</string>
+			<key>tw</key>
+			<string>郵件</string>
+			<key>khmer</key>
+			<string>Email</string>
+		</dict>
+		<key>t_account_018</key>
+		<dict>
+			<key>vi</key>
+			<string>Đổi Mật Khẩu</string>
+			<key>thb</key>
+			<string>เปลี่ยนรหัสผ่าน</string>
+			<key>en</key>
+			<string>Change Your Password</string>
+			<key>tw</key>
+			<string>更換密碼</string>
+			<key>khmer</key>
+			<string>ប្ដូរពាក្យសម្ងាត់</string>
+		</dict>
+		<key>t_account_019</key>
+		<dict>
+			<key>vi</key>
+			<string>Mật khẩu mới</string>
+			<key>thb</key>
+			<string>รหัสผ่านใหม่</string>
+			<key>en</key>
+			<string>New Password</string>
+			<key>tw</key>
+			<string>新密碼</string>
+			<key>khmer</key>
+			<string>ពាក្យសម្ងាត់ថ្មី</string>
+		</dict>
+		<key>t_account_020</key>
+		<dict>
+			<key>vi</key>
+			<string>Nhập lại mật khẩu mới</string>
+			<key>thb</key>
+			<string>ป้อนรหัสผ่านใหม่อีกครั้ง</string>
+			<key>en</key>
+			<string>Repeat new password</string>
+			<key>tw</key>
+			<string>重新輸入密碼</string>
+			<key>khmer</key>
+			<string>បញ្ចូលពាក្យសម្ងាត់ថ្មីម្ដងទៀត</string>
+		</dict>
+		<key>t_account_021</key>
+		<dict>
+			<key>vi</key>
+			<string>Đăng nhập với Apple</string>
+			<key>thb</key>
+			<string>เข้าสู่ระบบด้วย Apple</string>
+			<key>en</key>
+			<string>Sign In With Apple</string>
+			<key>tw</key>
+			<string>使用Apple系統登錄</string>
+			<key>khmer</key>
+			<string>ចូលជាមួយនឹង Apple</string>
+		</dict>
+		<key>t_account_022</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản hoặc mật khẩu không chính xác, vui lòng thử lại.</string>
+			<key>thb</key>
+			<string>บัญชีหรือรหัสผ่านไม่ถูกต้อง โปรดลองใหม่อีกครั้ง.</string>
+			<key>en</key>
+			<string>Username or Password is Wrong!</string>
+			<key>tw</key>
+			<string>用戶名或密碼錯誤，請重試</string>
+			<key>khmer</key>
+			<string>គណនីឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ សូមព្យាយាមម្ដងទៀត។</string>
+		</dict>
+		<key>t_account_023</key>
+		<dict>
+			<key>vi</key>
+			<string>Đăng nhập thành công.</string>
+			<key>thb</key>
+			<string>เข้าสู่ระบบสำเร็จ.</string>
+			<key>en</key>
+			<string>Login Success.</string>
+			<key>tw</key>
+			<string>登錄成功</string>
+			<key>khmer</key>
+			<string>ចូលជោគជ័យ</string>
+		</dict>
+		<key>t_account_024</key>
+		<dict>
+			<key>vi</key>
+			<string>Đăng nhập thất bại, vui lòng thử lại sau ít phút(C2SV-Profile)</string>
+			<key>thb</key>
+			<string>การเข้าสู่ระบบล้มเหลว โปรดลองใหม่อีกครั้งในอีกสักครู่(C2SV-Profile)</string>
+			<key>en</key>
+			<string>Login failed, please try again later(C2SV-Profile)</string>
+			<key>tw</key>
+			<string>登錄失敗，請稍後再試(C2SV-Profile)</string>
+			<key>khmer</key>
+			<string>ចូលបរាជ័យ សូមព្យាយាមម្តងទៀតក្នុងរយៈពេលពីរបីនាទី។ (C2SV-Profile)</string>
+		</dict>
+		<key>t_account_025</key>
+		<dict>
+			<key>vi</key>
+			<string>Khách</string>
+			<key>thb</key>
+			<string>แขก</string>
+			<key>en</key>
+			<string>Guest</string>
+			<key>tw</key>
+			<string>遊客</string>
+			<key>khmer</key>
+			<string>ភ្ញៀវ</string>
+		</dict>
+		<key>t_account_026</key>
+		<dict>
+			<key>vi</key>
+			<string>Hệ thống bận, vui lòng thử lại sau ít phút.(SV%d)</string>
+			<key>thb</key>
+			<string>ระบบไม่ว่าง โปรดลองอีกครั้งในอีกสักครู่.(SV%d)</string>
+			<key>en</key>
+			<string>System Error, please try again later.(SV%d)</string>
+			<key>tw</key>
+			<string>系統繁忙，請稍後再試。(SV%d)</string>
+			<key>khmer</key>
+			<string>ប្រព័ន្ធជាប់រវល់ សូមព្យាយាមម្តងទៀតក្នុងរយៈពេលពីរបីនាទី។ (SV%d)</string>
+		</dict>
+		<key>t_account_027</key>
+		<dict>
+			<key>vi</key>
+			<string>Vui lòng không gửi yêu cầu liên tục đến hệ thống.(SV%d)</string>
+			<key>thb</key>
+			<string>โปรดอย่าส่งคำขออย่างต่อเนื่องไปยังระบบ.(SV%d)</string>
+			<key>en</key>
+			<string>Please don't send requests continuously to the system.(SV%d)</string>
+			<key>tw</key>
+			<string>請不要連續向系統發送請求。(SV%d)</string>
+			<key>khmer</key>
+			<string>សូមកុំផ្ញើសំណើបន្តមកកាន់ប្រព័ន្ធ។ (SV%d)</string>
+		</dict>
+		<key>t_account_028</key>
+		<dict>
+			<key>vi</key>
+			<string>Mật khẩu quá dễ đoán. Vui lòng chọn mật khẩu khác để bảo vệ tài khoản.</string>
+			<key>thb</key>
+			<string>เดาง่ายเกินไป โปรดสร้างรหัสผ่านที่รัดกุมเพื่อปกป้องบัญชีของคุณ.</string>
+			<key>en</key>
+			<string>Easy password. Please create a strong password to protect your account.</string>
+			<key>tw</key>
+			<string>密碼過於簡單。請選擇其他密碼以保護您的賬號。</string>
+			<key>khmer</key>
+			<string>ពាក្យ​សម្ងាត់​ងាយ​ទាយ​ពេក។ សូមជ្រើសរើសពាក្យសម្ងាត់ដែលពិបាកជាងនេះ ដើម្បីការពារគណនី។</string>
+		</dict>
+		<key>t_account_029</key>
+		<dict>
+			<key>vi</key>
+			<string>Mật khẩu không hợp lệ (có ít nhất 8 ký tự).</string>
+			<key>thb</key>
+			<string>รหัสผ่านไม่ถูกต้อง (อย่างน้อย 8 ตัวอักษร).</string>
+			<key>en</key>
+			<string>Password should be consist of 8-30 characters.</string>
+			<key>tw</key>
+			<string>密碼無效（至少有8個字符）</string>
+			<key>khmer</key>
+			<string>ពាក្យសម្ងាត់មិនត្រឹមត្រូវ (យ៉ាងហោចណាស់មាន 8 តួអក្សរ)។</string>
+		</dict>
+		<key>t_account_030</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản không hợp lệ (có ít nhất 6 ký tự)</string>
+			<key>thb</key>
+			<string>บัญชีไม่ถูกต้อง (อย่างน้อย 6 ตัวอักษร)</string>
+			<key>en</key>
+			<string>Username should be consist more than 6 characters.</string>
+			<key>tw</key>
+			<string>賬號無效（至少有6個字符）</string>
+			<key>khmer</key>
+			<string>ពាក្យសម្ងាត់មិនត្រឹមត្រូវ (យ៉ាងហោចណាស់មាន 6 តួអក្សរ)</string>
+		</dict>
+		<key>t_account_031</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản không hợp lệ (tài khoản chỉ cho phép ký tự và chữ số).</string>
+			<key>thb</key>
+			<string>บัญชีไม่ถูกต้อง (บัญชีอนุญาตเฉพาะอักขระและตัวเลข).</string>
+			<key>en</key>
+			<string>Username should allows the letters and numbers.</string>
+			<key>tw</key>
+			<string>賬號無效（只允許字符及數字）</string>
+			<key>khmer</key>
+			<string>ពាក្យសម្ងាត់មិនត្រឹមត្រូវ (អនុញ្ញាត​ឲ្យ​ប្រើតួអក្សរនិងតួលេខ)។</string>
+		</dict>
+		<key>t_account_032</key>
+		<dict>
+			<key>vi</key>
+			<string>Email không đúng, vui lòng kiểm tra lại.</string>
+			<key>thb</key>
+			<string>Email ไม่ถูกต้อง โปรดตรวจสอบใหม่อีกครั้ง.</string>
+			<key>en</key>
+			<string>Email incorrect, please check your email.</string>
+			<key>tw</key>
+			<string>郵件無效，請重新檢查</string>
+			<key>khmer</key>
+			<string>Email មិនត្រឹមត្រូវ សូមពិនិត្យឡើងវិញ។</string>
+		</dict>
+		<key>t_account_033</key>
+		<dict>
+			<key>vi</key>
+			<string>Vui lòng nhập địa chỉ Email</string>
+			<key>thb</key>
+			<string>กรุณากรอกอีเมลของคุณ</string>
+			<key>en</key>
+			<string>Email is invalid!</string>
+			<key>tw</key>
+			<string>請輸入郵件地址</string>
+			<key>khmer</key>
+			<string>សូមបញ្ចូលអាសយដ្ឋាន Email របស់អ្នក</string>
+		</dict>
+		<key>t_account_034</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản không hợp lệ, vui lòng kiểm tra lại.</string>
+			<key>thb</key>
+			<string>บัญชีไม่ถูกต้อง โปรดตรวจสอบใหม่อีกครั้ง.</string>
+			<key>en</key>
+			<string>Account incorrect, please check your account again.</string>
+			<key>tw</key>
+			<string>賬號無效，請重新檢查</string>
+			<key>khmer</key>
+			<string>គណនីមិនត្រឹមត្រូវ សូមពិនិត្យឡើងវិញ។</string>
+		</dict>
+		<key>t_account_035</key>
+		<dict>
+			<key>vi</key>
+			<string>Đã thay đổi mật khẩu thành công.</string>
+			<key>thb</key>
+			<string>เปลี่ยนรหัสผ่านสำเร็จ.</string>
+			<key>en</key>
+			<string>Reset password successful.</string>
+			<key>tw</key>
+			<string>更改密碼成功。</string>
+			<key>khmer</key>
+			<string>ប្ដូរពាក្យសម្ងាត់បានជោគជ័យ។</string>
+		</dict>
+		<key>t_account_036</key>
+		<dict>
+			<key>vi</key>
+			<string>Thay đổi mật khẩu thất bại, vui lòng thử lại.</string>
+			<key>thb</key>
+			<string>เปลี่ยนรหัสผ่านไม่สำเร็จ โปรดลองใหม่อีกครั้ง.</string>
+			<key>en</key>
+			<string>Reset password fail, please try again.</string>
+			<key>tw</key>
+			<string>更改密碼失敗，請重試。</string>
+			<key>khmer</key>
+			<string>ប្ដូរពាក្យសម្ងាត់បរាជ័យ សូមព្យាយាមម្ដងទៀត។</string>
+		</dict>
+		<key>t_account_037</key>
+		<dict>
+			<key>vi</key>
+			<string>Login fail, please check your account.</string>
+			<key>thb</key>
+			<string>Login fail, please check your account.</string>
+			<key>en</key>
+			<string>Đăng nhập bằng tài khoản Facebook lỗi, vui lòng kiểm tra lại thông tin.</string>
+			<key>tw</key>
+			<string>登錄失敗，請重新檢查您的賬號。</string>
+			<key>khmer</key>
+			<string>ចូលដោយគណនី Facebook កំហុស  សូមពិនិត្យមើលព័ត៌មានម្តងទៀត។</string>
+		</dict>
+		<key>t_account_038</key>
+		<dict>
+			<key>vi</key>
+			<string>Đăng nhập facebook lỗi, vui lòng thử lại sau.</string>
+			<key>thb</key>
+			<string>เข้าสู่ระบบด้วย Facebook ล้มเหลว โปรดลองใหม่อีกครั้งในภายหลัง.</string>
+			<key>en</key>
+			<string>Login fail, please try again later.</string>
+			<key>tw</key>
+			<string>登錄失敗，請稍後再試。</string>
+			<key>khmer</key>
+			<string>ចូលដោយគណនី Facebook កំហុស  សូម​ព្យាយាម​ម្តង​ទៀត​នៅ​ពេល​ក្រោយ។</string>
+		</dict>
+		<key>t_account_039</key>
+		<dict>
+			<key>vi</key>
+			<string>Xác thực tài khoản Google không thành công, vui lòng thử lại sau.</string>
+			<key>thb</key>
+			<string>ยืนยันด้วย Google ล้มเหลว โปรดลองใหม่อีกครั้งในภายหลัง.</string>
+			<key>en</key>
+			<string>Verify with Google fail, please try again later.</string>
+			<key>tw</key>
+			<string>驗證Google賬號失敗，請稍後再試。</string>
+			<key>khmer</key>
+			<string>ការផ្ទៀងផ្ទាត់គណនី Google បានបរាជ័យ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។</string>
+		</dict>
+		<key>t_account_040</key>
+		<dict>
+			<key>vi</key>
+			<string>Chức năng chỉ hỗ trợ cho thiết bị iOS 13 trở lên!</string>
+			<key>thb</key>
+			<string>ฟังก์ชันรองรับเฉพาะอุปกรณ์ iOS 13 ขึ้นไป!</string>
+			<key>en</key>
+			<string>Sorry, this feature is available on iOS13 and newer!</string>
+			<key>tw</key>
+			<string>此功能僅提供給iOS 13以上的設備！</string>
+			<key>khmer</key>
+			<string>មុខងារនេះជំនួយតែឧបករណ៍ iOS 13 ឡើងទៅ!</string>
+		</dict>
+		<key>t_account_041</key>
+		<dict>
+			<key>vi</key>
+			<string>Chức năng chỉ hỗ trợ cho thiết bị iOS 13 trở lên!</string>
+			<key>thb</key>
+			<string>ฟังก์ชันรองรับเฉพาะอุปกรณ์ iOS 13 ขึ้นไป!</string>
+			<key>en</key>
+			<string>Sorry, this feature is available on iOS13 and newer!</string>
+			<key>tw</key>
+			<string>此功能僅提供給iOS 13以上的設備！</string>
+			<key>khmer</key>
+			<string>មុខងារនេះជំនួយតែឧបករណ៍ iOS 13 ឡើងទៅ!</string>
+		</dict>
+		<key>t_account_042</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản không đúng hoặc đã tồn tại.</string>
+			<key>thb</key>
+			<string>บัญชีไม่ถูกต้องหรือมีอยู่แล้ว.</string>
+			<key>en</key>
+			<string>Username incorrect or has existed, please try again.</string>
+			<key>tw</key>
+			<string>賬號無效或已存在。</string>
+			<key>khmer</key>
+			<string>គណនីមិនត្រឹមត្រូវឬធ្លាប់មានហើយ។</string>
+		</dict>
+		<key>t_account_043</key>
+		<dict>
+			<key>vi</key>
+			<string>Liên kết tài khoản thành công.</string>
+			<key>thb</key>
+			<string>เชื่อมโยงบัญชีสำเร็จ.</string>
+			<key>en</key>
+			<string>Binding account has succeed</string>
+			<key>tw</key>
+			<string>綁定賬號成功</string>
+			<key>khmer</key>
+			<string>ភ្ជាប់គណនីជោគជ័យ។</string>
+		</dict>
+        <key>t_account_0431</key>
+        <dict>
+            <key>vi</key>
+            <string>Tài khoản đã liên kết thành công, vui lòng tiếp tục kích hoạt tài khoản của bạn.</string>
+            <key>thb</key>
+            <string>ได้เชื่อมโยงบัญชีแล้ว โปรดดำเนินการเปิดใช้งานบัญชีของคุณต่อ</string>
+            <key>en</key>
+            <string>Account linked, please continue to activate your account.</string>
+            <key>tw</key>
+            <string>已連結帳戶，請繼續啟動您的帳戶。</string>
+            <key>khmer</key>
+            <string>គណនីត្រូវបានភ្ជាប់រួចហើយ សូមបន្តធ្វើការដំឡើងគណនីរបស់អ្នក។</string>
+        </dict>
+        <key>t_account_0432</key>
+        <dict>
+            <key>vi</key>
+            <string>Tài khoản đã liên kết thành công, vui lòng đăng nhập bằng tài khoản mới của bạn.</string>
+            <key>thb</key>
+            <string>ได้เชื่อมโยงบัญชีแล้ว โปรดเข้าสู่ระบบด้วยบัญชีใหม่ของคุณ</string>
+            <key>en</key>
+            <string>Account linked, please log in with your new account.</string>
+            <key>tw</key>
+            <string>已連結帳戶，請使用您的新帳戶登入。</string>
+            <key>khmer</key>
+            <string>គណនីត្រូវបានភ្ជាប់រួចហើយ សូមចូលប្រើដោយគណនីថ្មីរបស់អ្នក។</string>
+        </dict>
+		<key>t_account_044</key>
+		<dict>
+			<key>vi</key>
+			<string>Email không đúng hoặc không hợp lệ.</string>
+			<key>thb</key>
+			<string>Email อีเมลไม่ถูกต้อง โปรดลองอีกครั้ง.</string>
+			<key>en</key>
+			<string>Email incorrect, please try again.</string>
+			<key>tw</key>
+			<string>郵件無效，請重試。</string>
+			<key>khmer</key>
+			<string>Email មិនត្រឹមត្រូវឬមិនសមស្រប។</string>
+		</dict>
+		<key>t_account_045</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản không tồn tại hoặc đã liên kết.</string>
+			<key>thb</key>
+			<string>บัญชีไม่มีอยู่หรือถูกเชื่อมโยงแล้ว.</string>
+			<key>en</key>
+			<string>Username doesn't exist or has bound, please try again.</string>
+			<key>tw</key>
+			<string>賬號不存在或已綁定。</string>
+			<key>khmer</key>
+			<string>គណនីគ្មានទេឬបានភ្ចាប់រួចហើយ។</string>
+		</dict>
+		<key>t_account_046</key>
+		<dict>
+			<key>vi</key>
+			<string>Liên kết tài khoản thất bại, vui lòng thử lại.</string>
+			<key>thb</key>
+			<string>การเชื่อมโยงบัญชีล้มเหลว โปรดลองใหม่อีกครั้ง.</string>
+			<key>en</key>
+			<string>Binding account has failed, please try again. </string>
+			<key>tw</key>
+			<string>綁定賬號失敗，請重試。</string>
+			<key>khmer</key>
+			<string>ភ្ជាប់គណនីបរាជ័យ សូមព្យាយាមម្ដងទៀត។</string>
+		</dict>
+		<key>t_account_047</key>
+		<dict>
+			<key>vi</key>
+			<string>Ứng dụng facebook nên được thiết lập thuộc facebook business manager.</string>
+			<key>thb</key>
+			<string>แอปพลิเคชั่น facebook ควรตั้งค่าภายใต้ facebook business manager.</string>
+			<key>en</key>
+			<string>Facebook app id must be set in the facebook business manager</string>
+			<key>zh-rTW</key>
+			<string>Facebook企業管理中設定Facebook賬號</string>
+			<key>tw</key>
+			<string>Facebook企業管理中設定Facebook賬號</string>
+			<key>khmer</key>
+			<string>កម្មវិធី facebook គួរតែត្រូវបានកំណត់នៅក្រោម facebook business manager។</string>
+		</dict>
+		<key>t_account_048</key>
+		<dict>
+			<key>vi</key>
+			<dict>
+				<key>201</key>
+				<string>Tài khoản đã được sử dụng</string>
+				<key>202</key>
+				<string>Email đã được sử dụng</string>
+				<key>203</key>
+				<string>Tài khoản đã được sử dụng</string>
+				<key>500</key>
+				<string>Lỗi hệ thống</string>
+			</dict>
+			<key>thb</key>
+			<dict>
+				<key>201</key>
+				<string>บัญชีนี้ถูกใช้งานอยู่แล้ว</string>
+				<key>202</key>
+				<string>Email ถูกใช้งานอยู่แล้ว</string>
+				<key>203</key>
+				<string>บัญชีนี้ถูกใช้งานอยู่แล้ว</string>
+				<key>500</key>
+				<string>ข้อผิดพลาดของระบบ</string>
+			</dict>
+			<key>en</key>
+			<dict>
+				<key>201</key>
+				<string>Account is exists.</string>
+				<key>202</key>
+				<string>Email is exists</string>
+				<key>203</key>
+				<string>Account is exists.</string>
+				<key>500</key>
+				<string>System error.</string>
+			</dict>
+			<key>tw</key>
+			<dict>
+				<key>201</key>
+				<string>賬號已被使用</string>
+				<key>202</key>
+				<string>郵件已被使用</string>
+				<key>203</key>
+				<string>賬號已被使用</string>
+				<key>500</key>
+				<string>系統錯誤</string>
+			</dict>
+			<key>khmer</key>
+			<dict>
+				<key>201</key>
+				<string>គណនីបានប្រើប្រាស់រួចហើយ</string>
+				<key>202</key>
+				<string>Email បានប្រើប្រាស់រួចហើយ</string>
+				<key>203</key>
+				<string>គណនីបានប្រើប្រាស់រួចហើយ</string>
+				<key>500</key>
+				<string>កំហុសប្រព័ន្ធ</string>
+			</dict>
+		</dict>
+		<key>t_account_049</key>
+		<dict>
+			<key>vi</key>
+			<dict>
+				<key>201</key>
+				<string>Tài khoản hoặc mật không không chính xác</string>
+				<key>202</key>
+				<string>Tài khoản chưa được kích hoạt</string>
+				<key>203</key>
+				<string>Tài khoản đang bị khóa</string>
+				<key>204</key>
+				<string>Chữ ký không hợp lệ</string>
+				<key>205</key>
+				<string>Không được phép truy cập</string>
+				<key>500</key>
+				<string>Hệ thống bận</string>
+			</dict>
+			<key>thb</key>
+			<dict>
+				<key>201</key>
+				<string>บัญชีหรือรหัสผ่านไม่ถูกต้อง</string>
+				<key>202</key>
+				<string>บัญชียังไม่เปิดใช้งาน</string>
+				<key>203</key>
+				<string>บัญชีถูกล็อคอยู่</string>
+				<key>204</key>
+				<string>ลายเซ็นไม่ถูกต้อง</string>
+				<key>205</key>
+				<string>ไม่อนุญาตให้เข้าถึง</string>
+				<key>500</key>
+				<string>ระบบไม่ว่าง</string>
+			</dict>
+			<key>en</key>
+			<dict>
+				<key>201</key>
+				<string>Username or password is incorrect</string>
+				<key>202</key>
+				<string>Account is not active</string>
+				<key>203</key>
+				<string>Account has been blocked</string>
+				<key>204</key>
+				<string>Sign error!</string>
+				<key>205</key>
+				<string>Forbbiden zone!</string>
+				<key>500</key>
+				<string>System error!</string>
+			</dict>
+			<key>tw</key>
+			<dict>
+				<key>201</key>
+				<string>用戶名或密碼錯誤</string>
+				<key>202</key>
+				<string>賬號未激活</string>
+				<key>203</key>
+				<string>賬號正在被鎖定</string>
+				<key>204</key>
+				<string>簽字無效！</string>
+				<key>205</key>
+				<string>不允許訪問</string>
+				<key>500</key>
+				<string>系統繁忙！</string>
+			</dict>
+			<key>khmer</key>
+			<dict>
+				<key>201</key>
+				<string>គណនីឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ</string>
+				<key>202</key>
+				<string>គណនីមិនទាន់បានបើកដំណើរការ</string>
+				<key>203</key>
+				<string>គណនីត្រូវបានចាក់សោ</string>
+				<key>204</key>
+				<string>ហត្ថលេខាមិនត្រឹមត្រូវ</string>
+				<key>205</key>
+				<string>ការចូលប្រើមិនត្រូវបានអនុញ្ញាតទេ</string>
+				<key>500</key>
+				<string>ប្រព័ន្ធជាប់រវល់</string>
+			</dict>
+		</dict>
+		<key>t_account_050</key>
+		<dict>
+			<key>vi</key>
+			<string>Kích hoạt tài khoản</string>
+			<key>thb</key>
+			<string>เปิดใช้งานบัญชี</string>
+			<key>en</key>
+			<string>Active Account</string>
+			<key>tw</key>
+			<string>激活賬號</string>
+			<key>khmer</key>
+			<string>បើកដំណើរការគណនី</string>
+		</dict>
+		<key>t_account_051</key>
+		<dict>
+			<key>vi</key>
+			<dict>
+				<key>200</key>
+				<string>Lấy mã OTP thành công, vui lòng kiểm tra</string>
+				<key>202</key>
+				<string>Vui lòng chọn hình thức nhận mã OTP (Email/Phone)</string>
+				<key>500</key>
+				<string>Hệ thống bận!</string>
+			</dict>
+			<key>thb</key>
+			<dict>
+				<key>200</key>
+				<string>รับรหัส OTP สำเร็จ โปรดตรวจสอบ</string>
+				<key>202</key>
+				<string>โปรดเลือกรูปแบบในการรับรหัส OTP (Email/Phone)</string>
+				<key>500</key>
+				<string>ระบบไม่ว่าง!</string>
+			</dict>
+			<key>en</key>
+			<dict>
+				<key>200</key>
+				<string>Send OTP successfully, please check your</string>
+				<key>202</key>
+				<string>Please confirm OTP receiving device</string>
+				<key>500</key>
+				<string>System error!</string>
+			</dict>
+			<key>tw</key>
+			<dict>
+				<key>200</key>
+				<string>獲取OTP驗證碼成功，請查看</string>
+				<key>202</key>
+				<string>請選選擇接受OTP驗證碼形式（郵件/電話）</string>
+				<key>500</key>
+				<string>系統繁忙！</string>
+			</dict>
+			<key>khmer</key>
+			<dict>
+				<key>200</key>
+				<string>ទទួលកូដ OTP ជោគជ័យ សូមឆែកពិនិត្យ</string>
+				<key>202</key>
+				<string>សូមជ្រើសរើសវិធីដើម្បីទទួលបានលេខកូដ OTP (Email/Phone)</string>
+				<key>500</key>
+				<string>ប្រព័ន្ធជាប់រវល់!</string>
+			</dict>
+		</dict>
+		<key>t_account_052</key>
+		<dict>
+			<key>vi</key>
+			<string>Lấy mã OTP thành công, vui lòng kiểm tra</string>
+			<key>thb</key>
+			<string>รับรหัส OTP สำเร็จ โปรดตรวจสอบ</string>
+			<key>en</key>
+			<string>Send OTP successfully, please check your</string>
+			<key>tw</key>
+			<string>獲取OTP驗證碼發送成功，請查看</string>
+			<key>khmer</key>
+			<string>ទទួលកូដ OTP ជោគជ័យ សូមឆែកពិនិត្យ</string>
+		</dict>
+		<key>t_account_053</key>
+		<dict>
+			<key>vi</key>
+			<string>Kích hoạt tài khoản thành công</string>
+			<key>thb</key>
+			<string>เปิดใช้งานบัญชีสำเร็จ</string>
+			<key>en</key>
+			<string>Account activation successful.</string>
+			<key>tw</key>
+			<string>賬號激活成功</string>
+			<key>khmer</key>
+			<string>បើកដំណើរការគណនីជោគជ័យ</string>
+		</dict>
+		<key>t_account_054</key>
+		<dict>
+			<key>vi</key>
+			<string>Gửi yêu cầu thất bại</string>
+			<key>thb</key>
+			<string>ส่งคำขอล้มเหลว</string>
+			<key>en</key>
+			<string>Submit request failed</string>
+			<key>tw</key>
+			<string>提交請求失敗</string>
+			<key>khmer</key>
+			<string>ការបញ្ជូនសំណើបានបរាជ័យ</string>
+		</dict>
+		<key>t_account_055</key>
+		<dict>
+			<key>vi</key>
+			<string>Không thể kích hoạt tài khoản của bạn</string>
+			<key>thb</key>
+			<string>ไม่สามารถเปิดใช้งานบัญชีของคุณได้</string>
+			<key>en</key>
+			<string>Activation request failed</string>
+			<key>tw</key>
+			<string>激活請求失敗</string>
+			<key>khmer</key>
+			<string>មិនអាចបើកដំណើរការគណនីរបស់អ្នក</string>
+		</dict>
+        <key>t_account_055_201</key>
+        <dict>
+            <key>vi</key>
+            <string>Mã OTP không đúng</string>
+            <key>thb</key>
+            <string>รหัส OTP ไม่ถูกต้อง</string>
+            <key>en</key>
+            <string>The OTP code is incorrect.</string>
+            <key>tw</key>
+            <string>OTP碼不正確</string>
+            <key>khmer</key>
+            <string>កូដ OTP មិនត្រឹមត្រូវ</string>
+        </dict>
+        <key>t_account_055_202</key>
+        <dict>
+            <key>vi</key>
+            <string>Phiên làm việc đã hết hạn, vui lòng đóng ứng dụng rồi thử lại</string>
+            <key>thb</key>
+            <string>เซสชันหมดอายุแล้ว โปรดปิดแอปพลิเคชันแล้วลองใหม่</string>
+            <key>en</key>
+            <string>The session has expired, please close the application and try again.</string>
+            <key>tw</key>
+            <string>工作階段已過期，請關閉應用程式後再試一次</string>
+            <key>khmer</key>
+            <string>វេនការងារបានផុតកំណត់ សូមបិទកម្មវិធីរួចព្យាយាមម្តងទៀត</string>
+        </dict>
+		<key>t_account_056</key>
+		<dict>
+			<key>vi</key>
+			<string>Kích hoạt</string>
+			<key>thb</key>
+			<string>เปิดใช้งาน</string>
+			<key>en</key>
+			<string>Active</string>
+			<key>tw</key>
+			<string>激活</string>
+			<key>khmer</key>
+			<string>បើកដំណើរការ</string>
+		</dict>
+		<key>t_account_057</key>
+		<dict>
+			<key>vi</key>
+			<string>Gửi OTP đến địa chỉ email</string>
+			<key>thb</key>
+			<string>ส่ง OTP ไปยัง email</string>
+			<key>en</key>
+			<string>Send OTP to email</string>
+			<key>tw</key>
+			<string>发送到otp邮箱</string>
+			<key>khmer</key>
+			<string>ផ្ញើ OTP ដល់អាស័យដ្ឋាន Email</string>
+		</dict>
+		<key>t_account_058</key>
+		<dict>
+			<key>vi</key>
+			<string>Tài khoản đã được sử dụng, vui lòng chọn tên khác</string>
+			<key>thb</key>
+			<string>ชื่อบัญชีถูกใช้อยู่แล้ว โปรดเลือกชื่ออื่น</string>
+			<key>en</key>
+			<string>This Username has already existed</string>
+			<key>tw</key>
+			<string>賬號名已存在</string>
+			<key>khmer</key>
+			<string>គណនីនេះត្រូវបានប្រើប្រាស់រួចហើយ សូមជ្រើសរើសឈ្មោះផ្សេងទៀត។</string>
+		</dict>
+        <key>t_account_059</key>
+        <dict>
+            <key>vi</key>
+            <string>Địa chỉ Email đã tồn tại.</string>
+            <key>thb</key>
+            <string>Email มีผู้ใช้อยู่แล้ว</string>
+            <key>en</key>
+            <string>Email already exists.</string>
+            <key>tw</key>
+            <string>郵件已存在。</string>
+            <key>khmer</key>
+            <string>Email របស់​អ្នកប្រើប្រាស់​ធ្លាប់​មាន​ហើយ។</string>
+        </dict>
+        <key>t_account_305</key>
+        <dict>
+            <key>vi</key>
+            <string>Tài khoản của bạn đã tạm ngừng sử dụng, vui lòng liên hệ chăm sóc khách hàng để được hỗ trợ</string>
+            <key>thb</key>
+            <string>บัญชีของคุณถูกระงับชั่วคราว กรุณาติดต่อฝ่ายบริการลูกค้าเพื่อขอความช่วยเหลือ</string>
+            <key>en</key>
+            <string>Your account has been temporarily suspended, please contact customer support for assistance.</string>
+            <key>tw</key>
+            <string>您的帳戶已被暫時停用，請聯繫客戶服務以獲得幫助。</string>
+            <key>khmer</key>
+            <string>គណនីរបស់អ្នកត្រូវបានផ្អាកជាបណ្តោះអាសន្ន សូមទាក់ទងក្រុមសេវាកម្មអតិថិជនដើម្បីទទួលបានជំនួយ</string>
+        </dict>
+		<key>t_iap_001</key>
+		<dict>
+			<key>vi</key>
+			<string>Không thể kết nối đến serverID để tiến hành xử lý IAP.</string>
+			<key>thb</key>
+			<string>ไม่สามารถเชื่อมต่อกับ serverID เพื่อดำเนินการประมวลผล IAP ต่อไป.</string>
+			<key>en</key>
+			<string>Can't connect to server ID to init IAP.</string>
+			<key>tw</key>
+			<string>無法連接到服務器ID以進行處理IAP</string>
+			<key>khmer</key>
+			<string>មិនអាចភ្ជាប់ទៅនឹង serverID ដើម្បីបន្តដំណើរការ IAP។</string>
+		</dict>
+		<key>t_iap_002</key>
+		<dict>
+			<key>vi</key>
+			<string>Khởi tạo giao dịch thất bại, Vui lòng liên hệ CSKH để được hỗ trợ.</string>
+			<key>thb</key>
+			<string>การเริ่มต้นธุรกรรมล้มเหลว โปรดติดต่อฝ่ายบริการลูกค้าเพื่อขอความช่วยเหลือ.</string>
+			<key>en</key>
+			<string>Payment init failed, please contact customer service for assistance.</string>
+			<key>tw</key>
+			<string>支付初始化失敗，請聯系客服獲取協助。</string>
+			<key>khmer</key>
+			<string>ប្រតិបត្តិការបានបរាជ័យ សូមទាក់ទងផ្នែកបម្រើអតិថិជនដើម្បីជំនួយ។</string>
+		</dict>
+		<key>t_iap_003</key>
+		<dict>
+			<key>vi</key>
+			<string>Không thể tiến hành thanh toán qua AppStore, vui lòng thử lại sau.</string>
+			<key>thb</key>
+			<string>ไม่สามารถดำเนินการชำระเงินผ่าน AppStore ได้ โปรดลองใหม่อีกครั้งในภายหลัง.</string>
+			<key>en</key>
+			<string>Can't make payment on AppStore, please try again.</string>
+			<key>tw</key>
+			<string>無法在AppStore上進行支付，請稍後再試。</string>
+			<key>khmer</key>
+			<string>មិនអាចចាប់ផ្ដើមប្រតិបត្តិការតាមរយៈ AppStore សូម​ព្យាយាម​ម្តង​ទៀត​នៅ​ពេល​ក្រោយ។</string>
+		</dict>
+		<key>t_iap_004</key>
+		<dict>
+			<key>vi</key>
+			<string>Product ID không hợp lệ hoặc không tồn tại trên Apple Store</string>
+			<key>thb</key>
+			<string>Product ID ไม่ถูกต้องหรือไม่มีอยู่ใน Apple Store</string>
+			<key>en</key>
+			<string>Product ID invalid or not exist on AppleStore.</string>
+			<key>tw</key>
+			<string>ID商品無效或在Apple Store上不存在。</string>
+			<key>khmer</key>
+			<string>Product ID មិនត្រឹមត្រូវឬមិនមាននៅលើ  Apple Store</string>
+		</dict>
+		<key>t_iap_005</key>
+		<dict>
+			<key>vi</key>
+			<string>Không thể kết nối đến iTunes Store.</string>
+			<key>thb</key>
+			<string>ไม่สามารถเชื่อมต่อกับ iTunes Store.</string>
+			<key>en</key>
+			<string>Can't connect to iTunes Store, please try again.</string>
+			<key>tw</key>
+			<string>無法連接到iTunes Store</string>
+			<key>khmer</key>
+			<string>មិនអាចភ្ជាប់ទៅនឹង iTunes Store។</string>
+		</dict>
+		<key>t_iap_006</key>
+		<dict>
+			<key>vi</key>
+			<string>Khôi phục thanh toán thành công</string>
+			<key>thb</key>
+			<string>กู้คืนการชำระเงินสำเร็จ</string>
+			<key>en</key>
+			<string>Restore payment successful.</string>
+			<key>tw</key>
+			<string>恢復支付成功</string>
+			<key>khmer</key>
+			<string>ការស្ដារប្រតិបត្តិការជោគជ័យ</string>
+		</dict>
+		<key>t_iap_007</key>
+		<dict>
+			<key>vi</key>
+			<string>Thanh toán IAP thất bại.</string>
+			<key>thb</key>
+			<string>การชำระเงิน IAP ล้มเหลว.</string>
+			<key>en</key>
+			<string> IAP Payment failure</string>
+			<key>tw</key>
+			<string>IPA支付失败</string>
+			<key>khmer</key>
+			<string>ទូទាត់ IAP បរាជ័យ។</string>
+		</dict>
+		<key>t_iap_008</key>
+		<dict>
+			<key>vi</key>
+			<string>Xin chúc mừng, bạn đã thanh toán thành công trên AppleStore.</string>
+			<key>thb</key>
+			<string>ยินดีด้วย คุณชำระเงินบน AppleStore สำเร็จแล้ว.</string>
+			<key>en</key>
+			<string>Congratulation, You have paid success on AppleStore.</string>
+			<key>tw</key>
+			<string>恭喜，您已在AppleStore上支付成功。</string>
+			<key>khmer</key>
+			<string>សូមអបអរសាទរ អ្នកទូទាត់បានជោកជ័យនៅលើ AppleStore។</string>
+		</dict>
+		<key>t_iap_009</key>
+		<dict>
+			<key>vi</key>
+			<string>Thanh toán không hợp lệ. Vui lòng liên hệ CSKH.</string>
+			<key>thb</key>
+			<string>การชำระเงินไม่ถูกต้อง โปรดติดต่อฝ่ายบริการลูกค้า.</string>
+			<key>en</key>
+			<string>Payment invalid. Please contact customer service for assistance.</string>
+			<key>tw</key>
+			<string>支付無效。請聯系客服。</string>
+			<key>khmer</key>
+			<string>ការទូទាត់មិនត្រឹមត្រូវ។ សូមទាក់ទង់ផ្នែកបម្រើអតិថិជន។</string>
+		</dict>
+		<key>t_iap_010</key>
+		<dict>
+			<key>vi</key>
+			<dict>
+				<key>201</key>
+				<string>Giao dịch không tồn tại</string>
+				<key>202</key>
+				<string>Giao dịch đã được xử lý</string>
+				<key>203</key>
+				<string>Giao dịch hết hạn</string>
+				<key>204</key>
+				<string>Số tiền không đúng</string>
+				<key>205</key>
+				<string>Xác thực Apple thất bại</string>
+				<key>500</key>
+				<string>Xử lý thất bại, vui lòng liên hệ nhân viên CSKH để được hỗ trợ.</string>
+				<key>999</key>
+				<string>Xử lý thất bại, vui lòng đăng nhập lại.</string>
+			</dict>
+			<key>thb</key>
+			<dict>
+				<key>201</key>
+				<string>ไม่มีธุรกรรม</string>
+				<key>202</key>
+				<string>ธุรกรรมเสร็จสมบูรณ์</string>
+				<key>203</key>
+				<string>หมดอายุการทำธุรกรรม</string>
+				<key>204</key>
+				<string>จำนวนเงินไม่ถูกต้อง</string>
+				<key>205</key>
+				<string>การตรวจสอบสิทธิ์ Apple ล้มเหลว</string>
+				<key>500</key>
+				<string>การดำเนินการไม่สำเร็จ โปรดติดต่อฝพนักงานฝ่ายบริการลูกค้าเพื่อรับความช่วยเหลือ.</string>
+				<key>999</key>
+				<string>การดำเนินการล้มเหลว โปรดเข้าสู่ระบบใหม่อีกครั้ง.</string>
+			</dict>
+			<key>en</key>
+			<dict>
+				<key>201</key>
+				<string>Transaction does not exists</string>
+				<key>202</key>
+				<string>Transaction is completed</string>
+				<key>203</key>
+				<string>expired Transaction</string>
+				<key>204</key>
+				<string>Amount error</string>
+				<key>205</key>
+				<string>IAP verify failed.</string>
+				<key>500</key>
+				<string></string>
+				<key>999</key>
+				<string></string>
+			</dict>
+			<key>tw</key>
+			<dict>
+				<key>201</key>
+				<string>交易不存在</string>
+				<key>202</key>
+				<string>交易已處理完</string>
+				<key>203</key>
+				<string>交易過期</string>
+				<key>204</key>
+				<string>金額錯誤</string>
+				<key>205</key>
+				<string>IAP驗證失敗。</string>
+				<key>500</key>
+				<string>處理失敗，請聯系客服獲取協助。</string>
+				<key>999</key>
+				<string>處理失敗，請重新登錄。</string>
+			</dict>
+			<key>khmer</key>
+			<dict>
+				<key>201</key>
+				<string>ប្រតិបត្តិការមិនមានទេ</string>
+				<key>202</key>
+				<string>ប្រតិបត្តិការត្រូវបានដំណើរការ</string>
+				<key>203</key>
+				<string>ប្រតិបត្តិការបានផុតកំណត់</string>
+				<key>204</key>
+				<string>ចំនួនទឹកប្រាក់មិនត្រឹមត្រូវ</string>
+				<key>205</key>
+				<string>ការផ្ទៀងផ្ទាត់ Apple បរាជ័យ</string>
+				<key>500</key>
+				<string>ដំណើរការបរាជ័យ សូមទាក់ទងផ្នែកបម្រើអតិថិជនដើម្បីជំនួយ។</string>
+				<key>999</key>
+				<string>ដំណើរការបរាជ័យ សូមចូលម្តងទៀត។</string>
+			</dict>
+		</dict>
+        <key>t_iap_011</key>
+        <dict>
+            <key>vi</key>
+            <string>Giá thanh toán: </string>
+            <key>thb</key>
+            <string>ราคาชำระเงิน: </string>
+            <key>en</key>
+            <string>Amount: </string>
+            <key>tw</key>
+            <string>付款價格: </string>
+            <key>khmer</key>
+            <string>តម្លៃបង់ប្រាក់: </string>
+        </dict>
+        
+        <key>t_iap_012</key>
+        <dict>
+            <key>vi</key>
+            <string>Thanh toán IAP</string>
+            <key>thb</key>
+            <string>การชำระเงิน IAP</string>
+            <key>en</key>
+            <string>IAP Payment</string>
+            <key>tw</key>
+            <string>IAP 付款</string>
+            <key>khmer</key>
+            <string>ការបង់ប្រាក់ IAP</string>
+        </dict>
+        
+        <key>t_iap_013</key>
+        <dict>
+            <key>vi</key>
+            <string>Thanh toán ví GOSU</string>
+            <key>thb</key>
+            <string>การชำระเงินด้วยกระเป๋าเงิน GOSU</string>
+            <key>en</key>
+            <string>GOSU Payment</string>
+            <key>tw</key>
+            <string>GOSU 錢包付款</string>
+            <key>khmer</key>
+            <string>ការបង់ប្រាក់តាមកាបូប GOSU</string>
+        </dict>
+        <key>t_iap_014</key>
+        <dict>
+            <key>vi</key>
+            <string>Số dư ví: </string>
+            <key>thb</key>
+            <string>ยอดคงเหลือในกระเป๋าเงิน: </string>
+            <key>en</key>
+            <string>Balance: </string>
+            <key>tw</key>
+            <string>錢包餘額: </string>
+            <key>khmer</key>
+            <string>សមតុល្យកាបូប: </string>
+        </dict>
+		<key>t_alert_forgotpass</key>
+		<dict>
+			<key>vi</key>
+			<dict>
+				<key>200</key>
+				<string>Gửi yêu cầu thành công</string>
+				<key>201</key>
+				<string>Số điện thoại/Email chưa được kích hoạt</string>
+				<key>202</key>
+				<string>Tài khoản không tồn tại</string>
+				<key>500</key>
+				<string>Lỗi bất thường</string>
+			</dict>
+			<key>thb</key>
+			<dict>
+				<key>200</key>
+				<string>ส่งคำขอสำเร็จ</string>
+				<key>201</key>
+				<string>หมายเลขโทรศัพท์/Email ยังไม่ได้เปิดใช้งาน</string>
+				<key>202</key>
+				<string>บัญชีไม่มีอยู่</string>
+				<key>500</key>
+				<string>ข้อผิดพลาดผิดปกติ</string>
+			</dict>
+			<key>tw</key>
+			<dict>
+				<key>200</key>
+				<string>發送申請成功</string>
+				<key>201</key>
+				<string>電話號碼/郵件未激活</string>
+				<key>202</key>
+				<string>賬號不存在</string>
+				<key>500</key>
+				<string>異常錯誤</string>
+			</dict>
+			<key>khmer</key>
+			<dict>
+				<key>200</key>
+				<string>បញ្ជូនសំណើដោយជោគជ័យ</string>
+				<key>201</key>
+				<string>លេខទូរស័ព្ទ/Email មិន​ទាន់​បាន​បើក​ដំណើរការ</string>
+				<key>202</key>
+				<string>គណនីមិនមានទេ</string>
+				<key>500</key>
+				<string>កំហុសមិនប្រក្រតី</string>
+			</dict>
+		</dict>
+		<key>t_grpc_iap_002</key>
+		<dict>
+			<key>vi</key>
+			<dict>
+				<key>201</key>
+				<string>Tài khoản đã cấm thanh toán</string>
+				<key>202</key>
+				<string>Chữ ký không hợp lệ</string>
+				<key>203</key>
+				<string>Số tiền không hợp lệ</string>
+				<key>500</key>
+				<string>Lỗi bất thường</string>
+			</dict>
+			<key>thb</key>
+			<dict>
+				<key>201</key>
+				<string>บัญชีถูกระงับการชำระเงิน</string>
+				<key>202</key>
+				<string>ลายเซ็นไม่ถูกต้อง</string>
+				<key>203</key>
+				<string>จำนวนเงินไม่ถูกต้อง</string>
+				<key>500</key>
+				<string>ข้อผิดพลาดผิดปกติ</string>
+			</dict>
+			<key>en</key>
+			<dict>
+				<key>201</key>
+				<string>The Account can't make transactions.</string>
+				<key>202</key>
+				<string>Invalid Signature</string>
+				<key>203</key>
+				<string>Invalid Amount</string>
+				<key>500</key>
+				<string>System Error</string>
+			</dict>
+			<key>tw</key>
+			<dict>
+				<key>201</key>
+				<string>賬號已禁止支付</string>
+				<key>202</key>
+				<string>簽字無效</string>
+				<key>203</key>
+				<string>金額無效</string>
+				<key>500</key>
+				<string>異常錯誤</string>
+			</dict>
+			<key>khmer</key>
+			<dict>
+				<key>201</key>
+				<string>គណនីត្រូវបានហាមឃាត់មិនឱ្យទូទាត់</string>
+				<key>202</key>
+				<string>ហត្ថលេខាមិនត្រឹមត្រូវ</string>
+				<key>203</key>
+				<string>ចំនួនទឹកប្រាក់មិនត្រឹមត្រូវ</string>
+				<key>500</key>
+				<string>កំហុសមិនប្រក្រតី</string>
+			</dict>
+		</dict>
+        <key>delete_account_success</key>
+        <dict>
+            <key>vi</key>
+            <string>Xóa tài khoản thành công</string>
+            <key>thb</key>
+            <string>ลบบัญชีสำเร็จแล้ว</string>
+            <key>en</key>
+            <string>Account successfully deleted.</string>
+            <key>tw</key>
+            <string>成功刪除帳戶。</string>
+            <key>khmer</key>
+            <string>បានលុបគណនីដោយជោគជ័យ។</string>
+        </dict>
+        <key>delete_account_confirm</key>
+        <dict>
+            <key>vi</key>
+            <string>Tài khoản của bạn sẽ được xóa vĩnh viễn sau khi nhấn xác nhận, bạn có chắc chắn không?</string>
+            <key>thb</key>
+            <string>บัญชีของคุณจะถูกลบอย่างถาวรหลังจากคลิกยืนยัน คุณแน่ใจหรือไม่?</string>
+            <key>en</key>
+            <string>Your account will be permanently deleted after clicking confirm, are you sure?</string>
+            <key>tw</key>
+            <string>點擊確認後，您的賬戶將被永久刪除，您確定嗎？</string>
+            <key>khmer</key>
+            <string>គណនីរបស់អ្នកនឹងត្រូវបានលុបជាអចិន្ត្រៃយ៍បន្ទាប់ពីចុចបញ្ជាក់, តើអ្នកប្រាកដឬទេ?</string>
+        </dict>
+        <key>delete_account_failed</key>
+        <dict>
+            <key>vi</key>
+            <string>Không thể thực hiện yêu cầu, vui lòng thử lại sau</string>
+            <key>thb</key>
+            <string>ไม่สามารถดำเนินการตามคำขอได้ โปรดลองอีกครั้งในภายหลัง</string>
+            <key>en</key>
+            <string>Unable to process the request, please try again later.</string>
+            <key>tw</key>
+            <string>無法執行請求，請稍後再試。</string>
+            <key>khmer</key>
+            <string>មិនអាចបំពេញការស្នើសុំបានទេ សូមព្យាយាមម្ដងទៀតនៅពេលក្រោយ។</string>
+        </dict>
+        <key>link_account_confirm</key>
+        <dict>
+            <key>vi</key>
+            <string>Liên kết với tài khoản thực để bảo mật tài khoản, liên kết ngay?</string>
+            <key>thb</key>
+            <string>ผูกบัญชีกับบัญชีจริงเพื่อความปลอดภัยของบัญชี ต้องการผูกตอนนี้เลยไหม?</string>
+            <key>en</key>
+            <string>Link to a real account to secure your account, link now?</string>
+            <key>tw</key>
+            <string>為了帳戶安全，請立即連結到真實帳戶，現在連結嗎？</string>
+            <key>khmer</key>
+            <string>ភ្ជាប់ទៅគណនីពិតដើម្បីការពារគណនីរបស់អ្នក, ភ្ជាប់ឥឡូវនេះទេ?</string>
+        </dict>
+	</dict>
+</plist>
