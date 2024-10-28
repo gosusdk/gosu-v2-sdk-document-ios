@@ -60,4 +60,7 @@ Demo/GosuApiv2_Demo/SDK/libs.zip
 Demo/.DS_Store
 SDK/.DS_Store
 
+#Ignore build folder
+SDK/build/
+SDK/build/*
 
