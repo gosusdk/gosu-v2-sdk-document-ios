@@ -10,6 +10,7 @@
 #import "ServerFactory.h"
 #import <AdSupport/AdSupport.h>
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
+#import "GlobalVariable.h"
 
 static SdkConfig *sharedInstance;
 @implementation SdkConfig
@@ -120,9 +121,9 @@ static SdkConfig *sharedInstance;
         }
     }
     _clientIsReady = NO;
-    _airbridgeName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"AirbAppName"];
-    _airbridgeToken = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"AirbAppToken"];
-    
+//    _airbridgeName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"AirbAppName"];
+//    _airbridgeToken = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"AirbAppToken"];
+    [self loadItsConfig];
     
     NSString *GameClientID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GameClientID"];
     NSString *GameSdkSignature = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GameSdkSignature"];
@@ -221,6 +222,18 @@ static SdkConfig *sharedInstance;
         _username = @"";
     if(!_userID || [_userID isKindOfClass:[NSNull class]])
         _userID = @"";
+}
+
+- (void)loadItsConfig
+{
+    //NSLog(@"loadItsConfig");
+    if(_itsWritekey == NULL) {
+        _itsWritekey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ItsWriteKey"];
+        _itsWritekey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ItsWriteKey"];
+        _itsSigningKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ItsSigningKey"];
+        _itsEnv = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ItsMode"];
+        
+    }
 }
 
 - (void) setUsername:(NSString *)username
@@ -373,6 +386,10 @@ static SdkConfig *sharedInstance;
         return [manager.advertisingIdentifier UUIDString];
     }
     return @"";
+}
+
+- (NSString *)getSDKVersionName {
+    return @G_SDK_VERSION_NAME;
 }
 @end
 

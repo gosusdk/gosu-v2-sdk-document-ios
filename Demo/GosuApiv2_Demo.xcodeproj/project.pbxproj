@@ -46,6 +46,16 @@
 		22E774692C60748800179E04 /* ProtoRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E774352C60748800179E04 /* ProtoRPC.framework */; };
 		22E7746A2C60748800179E04 /* RxLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E774362C60748800179E04 /* RxLibrary.framework */; };
 		22E7746B2C60748800179E04 /* libGosuSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E774452C60748800179E04 /* libGosuSDK.a */; };
+		629515072E9A38DB00B705D8 /* MetricsReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629515002E9A38DB00B705D8 /* MetricsReporter.framework */; };
+		629515082E9A38DB00B705D8 /* MetricsReporter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 629515002E9A38DB00B705D8 /* MetricsReporter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		629515092E9A38DB00B705D8 /* ItsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629515032E9A38DB00B705D8 /* ItsSDK.framework */; };
+		6295150A2E9A38DB00B705D8 /* ItsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 629515032E9A38DB00B705D8 /* ItsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6295150B2E9A38DB00B705D8 /* Rudder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629515042E9A38DB00B705D8 /* Rudder.framework */; };
+		6295150C2E9A38DB00B705D8 /* Rudder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 629515042E9A38DB00B705D8 /* Rudder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6295150D2E9A38DC00B705D8 /* RSCrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629515052E9A38DB00B705D8 /* RSCrashReporter.framework */; };
+		6295150E2E9A38DC00B705D8 /* RSCrashReporter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 629515052E9A38DB00B705D8 /* RSCrashReporter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6295150F2E9A38DC00B705D8 /* RudderKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629515062E9A38DB00B705D8 /* RudderKit.framework */; };
+		629515102E9A38DC00B705D8 /* RudderKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 629515062E9A38DB00B705D8 /* RudderKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A5528C3211B324700F7E933 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5528C2211B324700F7E933 /* LaunchScreen.storyboard */; };
 		8A5528C5211B330000F7E933 /* ap_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A5528C4211B330000F7E933 /* ap_logo.png */; };
 		8A8334DD21006C00007200B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8334DC21006C00007200B0 /* AppDelegate.m */; };
@@ -90,6 +100,11 @@
 			dstSubfolderSpec = 10;
 			files = (
 				12329B152CC8EFA50013240C /* AirBridge.framework in Embed Frameworks */,
+				629515082E9A38DB00B705D8 /* MetricsReporter.framework in Embed Frameworks */,
+				6295150C2E9A38DB00B705D8 /* Rudder.framework in Embed Frameworks */,
+				6295150E2E9A38DC00B705D8 /* RSCrashReporter.framework in Embed Frameworks */,
+				6295150A2E9A38DB00B705D8 /* ItsSDK.framework in Embed Frameworks */,
+				629515102E9A38DC00B705D8 /* RudderKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +162,11 @@
 		22E774412C60748800179E04 /* LoginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginDelegate.h; sourceTree = "<group>"; };
 		22E774422C60748800179E04 /* UserProfileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileResponse.h; sourceTree = "<group>"; };
 		22E774452C60748800179E04 /* libGosuSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGosuSDK.a; path = ../../../SDK/build/GosuSDK/libGosuSDK.a; sourceTree = "<group>"; };
+		629515002E9A38DB00B705D8 /* MetricsReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetricsReporter.framework; path = ../SDK/build/GosuSDK/GSinSDK_include/its_xcframeworks/MetricsReporter.framework; sourceTree = "<group>"; };
+		629515032E9A38DB00B705D8 /* ItsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ItsSDK.framework; path = ../SDK/build/GosuSDK/GSinSDK_include/its_xcframeworks/ItsSDK.framework; sourceTree = "<group>"; };
+		629515042E9A38DB00B705D8 /* Rudder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rudder.framework; path = ../SDK/build/GosuSDK/GSinSDK_include/its_xcframeworks/Rudder.framework; sourceTree = "<group>"; };
+		629515052E9A38DB00B705D8 /* RSCrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RSCrashReporter.framework; path = ../SDK/build/GosuSDK/GSinSDK_include/its_xcframeworks/RSCrashReporter.framework; sourceTree = "<group>"; };
+		629515062E9A38DB00B705D8 /* RudderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RudderKit.framework; path = ../SDK/build/GosuSDK/GSinSDK_include/its_xcframeworks/RudderKit.framework; sourceTree = "<group>"; };
 		8A5528C2211B324700F7E933 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A5528C4211B330000F7E933 /* ap_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ap_logo.png; sourceTree = "<group>"; };
 		8A8334D821006C00007200B0 /* GosuApiV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GosuApiV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,9 +199,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6295150B2E9A38DB00B705D8 /* Rudder.framework in Frameworks */,
 				22E774562C60748800179E04 /* FirebasePerformance.framework in Frameworks */,
 				22E774612C60748800179E04 /* GTMSessionFetcher.framework in Frameworks */,
 				22E774572C60748800179E04 /* FirebaseRemoteConfig.framework in Frameworks */,
+				629515072E9A38DB00B705D8 /* MetricsReporter.framework in Frameworks */,
 				22E7745B2C60748800179E04 /* GoogleAppMeasurement.framework in Frameworks */,
 				22E774622C60748800179E04 /* nanopb.framework in Frameworks */,
 				22E7745A2C60748800179E04 /* FirebaseSharedSwift.framework in Frameworks */,
@@ -206,6 +228,7 @@
 				22E7744A2C60748800179E04 /* FBSDKCoreKit.framework in Frameworks */,
 				8A83352A21006DDA007200B0 /* MobileCoreServices.framework in Frameworks */,
 				22E7745C2C60748800179E04 /* GoogleAppMeasurementIdentitySupport.framework in Frameworks */,
+				6295150F2E9A38DC00B705D8 /* RudderKit.framework in Frameworks */,
 				22E774582C60748800179E04 /* FirebaseRemoteConfigInterop.framework in Frameworks */,
 				22E7745E2C60748800179E04 /* GoogleSignIn.framework in Frameworks */,
 				22E774642C60748800179E04 /* absl.framework in Frameworks */,
@@ -216,12 +239,14 @@
 				22E7744C2C60748800179E04 /* AppAuth.framework in Frameworks */,
 				22E7744B2C60748800179E04 /* FBSDKLoginKit.framework in Frameworks */,
 				22E774552C60748800179E04 /* FirebaseMessaging.framework in Frameworks */,
+				629515092E9A38DB00B705D8 /* ItsSDK.framework in Frameworks */,
 				22E774502C60748800179E04 /* FirebaseCore.framework in Frameworks */,
 				22E774672C60748800179E04 /* openssl_grpc.framework in Frameworks */,
 				8A83352621006DCC007200B0 /* MessageUI.framework in Frameworks */,
 				22E774522C60748800179E04 /* FirebaseCoreInternal.framework in Frameworks */,
 				22E7744F2C60748800179E04 /* FirebaseAnalytics.framework in Frameworks */,
 				22E774692C60748800179E04 /* ProtoRPC.framework in Frameworks */,
+				6295150D2E9A38DC00B705D8 /* RSCrashReporter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +446,11 @@
 		8A83352221006DBE007200B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				629515032E9A38DB00B705D8 /* ItsSDK.framework */,
+				629515002E9A38DB00B705D8 /* MetricsReporter.framework */,
+				629515052E9A38DB00B705D8 /* RSCrashReporter.framework */,
+				629515042E9A38DB00B705D8 /* Rudder.framework */,
+				629515062E9A38DB00B705D8 /* RudderKit.framework */,
 				CEE354F525B31CD00008F412 /* Accelerate.framework */,
 				8AB17D98239FCD6D0057AED5 /* AuthenticationServices.framework */,
 				8A9A52CF212D1C6D0097A25C /* MediaPlayer.framework */,

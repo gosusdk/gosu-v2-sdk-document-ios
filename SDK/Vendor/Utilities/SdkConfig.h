@@ -70,6 +70,11 @@
 @property (nonatomic, strong) NSString *airbridgeName;
 @property (nonatomic, strong) NSString *airbridgeToken;
 
+//Its
+@property (nonatomic, strong) NSString *itsWritekey;
+@property (nonatomic, strong) NSString *itsSigningKey;
+@property (nonatomic, strong) NSString *itsEnv;
+
 //server config data
 + (SdkConfig *) sharedInstance;
 - (SdkConfig *) loadConfig:(void(^)(NSString *))loadCallback;
@@ -91,4 +96,5 @@
 - (void)deleteAccountWithCallback:(void (^)(NSDictionary<NSString *, id> *))deleteCallback;
 - (NSString *)getAdId;
 - (NSString *) getDefaultLanguage;
+- (NSString *)getSDKVersionName;
 @end
