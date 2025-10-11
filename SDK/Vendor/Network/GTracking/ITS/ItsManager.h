@@ -2,7 +2,6 @@
 #import <UIKit/UIKit.h>
 #import "ItsSDK/ItsSDK.h"
 @interface ItsManager : NSObject
-@property (nonatomic, weak) id<ItsSDKDelegate> delegate;
 
 + (instancetype)sharedInstance;
 
