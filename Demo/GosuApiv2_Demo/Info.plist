@@ -61,8 +61,6 @@
     <string>sample-key</string>
     <key>ItsWriteKey</key>
     <string>sample-key</string>
-    <key>ItsMode</key>
-    <string>default</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
