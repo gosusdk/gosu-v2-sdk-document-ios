@@ -50,6 +50,8 @@ Demo/GosuApiv2_Demo/SDK/frameworks/
 # Ignore SDK/Frameworks/libs
 SDK/Frameworks/libs/
 Demo/GosuApiv2_Demo/SDK/libs/
+# Ignore SDK/Frameworks/its_frameworks
+SDK/Frameworks/its_frameworks/
 #Ignore zip files to douwnload outsdie the project
 SDK/Frameworks/frameworks.zip
 Demo/GosuApiv2_Demo/SDK/frameworks.zip

@@ -82,6 +82,17 @@
 		225504002BD5F96A00FCA77B /* RxLibrary.xcframework in Grpc */ = {isa = PBXBuildFile; fileRef = 225503D12BD5F8D100FCA77B /* RxLibrary.xcframework */; };
 		22E7740B2C606CE900179E04 /* CrashlyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E7740A2C606CE900179E04 /* CrashlyticsManager.m */; };
 		22E7740C2C606CF700179E04 /* CrashlyticsManager.h in header */ = {isa = PBXBuildFile; fileRef = 22E774092C606CE900179E04 /* CrashlyticsManager.h */; };
+		629514F52E9A36C400B705D8 /* RudderKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629514EE2E9A36B800B705D8 /* RudderKit.xcframework */; };
+		629514F62E9A36C400B705D8 /* RudderKit.xcframework in its */ = {isa = PBXBuildFile; fileRef = 629514EE2E9A36B800B705D8 /* RudderKit.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		629514F82E9A36C600B705D8 /* Rudder.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629514ED2E9A36B800B705D8 /* Rudder.xcframework */; };
+		629514F92E9A36C600B705D8 /* Rudder.xcframework in its */ = {isa = PBXBuildFile; fileRef = 629514ED2E9A36B800B705D8 /* Rudder.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		629514FA2E9A36C700B705D8 /* RSCrashReporter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629514EC2E9A36B800B705D8 /* RSCrashReporter.xcframework */; };
+		629514FB2E9A36C700B705D8 /* RSCrashReporter.xcframework in its */ = {isa = PBXBuildFile; fileRef = 629514EC2E9A36B800B705D8 /* RSCrashReporter.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		629514FC2E9A36C900B705D8 /* MetricsReporter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629514EB2E9A36B800B705D8 /* MetricsReporter.xcframework */; };
+		629514FD2E9A36C900B705D8 /* MetricsReporter.xcframework in its */ = {isa = PBXBuildFile; fileRef = 629514EB2E9A36B800B705D8 /* MetricsReporter.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		629515152E9A407600B705D8 /* ItsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 629515132E9A407600B705D8 /* ItsManager.m */; };
+		6295151A2E9A4F3600B705D8 /* ItsSDK(1.1.2).xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629514EA2E9A36B800B705D8 /* ItsSDK(1.1.2).xcframework */; };
+		6295151B2E9A4F3600B705D8 /* ItsSDK(1.1.2).xcframework in its */ = {isa = PBXBuildFile; fileRef = 629514EA2E9A36B800B705D8 /* ItsSDK(1.1.2).xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE1840CE299CA15F00AE01F6 /* oPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA28B72298CE3E300E93CA1 /* oPayViewController.m */; };
 		CE1840CF299CA16400AE01F6 /* GrpcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7CBB3827F153D9008B03F0 /* GrpcViewController.m */; };
 		CE1840D5299CB4E700AE01F6 /* MainUIController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1840D3299CB4E700AE01F6 /* MainUIController.m */; };
@@ -219,6 +230,21 @@
 			name = Firebase;
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		629514F72E9A36C400B705D8 /* its */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = GSinSDK_include/its_xcframeworks;
+			dstSubfolderSpec = 10;
+			files = (
+				629514FD2E9A36C900B705D8 /* MetricsReporter.xcframework in its */,
+				629514F62E9A36C400B705D8 /* RudderKit.xcframework in its */,
+				629514F92E9A36C600B705D8 /* Rudder.xcframework in its */,
+				629514FB2E9A36C700B705D8 /* RSCrashReporter.xcframework in its */,
+				6295151B2E9A4F3600B705D8 /* ItsSDK(1.1.2).xcframework in its */,
+			);
+			name = its;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE9C9FFE299C7D2A00547216 /* header */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,6 +329,13 @@
 		225503D12BD5F8D100FCA77B /* RxLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RxLibrary.xcframework; sourceTree = "<group>"; };
 		22E774092C606CE900179E04 /* CrashlyticsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrashlyticsManager.h; sourceTree = "<group>"; };
 		22E7740A2C606CE900179E04 /* CrashlyticsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrashlyticsManager.m; sourceTree = "<group>"; };
+		629514EA2E9A36B800B705D8 /* ItsSDK(1.1.2).xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "ItsSDK(1.1.2).xcframework"; sourceTree = "<group>"; };
+		629514EB2E9A36B800B705D8 /* MetricsReporter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MetricsReporter.xcframework; sourceTree = "<group>"; };
+		629514EC2E9A36B800B705D8 /* RSCrashReporter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RSCrashReporter.xcframework; sourceTree = "<group>"; };
+		629514ED2E9A36B800B705D8 /* Rudder.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Rudder.xcframework; sourceTree = "<group>"; };
+		629514EE2E9A36B800B705D8 /* RudderKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RudderKit.xcframework; sourceTree = "<group>"; };
+		629515122E9A407600B705D8 /* ItsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItsManager.h; sourceTree = "<group>"; };
+		629515132E9A407600B705D8 /* ItsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItsManager.m; sourceTree = "<group>"; };
 		CE1840D1299CB4E700AE01F6 /* MainUIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUIController.h; sourceTree = "<group>"; };
 		CE1840D2299CB4E700AE01F6 /* FloatingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatingButton.h; sourceTree = "<group>"; };
 		CE1840D3299CB4E700AE01F6 /* MainUIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUIController.m; sourceTree = "<group>"; };
@@ -464,12 +497,15 @@
 				225503B12BD5F88F00FCA77B /* FBLPromises.xcframework in Frameworks */,
 				225503BA2BD5F88F00FCA77B /* GTMAppAuth.xcframework in Frameworks */,
 				225503C82BD5F88F00FCA77B /* AirBridge.xcframework in Frameworks */,
+				629514F52E9A36C400B705D8 /* RudderKit.xcframework in Frameworks */,
+				629514F82E9A36C600B705D8 /* Rudder.xcframework in Frameworks */,
 				225503C32BD5F88F00FCA77B /* FirebaseRemoteConfigInterop.xcframework in Frameworks */,
 				225503BC2BD5F88F00FCA77B /* Promises.xcframework in Frameworks */,
 				225503D82BD5F8D100FCA77B /* RxLibrary.xcframework in Frameworks */,
 				225503BD2BD5F88F00FCA77B /* FirebaseRemoteConfig.xcframework in Frameworks */,
 				225503BF2BD5F88F00FCA77B /* FirebaseCoreExtension.xcframework in Frameworks */,
 				225503B42BD5F88F00FCA77B /* GoogleAppMeasurement.xcframework in Frameworks */,
+				629514FA2E9A36C700B705D8 /* RSCrashReporter.xcframework in Frameworks */,
 				225503D52BD5F8D100FCA77B /* ProtoRPC.xcframework in Frameworks */,
 				225503D32BD5F8D100FCA77B /* absl.xcframework in Frameworks */,
 				225503C62BD5F88F00FCA77B /* FBAEMKit.xcframework in Frameworks */,
@@ -486,11 +522,13 @@
 				225503B62BD5F88F00FCA77B /* FirebaseMessaging.xcframework in Frameworks */,
 				225503B72BD5F88F00FCA77B /* GoogleDataTransport.xcframework in Frameworks */,
 				225503B22BD5F88F00FCA77B /* FirebaseCore.xcframework in Frameworks */,
+				629514FC2E9A36C900B705D8 /* MetricsReporter.xcframework in Frameworks */,
 				225503AF2BD5F88F00FCA77B /* FirebaseAnalytics.xcframework in Frameworks */,
 				225503C72BD5F88F00FCA77B /* FBSDKCoreKit_Basics.xcframework in Frameworks */,
 				225503C12BD5F88F00FCA77B /* FirebaseSharedSwift.xcframework in Frameworks */,
 				225503BB2BD5F88F00FCA77B /* GTMSessionFetcher.xcframework in Frameworks */,
 				225503D42BD5F8D100FCA77B /* Protobuf.xcframework in Frameworks */,
+				6295151A2E9A4F3600B705D8 /* ItsSDK(1.1.2).xcframework in Frameworks */,
 				225503AE2BD5F88F00FCA77B /* GoogleAppMeasurementIdentitySupport.xcframework in Frameworks */,
 				225503D72BD5F8D100FCA77B /* openssl_grpc.xcframework in Frameworks */,
 				225503B32BD5F88F00FCA77B /* FirebaseCoreInternal.xcframework in Frameworks */,
@@ -583,6 +621,27 @@
 				225503AA2BD5F88E00FCA77B /* FBSDKCoreKit_Basics.xcframework */,
 			);
 			path = FacebookSDKv17;
+			sourceTree = "<group>";
+		};
+		629514EF2E9A36B800B705D8 /* its_frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				629514EA2E9A36B800B705D8 /* ItsSDK(1.1.2).xcframework */,
+				629514EB2E9A36B800B705D8 /* MetricsReporter.xcframework */,
+				629514EC2E9A36B800B705D8 /* RSCrashReporter.xcframework */,
+				629514ED2E9A36B800B705D8 /* Rudder.xcframework */,
+				629514EE2E9A36B800B705D8 /* RudderKit.xcframework */,
+			);
+			path = its_frameworks;
+			sourceTree = "<group>";
+		};
+		629515142E9A407600B705D8 /* ITS */ = {
+			isa = PBXGroup;
+			children = (
+				629515122E9A407600B705D8 /* ItsManager.h */,
+				629515132E9A407600B705D8 /* ItsManager.m */,
+			);
+			path = ITS;
 			sourceTree = "<group>";
 		};
 		CE1840D0299CB4E700AE01F6 /* SdkViewManager */ = {
@@ -847,6 +906,7 @@
 		CE3E03962AA9C43000606C88 /* GTracking */ = {
 			isa = PBXGroup;
 			children = (
+				629515142E9A407600B705D8 /* ITS */,
 				CE3E03972AA9C43000606C88 /* GTrackingManager.h */,
 				CE3E039E2AA9C43000606C88 /* GTrackingManager.m */,
 				CE3E038D2AA9C43000606C88 /* ServerId */,
@@ -891,6 +951,7 @@
 			children = (
 				CEEB6B672AB4438F006AECDC /* frameworks */,
 				CE3E03A32AA9C43000606C88 /* libs */,
+				629514EF2E9A36B800B705D8 /* its_frameworks */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -1090,6 +1151,7 @@
 				CE9CA0C5299C873600547216 /* Grpc */,
 				22470A972BB52619005C4B04 /* Facebook */,
 				22470A982BB52643005C4B04 /* Firebase */,
+				629514F72E9A36C400B705D8 /* its */,
 			);
 			buildRules = (
 			);
@@ -1224,6 +1286,7 @@
 				CE3E03E02AA9C43100606C88 /* IAPDataResponse.m in Sources */,
 				CE3E04102AA9C43100606C88 /* IdAppTracking.m in Sources */,
 				CE1840D7299CB4E800AE01F6 /* FloatingButton.m in Sources */,
+				629515152E9A407600B705D8 /* ItsManager.m in Sources */,
 				CE3E04722AA9C9C000606C88 /* AppleIAP.m in Sources */,
 				CE3E03F42AA9C43100606C88 /* SdkConfig.m in Sources */,
 				CE3E04142AA9C43100606C88 /* FacebookManager.m in Sources */,
@@ -1413,7 +1476,7 @@
 					"$(PROJECT_DIR)/Frameworks/libs",
 					"$(PROJECT_DIR)/Frameworks/frameworks",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 0.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -1433,7 +1496,7 @@
 					"$(PROJECT_DIR)/Frameworks/libs",
 					"$(PROJECT_DIR)/Frameworks/frameworks",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 0.0.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
