@@ -351,6 +351,19 @@
     [[GosuSDK GTracking] trackingEvent:@"level_20" withValues:@{@"customerId": @"12345"}];
     
     [[GosuSDK GTracking] trackingEvent:@"user_checkinday_1"];
+    
+   
+    [[GosuSDK GTracking] createNewCharacter:@"server01" andRoleId:@"character01" andRoleName:@"character01Name"];
+    [[GosuSDK GTracking] enterGame:@"toantest" characterID:@"character01" characterName:@"character01Name" serverInfo:@"server01"];
+    [[GosuSDK GTracking] startTutorial: @"user01"  andCharacterID:@"character01" andCharacterName:@"character01Name" andServerInfo:@"server01"];
+    [[GosuSDK GTracking] completeTutorial: @"user01"  andCharacterID:@"character01" andCharacterName:@"character01Name" andServerInfo:@"server01"];
+    [[GosuSDK GTracking] checkout:@"orderid_001" andProductId:@"product_id001" andAmount:@"10000" andCurrency:@"VND" andUsername:@"toantest"];
+    [[GosuSDK GTracking] purchase:@"orderid_001" andProductId:@"product_id001" andAmount:@"10000" andCurrency:@"VND" andUsername:@"toantest"];
+    [[GosuSDK GTracking] levelUp:@"toantest" characterID:@"character01" serverInfo:@"server01" level:10];
+    [[GosuSDK GTracking] vipUp:@"toantest" characterID:@"character01" serverInfo:@"server01" vipLevel:2];
+    [[GosuSDK GTracking] useItem:@"toantest" characterID:@"character01" serverInfo:@"server01" itemID:@"item01" quantity:1];
+    [[GosuSDK GTracking] trackActivityResult:@"toantest" characterID:@"character01" serverInfo:@"server01" activityID: @"activityid_01" activityResult:@"success!"];
+    [[GosuSDK GTracking] trackingEvent:@"user_checkinday_1"];
 }
 
 - (void)encodeWithCoder:(nonnull NSCoder *)coder {
