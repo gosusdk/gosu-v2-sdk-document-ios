@@ -232,7 +232,7 @@
     @try {
         [[FacebookManager sharedInstance] FBTrackingEnable];
         [[FacebookManager sharedInstance] FBAppActive];
-        [[GTrackingManager sharedInstance] application:self->application didFinishLaunchingWithOptions:self->launchOptions];
+//        [[GTrackingManager sharedInstance] application:self->application didFinishLaunchingWithOptions:self->launchOptions];
     } @catch (NSException *exception) {
         
     }
@@ -252,6 +252,10 @@
 {
     self->application = application;
     self->launchOptions = launchOptions;
+    
+    [[SdkContainer sharedInstance] requestIDFAWithCallback:^(NSString *callback) {
+        [[GTrackingManager sharedInstance] application:self->application didFinishLaunchingWithOptions:self->launchOptions];
+    }];
     
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     [[FirebaseManager sharedInstance] applicationDelegate:appDelegate andApplication:application didFinishLaunchingWithOptions:launchOptions];
