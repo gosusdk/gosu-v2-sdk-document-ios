@@ -57,10 +57,10 @@
 	<string>com.mystic.realms</string>
 	<key>GameSdkSignature_gosu</key>
 	<string>m616.ncuepdabhqrcnkjjzt</string>
-    <key>ItsSigningKey</key>
-    <string>sample-key</string>
-    <key>ItsWriteKey</key>
-    <string>sample-key</string>
+	<key>ItsSigningKey</key>
+	<string>f5ad5b5d7d2f409cbd225a28a8777ea1</string>
+	<key>ItsWriteKey</key>
+	<string>34gD7ILh3NZABhTIRbPATA23jU4</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
