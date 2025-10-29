@@ -36,7 +36,6 @@
 		225503C52BD5F88F00FCA77B /* FBSDKLoginKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225503A82BD5F88E00FCA77B /* FBSDKLoginKit.xcframework */; };
 		225503C62BD5F88F00FCA77B /* FBAEMKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225503A92BD5F88E00FCA77B /* FBAEMKit.xcframework */; };
 		225503C72BD5F88F00FCA77B /* FBSDKCoreKit_Basics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225503AA2BD5F88E00FCA77B /* FBSDKCoreKit_Basics.xcframework */; };
-		225503C82BD5F88F00FCA77B /* AirBridge.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225503AB2BD5F88F00FCA77B /* AirBridge.xcframework */; };
 		225503D22BD5F8D100FCA77B /* grpc.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225503CA2BD5F8D100FCA77B /* grpc.xcframework */; };
 		225503D32BD5F8D100FCA77B /* absl.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225503CB2BD5F8D100FCA77B /* absl.xcframework */; };
 		225503D42BD5F8D100FCA77B /* Protobuf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225503CD2BD5F8D100FCA77B /* Protobuf.xcframework */; };
@@ -68,7 +67,6 @@
 		225503F22BD5F95200FCA77B /* FirebaseSharedSwift.xcframework in Firebase */ = {isa = PBXBuildFile; fileRef = 225503A32BD5F88E00FCA77B /* FirebaseSharedSwift.xcframework */; };
 		225503F32BD5F95200FCA77B /* FirebaseABTesting.xcframework in Firebase */ = {isa = PBXBuildFile; fileRef = 225503A42BD5F88E00FCA77B /* FirebaseABTesting.xcframework */; };
 		225503F42BD5F95200FCA77B /* FirebaseRemoteConfigInterop.xcframework in Firebase */ = {isa = PBXBuildFile; fileRef = 225503A52BD5F88E00FCA77B /* FirebaseRemoteConfigInterop.xcframework */; };
-		225503F52BD5F96100FCA77B /* AirBridge.xcframework in Facebook */ = {isa = PBXBuildFile; fileRef = 225503AB2BD5F88F00FCA77B /* AirBridge.xcframework */; };
 		225503F62BD5F96100FCA77B /* FBSDKCoreKit.xcframework in Facebook */ = {isa = PBXBuildFile; fileRef = 225503A72BD5F88E00FCA77B /* FBSDKCoreKit.xcframework */; };
 		225503F72BD5F96100FCA77B /* FBSDKLoginKit.xcframework in Facebook */ = {isa = PBXBuildFile; fileRef = 225503A82BD5F88E00FCA77B /* FBSDKLoginKit.xcframework */; };
 		225503F82BD5F96100FCA77B /* FBAEMKit.xcframework in Facebook */ = {isa = PBXBuildFile; fileRef = 225503A92BD5F88E00FCA77B /* FBAEMKit.xcframework */; };
@@ -187,7 +185,6 @@
 			dstPath = GSinSDK_include/facebook;
 			dstSubfolderSpec = 16;
 			files = (
-				225503F52BD5F96100FCA77B /* AirBridge.xcframework in Facebook */,
 				225503F62BD5F96100FCA77B /* FBSDKCoreKit.xcframework in Facebook */,
 				225503F72BD5F96100FCA77B /* FBSDKLoginKit.xcframework in Facebook */,
 				225503F82BD5F96100FCA77B /* FBAEMKit.xcframework in Facebook */,
@@ -317,7 +314,6 @@
 		225503A82BD5F88E00FCA77B /* FBSDKLoginKit.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:V9WTTPBFK9:Meta Platforms, Inc."; lastKnownFileType = wrapper.xcframework; path = FBSDKLoginKit.xcframework; sourceTree = "<group>"; };
 		225503A92BD5F88E00FCA77B /* FBAEMKit.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:V9WTTPBFK9:Meta Platforms, Inc."; lastKnownFileType = wrapper.xcframework; path = FBAEMKit.xcframework; sourceTree = "<group>"; };
 		225503AA2BD5F88E00FCA77B /* FBSDKCoreKit_Basics.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:V9WTTPBFK9:Meta Platforms, Inc."; lastKnownFileType = wrapper.xcframework; path = FBSDKCoreKit_Basics.xcframework; sourceTree = "<group>"; };
-		225503AB2BD5F88F00FCA77B /* AirBridge.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:W378YHH57B:ab180 Inc."; lastKnownFileType = wrapper.xcframework; path = AirBridge.xcframework; sourceTree = "<group>"; };
 		225503C92BD5F8D100FCA77B /* Protobuf_Privacy.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Protobuf_Privacy.bundle; sourceTree = "<group>"; };
 		225503CA2BD5F8D100FCA77B /* grpc.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = grpc.xcframework; sourceTree = "<group>"; };
 		225503CB2BD5F8D100FCA77B /* absl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = absl.xcframework; sourceTree = "<group>"; };
@@ -496,7 +492,6 @@
 				225503D22BD5F8D100FCA77B /* grpc.xcframework in Frameworks */,
 				225503B12BD5F88F00FCA77B /* FBLPromises.xcframework in Frameworks */,
 				225503BA2BD5F88F00FCA77B /* GTMAppAuth.xcframework in Frameworks */,
-				225503C82BD5F88F00FCA77B /* AirBridge.xcframework in Frameworks */,
 				629514F52E9A36C400B705D8 /* RudderKit.xcframework in Frameworks */,
 				629514F82E9A36C600B705D8 /* Rudder.xcframework in Frameworks */,
 				225503C32BD5F88F00FCA77B /* FirebaseRemoteConfigInterop.xcframework in Frameworks */,
@@ -920,8 +915,8 @@
 		CE3E03982AA9C43000606C88 /* Airbridge */ = {
 			isa = PBXGroup;
 			children = (
-				CE3E03992AA9C43000606C88 /* AirbridgeManager.m */,
 				CE3E039A2AA9C43000606C88 /* AirbridgeManager.h */,
+				CE3E03992AA9C43000606C88 /* AirbridgeManager.m */,
 			);
 			path = Airbridge;
 			sourceTree = "<group>";
@@ -959,7 +954,6 @@
 		CE3E03A32AA9C43000606C88 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				225503AB2BD5F88F00FCA77B /* AirBridge.xcframework */,
 				225503A62BD5F88E00FCA77B /* FacebookSDKv17 */,
 				225503862BD5F88E00FCA77B /* Firebase */,
 			);
