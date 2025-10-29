@@ -10,7 +10,7 @@
 #import "SdkConfig.h"
 #import "FirebaseManager.h"
 #import "IdAppTracking.h"
-#import "AppsflyerManager.h"
+//#import "AppsflyerManager.h"
 #import "CrashlyticsManager.h"
 #import "ItsManager.h"
 
@@ -81,8 +81,10 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 - (void) setCustomerUserID:(NSString *)customerUserID
 {
     [[FirebaseManager sharedInstance] setCustomerID:customerUserID];
-//    [[AirbridgeManager sharedInstance] setCustomerUserID:customerUserID];
-    [[AppsflyerManager sharedInstance] setCustomerUserID:customerUserID];
+    //Airbridge Removed
+    //[[AirbridgeManager sharedInstance] setCustomerUserID:customerUserID];
+    //Appsflyer Removed
+    //[[AppsflyerManager sharedInstance] setCustomerUserID:customerUserID];
 }
 
 - (void)completeRegistration:(NSString *)userID {
@@ -97,8 +99,10 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 - (void) login:userId andUsername:(NSString *)username andEmail:(NSString *)email;
 {
     [[FirebaseManager sharedInstance] trackingSignIn:userId andUsername:username andEmail:email];
-//    [[AirbridgeManager sharedInstance] trackingLogin:userId andUsername:username andEmail:email];
-    [[AppsflyerManager sharedInstance] trackingLogin:userId andUsername:username andEmail:email];
+    //Airbridge Removed
+    //[[AirbridgeManager sharedInstance] trackingLogin:userId andUsername:username andEmail:email];
+    //Appsflyer Removed
+    //[[AppsflyerManager sharedInstance] trackingLogin:userId andUsername:username andEmail:email];
     [[ItsManager sharedInstance] loginWithUserID:userId userName:username userEmail:email];
 }
 //-----//
@@ -106,8 +110,10 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 - (void) checkout:(NSString *)orderId andProductId:(NSString *)productId andAmount:(NSString *)amount andCurrency:(NSString *)currency andUsername:(NSString *)username
 {
     [[FirebaseManager sharedInstance] trackingCheckout:orderId andProductId:productId andAmount:amount andCurrency:currency andUsername: username];
+    //Airbridge Removed
 //   [[AirbridgeManager sharedInstance] trackingCheckout:orderId andProductId:productId andAmount:amount andCurrency:currency andUsername:(NSString *)username];
-    [[AppsflyerManager sharedInstance] trackingCheckout:orderId andProductId:productId andAmount:amount andCurrency:currency andUsername:username];
+    //Appsflyer Removed
+//    [[AppsflyerManager sharedInstance] trackingCheckout:orderId andProductId:productId andAmount:amount andCurrency:currency andUsername:username];
     float revenue = [amount floatValue];
     [[ItsManager sharedInstance] checkoutWithOrderID:orderId userID:username characterID:@"" serverInfo:@"" productInfo:productId brand:@"" quantity:1 category:@"" price:revenue  currency: currency revenue:revenue];
 }
@@ -118,9 +124,11 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 }
 - (void) purchase:(NSString *)orderId andProductId:(NSString *)productId andAmount:(NSString *)amount andCurrency:(NSString *)currency andUsername:(NSString *)username andIsIAP:(BOOL) isIAP
 {
+    //Airbridge Removed
 //    [[AirbridgeManager sharedInstance] trackingPurchase:orderId andProductId:productId andAmount:amount andCurrency:currency andUsername:(NSString *)username andIsIAP:isIAP];
     [[FirebaseManager sharedInstance] trackingPurchase:orderId andProductId:productId andAmount:amount andCurrency:currency andUsername: username];
-    [[AppsflyerManager sharedInstance] trackingPurchase:orderId andProductId:productId andAmount:amount andCurrency:currency andUsername:username];
+    //Appsflyer Removed
+//    [[AppsflyerManager sharedInstance] trackingPurchase:orderId andProductId:productId andAmount:amount andCurrency:currency andUsername:username];
     float revenue = [amount floatValue];
     [[ItsManager sharedInstance] purchaseWithOrderID:orderId userID:username characterID:@"" serverInfo:@"" productInfo:productId brand:@"" quantity:1 category:@"" price:revenue  currency: currency revenue:revenue];
 }
@@ -249,7 +257,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 -(void) registerForRemoteNotifications:(NSData *)deviceToken
 {
 //   [[AirbridgeManager sharedInstance] registerForRemoteNotifications:deviceToken];
-    [[AppsflyerManager sharedInstance] trackingUninstallOnAF:deviceToken];
+  //  [[AppsflyerManager sharedInstance] trackingUninstallOnAF:deviceToken];
 }
 
 - (void)enterGame:(NSString *)userID

@@ -160,8 +160,9 @@ static SdkConfig *sharedInstance;
                 self->_serviceKey = response.secrectID;
                 self->_idAppKey = response.idAdsAppKey;
                 self->_idAppSign = response.idAdsAppSign;
-                self->_appFlyerKey = response.appsFlyerDevKey;
-                self->_appFlyerAppleID = response.appsFlyerAppleAppID;
+                //Appflyer Removed
+//                self->_appFlyerKey = response.appsFlyerDevKey;
+//                self->_appFlyerAppleID = response.appsFlyerAppleAppID;
                 self->_iapProductID = response.productIDs;
                 self->_priceType = response.priceType;
                 self->_currency = response.currencyUnit;

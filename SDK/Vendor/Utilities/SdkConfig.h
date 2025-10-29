@@ -40,8 +40,10 @@
 @property (nonatomic, strong) NSString *serviceID;
 @property (nonatomic, strong) NSString *serviceKey;
 @property (nonatomic, strong) NSArray *iapProductID;
-@property (nonatomic, strong) NSString *appFlyerKey;
-@property (nonatomic, strong) NSString *appFlyerAppleID;
+// Appsflyer Removed
+//@property (nonatomic, strong) NSString *appFlyerKey;
+//@property (nonatomic, strong) NSString *appFlyerAppleID;
+
 @property (nonatomic, strong) NSString *idAppKey;
 @property (nonatomic, strong) NSString *idAppSign;
 @property (nonatomic, strong) NSString *sdkLanguage;
@@ -67,8 +69,9 @@
 @property (nonatomic, strong) NSString *firebaseFCMToken;
 @property (nonatomic, strong) NSString *deviceToken;
 //Airbridge
-@property (nonatomic, strong) NSString *airbridgeName;
-@property (nonatomic, strong) NSString *airbridgeToken;
+//remove Airbridge module
+//@property (nonatomic, strong) NSString *airbridgeName;
+//@property (nonatomic, strong) NSString *airbridgeToken;
 
 //Its
 @property (nonatomic, strong) NSString *itsWritekey;
