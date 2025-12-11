@@ -67,6 +67,7 @@
                 [[IdAppTracking sharedInstance] idAppTrackingInstall:nil];
                 [[SdkConfig sharedInstance] setAppLogInstall];
             }
+            [[IdAppTracking sharedInstance] idAppTrackingOpen];
         }];
     }];
 }
