@@ -289,11 +289,17 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 ## Initialize SDK delegate
 ```objectivec
 //MainViewController.h
+#import "GosuSDK.h"
 @interface MainViewController:UIViewController<UIActionSheetDelegate, SKProductsRequestDelegate, LoginDelegate, LogoutDelegate, IAPDelegate> {
 }
 ```
 ```objectivec
 //MainViewController.m
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [GosuSDK sharedInstance].delegate = self;
+}
+
 #pragma Login Delegate
 - (void)loginSuccess:(NSString *)userID andUserName:(NSString *)userName andAccessToken:(NSString *)access_token {
     // Your implementation here
