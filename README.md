@@ -185,8 +185,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //your code
     
-    //GosuSDK - Use onlyInitSDK for better ATT control
+    // Use onlyInitSDK to initialize the SDK for better ATT control
     [[GosuSDK sharedInstance] onlyInitSDK];
+    // Or use initSDK to initialize the SDK and display the LoginView.
+    //[[GosuSDK sharedInstance] initSDK];
+
     [[GosuSDK sharedInstance] applicationDelegate:self andApplication:application didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }
@@ -195,7 +198,7 @@
 4. Add applicationDidBecomeActive
 ```objectivec
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    NSLog(@"applicationDidBecomeActive");
+    
     [[GosuSDK sharedInstance] applicationDidBecomeActive:application];
        
     application.applicationIconBadgeNumber = 0;
@@ -213,20 +216,24 @@
 6. Registration FCM token and message
 ```objectivec
 - (void)messaging:(FIRMessaging *)messaging didReceiveRegistrationToken:(NSString *)fcmToken {
-    [[GosuSDK Firebase] messaging:messaging didReceiveRegistrationToken:fcmToken];
+    [[FirebaseManager sharedInstance] messaging:messaging didReceiveRegistrationToken:fcmToken];
 }
+
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     NSLog(@"APNs Unable to register for remote notifications: %@", error);
 }
+
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [[GosuSDK sharedInstance] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
     NSLog(@"APNs device token retrieved: %@", deviceToken);
     [[GosuSDK GTracking] registerForRemoteNotifications:deviceToken];
 }
+
 - (void)application:(UIApplication *)application 
         didReceiveRemoteNotification:(NSDictionary *) userInfo {
     NSLog(@"APNs full message. %@", userInfo);
 }
+
 - (void)application:(UIApplication *)application 
       didReceiveRemoteNotification:(NSDictionary *) userInfo
           fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
@@ -234,6 +241,7 @@
     NSLog(@"APNs receive_message %@", userInfo);
     completionHandler(UIBackgroundFetchResultNewData);
 }
+
 // [START ios_10_message_handling]
 // Receive displayed notifications for iOS 10 devices.
 // Handle incoming notification messages while app is in the foreground.
@@ -242,7 +250,7 @@
          withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler API_AVAILABLE(ios(10.0)){
     NSDictionary *userInfo = notification.request.content.userInfo;
     // Print full message.
-    [[GosuSDK Firebase] showInAppMessage:userInfo];
+    [[FirebaseManager sharedInstance] showInAppMessage:userInfo];
     // Change this to your preferred presentation option
     completionHandler(UNNotificationPresentationOptionBadge);
 }
@@ -251,9 +259,9 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void(^)(void))completionHandler {
-  NSDictionary *userInfo = response.notification.request.content.userInfo;
-    [[GosuSDK Firebase] showInAppMessage:userInfo];
-  completionHandler();
+    NSDictionary *userInfo = response.notification.request.content.userInfo;
+    [[FirebaseManager sharedInstance] showInAppMessage:userInfo];
+    completionHandler();
 }
 // [END ios_10_message_handling]
 
@@ -270,9 +278,11 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 ```objectivec
 #import "GosuSDK.h"
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Use onlyInitSDK for better control over ATT timing
+    // Use onlyInitSDK to initialize the SDK for better ATT control
     [[GosuSDK sharedInstance] onlyInitSDK];
-    //...
+
+    // Or use initSDK to initialize the SDK and display the LoginView.
+    // [[GosuSDK sharedInstance] initSDK];
 }
 ```
 
@@ -310,12 +320,9 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 ## Show Login/Logout Interface
 ```objectivec
-[[GosuSDK sharedInstance] showSignInView:self andResultDelegate:self];
-//showSignInView: use as main view controller
-//andResultDelegate: use as Login Delegate
+[[GosuSDK sharedInstance] showSignIn];
 
-[[GosuSDK sharedInstance] IDSignOut:self];
-//use as Logout Delegate
+[[GosuSDK sharedInstance] logout];
 ```
 
 ## Delete Account API
@@ -323,6 +330,11 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 [[GosuSDK sharedInstance] deleteAccount:self andCallback:^(NSDictionary *response) {
     NSLog(@"Delete Account Response = %@", response);
 }];
+
+// Or use the function below to display message dialog.
+// [[GosuSDK sharedInstance] deleteAccount:^(NSDictionary<NSString *,id> *callback) {
+//     NSLog(@"delete account = %@", callback);
+// } andWithDialog:YES];
 ```
 
 ## Using IAP
@@ -339,9 +351,8 @@ IAPDataRequest *iapData = [[IAPDataRequest alloc]
           andAppleShareSecrect:appleSecret 
           andRoleID:character 
           andExtraInfo:extraInfo];
-[[GosuSDK sharedInstance] showIAP:(IAPDataRequest *)iapData andMainView:self andIAPDelegate:self];
+[[GosuSDK sharedInstance] showIAP:(IAPDataRequest *)iapData andMainView:self];
 //andMainView: use as main view controller
-//andIAPDelegate: use as IAP Delegate
 ```
 
 # API Tracking Events (New ITS Integration)
