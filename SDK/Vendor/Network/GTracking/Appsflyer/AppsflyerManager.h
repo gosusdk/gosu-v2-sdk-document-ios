@@ -1,30 +1,113 @@
-////Appsflyer Removed
-////  AppsflyerManager.h
-////  GameSDK
-////
-////  Created by Nero-Macbook on 11/10/21.
-////
 //
-//#import <Foundation/Foundation.h>
-////#import <AppsFlyerLib/AppsFlyerLib.h>
+//  AppsflyerManager.h
+//  GameSDK
 //
-//@interface AppsflyerManager : NSObject {
-//    
-//}
+//  Created by Nero-Macbook on 11/10/21.
 //
-//+ (AppsflyerManager *) sharedInstance;
-//- (void) initAppsFlyer;
-//- (void) initAppsFlyer:(NSString *)appFlyerKey andAppleId:(NSString *)appFlyerAppleID;
-//- (void) startAppsflyer;
-//- (void) startAppsflyerWithInterval;
-//- (void) setCustomerUserID:(NSString *)customerUserID;
-//- (void) trackingLaunchOnAF;
-//- (void) trackingLogin:(NSString *)userId andUsername:(NSString *)username andEmail:(NSString *)email;
-//- (void) trackingCheckout:(NSString *)orderId andProductId:(NSString *)productId andAmount:(NSString *)amount andCurrency:(NSString *)currency andUsername:(NSString *)username;
-//- (void) trackingPurchase:(NSString *)orderId andProductId:(NSString *)productId andAmount:(NSString *)amount andCurrency:(NSString *)currency andUsername:(NSString *)username;
-//- (void) trackingUninstallOnAF:(NSData *)deviceToken;
-//- (void) trackingEvent:(NSString *)eventName withValues:(NSDictionary*)values;
-////call from game client
-//- (void)trackingStartTrial;
-//- (void) trackingTurialCompleted;
-//@end
+
+#import <Foundation/Foundation.h>
+#import "GAppsflyer.h"
+#import "GAppsflyerListener.h"
+
+@interface AppsflyerManager : NSObject <GAppsflyerListener> {
+    
+}
+
++ (AppsflyerManager *) sharedInstance;
+- (void) initAppsFlyer;
+- (void) startAppsflyer;
+- (void) startAppsflyerWithInterval;
+- (void) setCustomerUserID:(NSString *)customerUserID;
+- (void) trackingLaunchOnAF;
+- (void) trackingUninstallOnAF:(NSData *)deviceToken;
+
+
+// Advanced tracking methods matching ItsManager interface
+
+- (void)completeRegistrationWithUserID:(NSString *)userID;
+
+- (void)loginWithUserID:(NSString *)userID
+               userName:(NSString *)userName
+              userEmail:(NSString *)userEmail;
+
+- (void)createNewCharacterWithUserID:(NSString *)userID
+                         characterID:(NSString *)characterID
+                       characterName:(NSString *)characterName
+                          serverInfo:(NSString *)serverInfo;
+
+- (void)enterGameWithUserID:(NSString *)userID
+                characterID:(NSString *)characterID
+              characterName:(NSString *)characterName
+                 serverInfo:(NSString *)serverInfo;
+
+- (void)startTutorialWithUserID:(NSString *)userID
+                    characterID:(NSString *)characterID
+                  characterName:(NSString *)characterName
+                     serverInfo:(NSString *)serverInfo;
+
+- (void)completeTutorialWithUserID:(NSString *)userID
+                       characterID:(NSString *)characterID
+                     characterName:(NSString *)characterName
+                        serverInfo:(NSString *)serverInfo;
+
+- (void)checkoutWithOrderID:(NSString *)orderID
+                     userID:(NSString *)userID
+                characterID:(NSString *)characterID
+                 serverInfo:(NSString *)serverInfo
+                productInfo:(NSString *)productInfo
+                      brand:(NSString *)brand
+                   quantity:(NSInteger)quantity
+                   category:(NSString *)category
+                      price:(float)price
+                   currency:(NSString *)currency
+                    revenue:(float)revenue;
+
+- (void)purchaseWithOrderID:(NSString *)orderID
+                     userID:(NSString *)userID
+                characterID:(NSString *)characterID
+                 serverInfo:(NSString *)serverInfo
+                productInfo:(NSString *)productInfo
+                      brand:(NSString *)brand
+                   quantity:(NSInteger)quantity
+                   category:(NSString *)category
+                      price:(float)price
+                   currency:(NSString *)currency
+                    revenue:(float)revenue;
+
+- (void)levelUpWithUserID:(NSString *)userID
+              characterID:(NSString *)characterID
+               serverInfo:(NSString *)serverInfo
+                    level:(NSInteger)level;
+
+- (void)vipUpWithUserID:(NSString *)userID
+            characterID:(NSString *)characterID
+             serverInfo:(NSString *)serverInfo
+                vipLevel:(NSInteger)vipLevel;
+
+- (void)useItemWithUserID:(NSString *)userID
+              characterID:(NSString *)characterID
+               serverInfo:(NSString *)serverInfo
+                   itemID:(NSString *)itemID
+                 quantity:(NSInteger)quantity;
+
+- (void)trackActivityResultWithUserID:(NSString *)userID
+                          characterID:(NSString *)characterID
+                           serverInfo:(NSString *)serverInfo
+                           activityID:(NSString *)activityID
+                      activityResult:(NSString *)activityResult;
+
+- (void)trackCustomEventWithEventName:(NSString *)eventName
+                           properties:(NSDictionary<NSString *, id> *)properties;
+
+- (void)logout;
+
+
+
+
+
+
+
+
+
+
+@end

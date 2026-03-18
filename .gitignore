@@ -44,19 +44,13 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 #Ignore folders of libraries and frameworks
-# Ignore SDK/Frameworks/frameworks
-SDK/Frameworks/frameworks/
-Demo/GosuApiv2_Demo/SDK/frameworks/
-# Ignore SDK/Frameworks/libs
-SDK/Frameworks/libs/
-Demo/GosuApiv2_Demo/SDK/libs/
-# Ignore SDK/Frameworks/its_frameworks
-SDK/Frameworks/its_frameworks/
+# Ignore SDK/Frameworks/
+SDK/Frameworks/
+
 #Ignore zip files to douwnload outsdie the project
-SDK/Frameworks/frameworks.zip
 Demo/GosuApiv2_Demo/SDK/frameworks.zip
-SDK/Frameworks/libs.zip
 Demo/GosuApiv2_Demo/SDK/libs.zip
+
 #ignore all .DS_Store files
 .DS_Store
 Demo/.DS_Store

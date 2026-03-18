@@ -5,6 +5,8 @@
 //  Created by Nero-Macbook on 3/26/22.
 //
 
+#import "SdkOption.h"
+
 @interface SdkConfig : NSObject {
 }
 
@@ -34,16 +36,25 @@
 @property (nonatomic, assign) BOOL      showPlaynow;
 @property (nonatomic, assign) BOOL      walletAllow;
 
+//Airbridge removed
+//@property (nonatomic, strong) NSString *airbridgeName;
+//@property (nonatomic, strong) NSString *airbridgeToken;
+
+//Its
+@property (nonatomic, strong) NSString *itsWritekey;
+@property (nonatomic, strong) NSString *itsSigningKey;
+@property (nonatomic, strong) NSString *itsEnv;
+
+//Appsflyer
+@property (nonatomic, strong) NSString *appsflyerKey;
+@property (nonatomic, strong) NSString *appsflyerAppleID;
+
 //sdk server data
 @property (nonatomic, strong) NSString *gameId;
 @property (nonatomic, strong) NSString *secrectKey;
 @property (nonatomic, strong) NSString *serviceID;
 @property (nonatomic, strong) NSString *serviceKey;
 @property (nonatomic, strong) NSArray *iapProductID;
-// Appsflyer Removed
-//@property (nonatomic, strong) NSString *appFlyerKey;
-//@property (nonatomic, strong) NSString *appFlyerAppleID;
-
 @property (nonatomic, strong) NSString *idAppKey;
 @property (nonatomic, strong) NSString *idAppSign;
 @property (nonatomic, strong) NSString *sdkLanguage;
@@ -68,15 +79,11 @@
 @property (nonatomic, strong) NSString *userStatus;
 @property (nonatomic, strong) NSString *firebaseFCMToken;
 @property (nonatomic, strong) NSString *deviceToken;
-//Airbridge
-//remove Airbridge module
-//@property (nonatomic, strong) NSString *airbridgeName;
-//@property (nonatomic, strong) NSString *airbridgeToken;
 
-//Its
-@property (nonatomic, strong) NSString *itsWritekey;
-@property (nonatomic, strong) NSString *itsSigningKey;
-@property (nonatomic, strong) NSString *itsEnv;
+//SdkOptions Config
+@property (nonatomic, assign) BOOL enableIts;
+@property (nonatomic, assign) BOOL enableAppsflyer;
+@property (nonatomic, assign) BOOL enableFirebase;
 
 //server config data
 + (SdkConfig *) sharedInstance;
@@ -100,4 +107,9 @@
 - (NSString *)getAdId;
 - (NSString *) getDefaultLanguage;
 - (NSString *)getSDKVersionName;
+
+- (void) setFeatureWithOption:(SdkOption *) option;
+- (BOOL) isEnableIts;
+- (BOOL) isEnableAppsflyer;
+- (BOOL) isEnableFirebase;
 @end

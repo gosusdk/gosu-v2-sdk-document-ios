@@ -2,10 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AirbAppName</key>
-	<string>sdkgosutest</string>
-	<key>AirbAppToken</key>
-	<string>d878da2af447440385fe9a4fe37b06a0</string>
+    <key>AppsflyerAppleID</key>
+    <string>111177889</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>

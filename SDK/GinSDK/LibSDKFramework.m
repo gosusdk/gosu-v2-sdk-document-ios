@@ -30,44 +30,50 @@
 
 @implementation LibSDKFramework
 
-- (void) initSDK
+- (void) initSdk:(void(^)(NSString *))initStatus;
 {
-    [self initSDKAndShowSignIn:YES];
+    [self initSdkWithOption:nil andInitStatus:initStatus];
 }
-- (void) onlyInitSDK
+
+-(void) initSdkWithOption:(SdkOption *)sdkOption andInitStatus:(void (^)(NSString *))initStatus
 {
-    [self initSDKAndShowSignIn:NO];
-}
-- (void) initSDKAndShowSignIn:(Boolean)isShowSignIn
-{
+    if(sdkOption == nil){
+        sdkOption = [SdkOption builderWithDefaultOption];
+    }
+    [[SdkConfig sharedInstance] setFeatureWithOption:sdkOption];
+    
     [[SdkLanguage sharedInstance] loadLangConfig];
     [[SdkLanguage sharedInstance] setLangCode:[[SdkConfig sharedInstance] getDefaultLanguage]];
     [[SdkConfig sharedInstance] loadConfig:^(NSString *configStatus) {
-        if ([configStatus isEqual:@"locked"]) {
-            @try {
-                UIViewController *rootView = [self topViewController:[self getKeyWindow]];
-                [[SdkHelper sharedInstance]
-                        showAlertMessage:rootView
-                 andWithTitle: [[SdkLanguage sharedInstance] translate:@"t_alert_001"]
-                 andWithMessage:[[SdkLanguage sharedInstance] translate:@"t_account_305"]
-                 andCallback:nil];
-            } @catch (NSException *exception) {
-                
-            }
-        }
-        if(isShowSignIn) {
-            [self showSignIn];
-        }
         [[SdkContainer sharedInstance] requestIDFAWithCallback:^(NSString *callback) {
-            if([callback isEqual:@"allow"])
-            {
+            if([callback isEqual:@"allow"]) {
+                //tracking has been allowed
                 [self IdfaAllowtracking];
             }
+        }];
+        
+        if(initStatus) {
+            initStatus(configStatus);
+        }
+        
+        if([configStatus isEqual:@"success"]) {
             if(![[SdkConfig sharedInstance] appIsInstalled]) {
                 [[IdAppTracking sharedInstance] idAppTrackingInstall:nil];
                 [[SdkConfig sharedInstance] setAppLogInstall];
             }
-        }];
+            [[IdAppTracking sharedInstance] idAppTrackingOpen];
+        }
+        if ([configStatus isEqual:@"locked"]) {
+            @try {
+                UIViewController *rootView = [self topViewController:[self getKeyWindow]];
+                [[SdkHelper sharedInstance] showAlertMessage:rootView
+                                                andWithTitle: [[SdkLanguage sharedInstance] translate:@"t_alert_001"]
+                                              andWithMessage:[[SdkLanguage sharedInstance] translate:@"t_account_305"]
+                                                 andCallback:nil];
+            } @catch (NSException *exception) {
+                
+            }
+        }
     }];
 }
 #pragma mark - Show LoginView

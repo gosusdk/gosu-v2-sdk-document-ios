@@ -35,9 +35,16 @@ static IdAppTracking *sharedInstance;
 }
 - (void) idAppTrackingOpen:(NSString *)serverID roleID:(NSString *)roleID roleName:(NSString *)roleName
 {
-    NSLog(@"idAppTrackingOpen = %@", self->_logOpenURL);
+    NSLog(@"idAppTrackingOpen with multi params = %@", self->_logOpenURL);
     id<ServerConnectionDelegate> connect = [[SdkConfig sharedInstance] apiConnect];
     [connect idAppTrackingOpen:serverID roleID:roleID roleName:roleName andLogOpenUrl:self->_logOpenURL andDevideModel:[self deviceModel]];
+}
+- (void) idAppTrackingOpen
+{
+    NSLog(@"idAppTrackingOpen = %@", self->_logOpenURL);
+    id<ServerConnectionDelegate> connect = [[SdkConfig sharedInstance] apiConnect];
+    
+    [connect idAppTrackingOpen];
 }
 - (void) idAppTrackingInstall:(UIApplication *)application
 {

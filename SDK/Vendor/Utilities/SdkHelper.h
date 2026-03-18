@@ -27,4 +27,7 @@
 - (void) runInMainThread:(void(^)(void)) loading;
 -(UIViewController *)getKeyWindow;
 - (UIViewController *)topViewController:(UIViewController *)rootViewController;
+
+// Security methods for encrypted keys
++ (NSString *)getAppsflyerDevKey;
 @end
