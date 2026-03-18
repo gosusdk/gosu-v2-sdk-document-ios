@@ -91,11 +91,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [[ItsManager sharedInstance] completeRegistrationWithUserID:userID];
 }
 
-//deprecated, uses login() instead
-- (void) trackingSignIn:(NSString *)userId andUsername:(NSString *)username andEmail:(NSString *)email
-{
-    [self login:userId andUsername:username andEmail:email];
-}
 - (void) login:userId andUsername:(NSString *)username andEmail:(NSString *)email;
 {
     [[FirebaseManager sharedInstance] trackingSignIn:userId andUsername:username andEmail:email];
@@ -133,12 +128,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [[ItsManager sharedInstance] purchaseWithOrderID:orderId userID:username characterID:@"" serverInfo:@"" productInfo:productId brand:@"" quantity:1 category:@"" price:revenue  currency: currency revenue:revenue];
 }
 
-//deprecated, user startTutorial() instead
-- (void)trackingStartTrial
-{
-    [self startTutorial:@"" andCharacterID:@"" andCharacterName:@"" andServerInfo:@"" ];
-}
-- (void)startTutorial:(NSString *)userID andCharacterID:(NSString *)characterID andCharacterName:(NSString *)characterName andServerInfo:(NSString *)serverID
+- (void) startTutorial:(NSString *)userID andCharacterID:(NSString *)characterID andCharacterName:(NSString *)characterName andServerInfo:(NSString *)serverID
 {
     SdkConfig *gameInfo = [SdkConfig sharedInstance];
     @try {
@@ -165,13 +155,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
             NSLog(@"Exception: %@", exception.reason);
         }
 }
-//-------//
-//deprecated, use completeTutorial() instead
-- (void)trackingTurialCompleted
-{
-    [self completeTutorial:@"" andCharacterID:@"" andCharacterName:@"" andServerInfo:@""];
-}
-- (void)completeTutorial:(NSString *)userID andCharacterID:(NSString *)characterID andCharacterName:(NSString *)characterName andServerInfo:(NSString *)serverID
+
+- (void) completeTutorial:(NSString *)userID andCharacterID:(NSString *)characterID andCharacterName:(NSString *)characterName andServerInfo:(NSString *)serverID
 {
     SdkConfig *gameInfo = [SdkConfig sharedInstance];
     @try {
@@ -199,12 +184,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
         }
 }
 
-//deprecated, uses createNewCharacter() instead
-- (void)doneNRU:(NSString *)serverId andRoleId:(NSString *)roleId andRoleName:(NSString *)roleName
-{
-    [self createNewCharacter:serverId andRoleId:roleId andRoleName:roleName];
-}
-- (void)createNewCharacter:(NSString *)serverId andRoleId:(NSString *)roleId andRoleName:(NSString *)roleName
+- (void) createNewCharacter:(NSString *)serverId andRoleId:(NSString *)roleId andRoleName:(NSString *)roleName
 {
 
     SdkConfig *gameInfo = [SdkConfig sharedInstance];

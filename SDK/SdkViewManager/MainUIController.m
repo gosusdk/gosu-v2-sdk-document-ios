@@ -91,7 +91,7 @@
             // lấy thông tin tài khoản
             [[SdkConfig sharedInstance] updateNetwork:@"playnow"];
             [connect requestProfile:[SdkConfig sharedInstance] andAccessToken:loginResponse.accessToken andUserProfileCallback:^(UserProfileResponse *userProfile) {
-                [self userProfileResult:userProfile andUserProfileCallback:userProfileCallback];
+                [self userProfileResult:userProfile andUserProfileCallback:userProfileCallback andNewAccount:YES];
             }];
         } else {
             [self hideProgress];
@@ -449,7 +449,7 @@
         id<ServerConnectionDelegate> connect = [[SdkConfig sharedInstance] apiConnect];
         [connect checkGameStatus:sdkConfig andGameStatusCallback:^(GameStatusResponse *gameStatus) {
             if([gameStatus.status isEqual:@"open"]) {
-                [[GTrackingManager sharedInstance] trackingSignIn:sdkConfig.userID andUsername:sdkConfig.username andEmail:@""];
+                [[GTrackingManager sharedInstance] login:sdkConfig.userID andUsername:sdkConfig.username andEmail:@""];
                 
                 [[GTrackingManager sharedInstance] verifyLogin];
                 
@@ -496,7 +496,7 @@
         [[GTrackingManager sharedInstance] setCustomerUserID:userProfile.userID];
         
         if(isNewAccount) {
-            //tracking register
+            [[GTrackingManager sharedInstance] completeRegistration:userProfile.userID];
         }
         // tracking gm
         id<ServerConnectionDelegate> connect = [[SdkConfig sharedInstance] apiConnect];
