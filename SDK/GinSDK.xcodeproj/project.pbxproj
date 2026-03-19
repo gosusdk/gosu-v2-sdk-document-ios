@@ -80,9 +80,9 @@
 		225504002BD5F96A00FCA77B /* RxLibrary.xcframework in Grpc */ = {isa = PBXBuildFile; fileRef = 225503D12BD5F8D100FCA77B /* RxLibrary.xcframework */; };
 		22E7740B2C606CE900179E04 /* CrashlyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E7740A2C606CE900179E04 /* CrashlyticsManager.m */; };
 		22E7740C2C606CF700179E04 /* CrashlyticsManager.h in header */ = {isa = PBXBuildFile; fileRef = 22E774092C606CE900179E04 /* CrashlyticsManager.h */; };
+		620662C72F6BDC27009FF4E8 /* AppsFlyerLib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620662C42F6BDC17009FF4E8 /* AppsFlyerLib.xcframework */; };
+		620662CA2F6BDC64009FF4E8 /* AppsFlyerLib.xcframework in appsflyer */ = {isa = PBXBuildFile; fileRef = 620662C42F6BDC17009FF4E8 /* AppsFlyerLib.xcframework */; };
 		62400D252F67BAD50092266B /* SdkOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 62400D242F67BAD50092266B /* SdkOption.m */; };
-		62891ACD2F67FA8C00624946 /* AppsFlyerLib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629428D52F67EE5E0095DC1E /* AppsFlyerLib.xcframework */; };
-		62891ACE2F67FA8C00624946 /* AppsFlyerLib.xcframework in appsflyer */ = {isa = PBXBuildFile; fileRef = 629428D52F67EE5E0095DC1E /* AppsFlyerLib.xcframework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		62891AD62F6931E400624946 /* SdkOption.h in header */ = {isa = PBXBuildFile; fileRef = 62891AD52F69313C00624946 /* SdkOption.h */; };
 		629428D42F67EC8E0095DC1E /* GAppsflyer.m in Sources */ = {isa = PBXBuildFile; fileRef = 629428D32F67EC8E0095DC1E /* GAppsflyer.m */; };
 		629428DC2F67F3CA0095DC1E /* AppsflyerException.m in Sources */ = {isa = PBXBuildFile; fileRef = 629428DB2F67F3CA0095DC1E /* AppsflyerException.m */; };
@@ -239,7 +239,7 @@
 			dstPath = GSinSDK_include/appslyer;
 			dstSubfolderSpec = 16;
 			files = (
-				62891ACE2F67FA8C00624946 /* AppsFlyerLib.xcframework in appsflyer */,
+				620662CA2F6BDC64009FF4E8 /* AppsFlyerLib.xcframework in appsflyer */,
 			);
 			name = appsflyer;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,11 +343,11 @@
 		225503D12BD5F8D100FCA77B /* RxLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RxLibrary.xcframework; sourceTree = "<group>"; };
 		22E774092C606CE900179E04 /* CrashlyticsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrashlyticsManager.h; sourceTree = "<group>"; };
 		22E7740A2C606CE900179E04 /* CrashlyticsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrashlyticsManager.m; sourceTree = "<group>"; };
+		620662C42F6BDC17009FF4E8 /* AppsFlyerLib.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6UQAD4B3U2:APPSFLYER LTD"; lastKnownFileType = wrapper.xcframework; path = AppsFlyerLib.xcframework; sourceTree = "<group>"; };
 		62400D242F67BAD50092266B /* SdkOption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SdkOption.m; sourceTree = "<group>"; };
 		62891AD52F69313C00624946 /* SdkOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SdkOption.h; sourceTree = "<group>"; };
 		629428D22F67EC630095DC1E /* GAppsflyer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAppsflyer.h; sourceTree = "<group>"; };
 		629428D32F67EC8E0095DC1E /* GAppsflyer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAppsflyer.m; sourceTree = "<group>"; };
-		629428D52F67EE5E0095DC1E /* AppsFlyerLib.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6UQAD4B3U2:APPSFLYER LTD"; lastKnownFileType = wrapper.xcframework; name = AppsFlyerLib.xcframework; path = "libs/AppsFlyer(6.17.7)/AppsFlyerLib.xcframework"; sourceTree = "<group>"; };
 		629428D92F67F0DC0095DC1E /* GAppsflyerListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAppsflyerListener.h; sourceTree = "<group>"; };
 		629428DA2F67F3AE0095DC1E /* AppsflyerException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppsflyerException.h; sourceTree = "<group>"; };
 		629428DB2F67F3CA0095DC1E /* AppsflyerException.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppsflyerException.m; sourceTree = "<group>"; };
@@ -538,7 +538,7 @@
 				225503B52BD5F88F00FCA77B /* GoogleUtilities.xcframework in Frameworks */,
 				225503C22BD5F88F00FCA77B /* FirebaseABTesting.xcframework in Frameworks */,
 				225503B82BD5F88F00FCA77B /* AppAuth.xcframework in Frameworks */,
-				62891ACD2F67FA8C00624946 /* AppsFlyerLib.xcframework in Frameworks */,
+				620662C72F6BDC27009FF4E8 /* AppsFlyerLib.xcframework in Frameworks */,
 				225503AD2BD5F88F00FCA77B /* nanopb.xcframework in Frameworks */,
 				225503B02BD5F88F00FCA77B /* FirebaseInstallations.xcframework in Frameworks */,
 				225503B62BD5F88F00FCA77B /* FirebaseMessaging.xcframework in Frameworks */,
@@ -643,6 +643,14 @@
 				225503AA2BD5F88E00FCA77B /* FBSDKCoreKit_Basics.xcframework */,
 			);
 			path = FacebookSDKv17;
+			sourceTree = "<group>";
+		};
+		620662C52F6BDC17009FF4E8 /* AppsFlyer(6.17 2.7) */ = {
+			isa = PBXGroup;
+			children = (
+				620662C42F6BDC17009FF4E8 /* AppsFlyerLib.xcframework */,
+			);
+			path = "AppsFlyer(6.17 2.7)";
 			sourceTree = "<group>";
 		};
 		629514EF2E9A36B800B705D8 /* its_frameworks */ = {
@@ -976,7 +984,6 @@
 		CE3E03A22AA9C43000606C88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				629428D52F67EE5E0095DC1E /* AppsFlyerLib.xcframework */,
 				CEEB6B672AB4438F006AECDC /* frameworks */,
 				CE3E03A32AA9C43000606C88 /* libs */,
 				629514EF2E9A36B800B705D8 /* its_frameworks */,
@@ -987,6 +994,7 @@
 		CE3E03A32AA9C43000606C88 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				620662C52F6BDC17009FF4E8 /* AppsFlyer(6.17 2.7) */,
 				225503A62BD5F88E00FCA77B /* FacebookSDKv17 */,
 				225503862BD5F88E00FCA77B /* Firebase */,
 			);
