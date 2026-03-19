@@ -18,6 +18,7 @@
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
 - (void) idAppTrackingOpen:(NSString *)serverID roleID:(NSString *)roleID roleName:(NSString *)roleName;
+- (void) idAppTrackingOpen;
 - (void) idAppTrackingInstall:(UIApplication *)application;
 - (void) idAppTrackingAllowNotification:(NSString *)devicetoken;
 - (void) idTrackingInstallUser;

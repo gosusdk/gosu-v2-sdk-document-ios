@@ -11,5 +11,4 @@
 @interface GosuSDK : LibSDKFramework
 
 + (GosuSDK *) sharedInstance;
-- (void) initSDK;
 @end
