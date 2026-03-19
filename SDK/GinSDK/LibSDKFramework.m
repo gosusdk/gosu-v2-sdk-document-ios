@@ -67,7 +67,7 @@
             @try {
                 UIViewController *rootView = [self topViewController:[self getKeyWindow]];
                 [[SdkHelper sharedInstance] showAlertMessage:rootView
-                                                andWithTitle: [[SdkLanguage sharedInstance] translate:@"t_alert_001"]
+                                                andWithTitle:[[SdkLanguage sharedInstance] translate:@"t_alert_001"]
                                               andWithMessage:[[SdkLanguage sharedInstance] translate:@"t_account_305"]
                                                  andCallback:nil];
             } @catch (NSException *exception) {
