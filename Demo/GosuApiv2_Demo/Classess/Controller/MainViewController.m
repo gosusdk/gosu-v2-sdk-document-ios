@@ -346,7 +346,7 @@
     
     [[GosuSDK GTracking] trackingEvent:[NSString stringWithFormat:@"level_%d", 20]];
     
-    [[GosuSDK GTracking] doneNRU:@"server_id" andRoleId:@"role_id" andRoleName:@"role_name"];
+//    [[GosuSDK GTracking] doneNRU:@"server_id" andRoleId:@"role_id" andRoleName:@"role_name"];
     
     [[GosuSDK GTracking] trackingEvent:@"level_20" withValues:@{@"customerId": @"12345"}];
     
