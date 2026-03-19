@@ -109,11 +109,6 @@ static GTrackingManager *sharedInstance;
     }
 }
 
-//deprecated, uses login() instead
-- (void) trackingSignIn:(NSString *)userId andUsername:(NSString *)username andEmail:(NSString *)email
-{
-    [self login:userId andUsername:username andEmail:email];
-}
 - (void) login:userId andUsername:(NSString *)username andEmail:(NSString *)email;
 {
     if([[SdkConfig sharedInstance] isEnableFirebase] == YES){
@@ -158,6 +153,7 @@ static GTrackingManager *sharedInstance;
 {
     [self purchase:orderId andProductId:productId andAmount:amount andCurrency:currency andUsername:username andIsIAP:YES];
 }
+
 - (void) purchase:(NSString *)orderId andProductId:(NSString *)productId andAmount:(NSString *)amount andCurrency:(NSString *)currency andUsername:(NSString *)username andIsIAP:(BOOL) isIAP
 {
     if([[SdkConfig sharedInstance] isEnableFirebase] == YES){
@@ -177,11 +173,6 @@ static GTrackingManager *sharedInstance;
     //    [[AirbridgeManager sharedInstance] trackingPurchase:orderId andProductId:productId andAmount:amount andCurrency:currency andUsername:(NSString *)username andIsIAP:isIAP];
 }
 
-//deprecated, user startTutorial() instead
-- (void)trackingStartTrial
-{
-    [self startTutorial:@"" andCharacterID:@"" andCharacterName:@"" andServerInfo:@"" ];
-}
 - (void) startTutorial:(NSString *)userID andCharacterID:(NSString *)characterID andCharacterName:(NSString *)characterName andServerInfo:(NSString *)serverID
 {
     SdkConfig *gameInfo = [SdkConfig sharedInstance];
@@ -218,12 +209,6 @@ static GTrackingManager *sharedInstance;
     } @catch (NSException *exception) {
         NSLog(@"Exception: %@", exception.reason);
     }
-}
-//-------//
-//deprecated, use completeTutorial() instead
-- (void)trackingTurialCompleted
-{
-    [self completeTutorial:@"" andCharacterID:@"" andCharacterName:@"" andServerInfo:@""];
 }
 
 - (void) completeTutorial:(NSString *)userID andCharacterID:(NSString *)characterID andCharacterName:(NSString *)characterName andServerInfo:(NSString *)serverID
@@ -264,11 +249,6 @@ static GTrackingManager *sharedInstance;
     }
 }
 
-//deprecated, uses createNewCharacter() instead
-- (void)doneNRU:(NSString *)serverId andRoleId:(NSString *)roleId andRoleName:(NSString *)roleName
-{
-    [self createNewCharacter:serverId andRoleId:roleId andRoleName:roleName];
-}
 - (void) createNewCharacter:(NSString *)serverId andRoleId:(NSString *)roleId andRoleName:(NSString *)roleName
 {
     

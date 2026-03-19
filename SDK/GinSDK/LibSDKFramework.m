@@ -86,7 +86,7 @@
             
             GrpcViewController *controller = [[GrpcViewController alloc] initWithNibName:@"GrpcViewController" bundle:bundle];
             controller.loginDelegate = self->_delegate;
-            [[GTrackingManager sharedInstance] showSignInSDK];
+            [[GTrackingManager sharedInstance] verifySDK];
             [[KGModal sharedInstance] showWithContentViewController:controller andAnimated:YES];
         } @catch (NSException *exception) {
             if(self->_delegate) {

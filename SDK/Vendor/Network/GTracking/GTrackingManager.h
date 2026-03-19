@@ -14,78 +14,85 @@
 }
 
 + (GTrackingManager *) sharedInstance;
-- (BOOL)application:(UIApplication *)application
-didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+
 - (void) setCustomerUserID:(NSString *)customerUserID;
 
-//deprecated, uses verifySDK() instead
-- (void) showSignInSDK;
 - (void) verifySDK;
-//------//
-
-- (void) verifyLogin;
-
-//deprecated, use login() instead
-- (void) trackingSignIn:(NSString *)userId andUsername:(NSString *)username andEmail:(NSString *)email;
-- (void) login:(NSString *)userId andUsername:(NSString *)username andEmail:(NSString *)email;
-//------//
-
-- (void) checkout:(NSString *)orderId andProductId:(NSString *)productId andAmount:(NSString *)amount andCurrency:(NSString *)currency andUsername:(NSString *)username;
-- (void) purchase:(NSString *)orderId andProductId:(NSString *)productId andAmount:(NSString *)amount andCurrency:(NSString *)currency andUsername:(NSString *)username;
-- (void) purchase:(NSString *)orderId andProductId:(NSString *)productId andAmount:(NSString *)amount andCurrency:(NSString *)currency andUsername:(NSString *)username andIsIAP:(BOOL) isIAP;
-
-//deprecated, use trackCusomEvent
-- (void) trackingEvent:(NSString *)eventName;
-- (void) trackingEvent:(NSString *)eventName withValues:(NSDictionary*)values;
-- (void) trackingCustomEvent:(NSString *)eventName withValues:(NSDictionary*)values;
-//------//
 
 - (void) registerForRemoteNotifications:(NSData *)deviceToken;
 
-//deprecated, uses createNewCharacter() instead
-- (void)doneNRU:(NSString *)serverId andRoleId:(NSString *)roleId andRoleName:(NSString *)roleName;
-- (void)createNewCharacter:(NSString *)serverId andRoleId:(NSString *)roleId andRoleName:(NSString *)roleName;
-//------//
+- (void) completeRegistration:(NSString *)userID;
 
-//--deprecated, use startTutorial instead;
-- (void)trackingStartTrial;
-- (void)startTutorial:(NSString *)userID andCharacterID:(NSString *)characterID andCharacterName:(NSString *)characterName andServerInfo:(NSString *)serverID;
-//------//
+- (void) login:(NSString *)userId andUsername:(NSString *)username andEmail:(NSString *)email;
 
-//deprecated, use completeTutorial() instead
-- (void)trackingTurialCompleted;
-- (void)completeTutorial:(NSString *)userID andCharacterID:(NSString *)characterID andCharacterName:(NSString *)characterName andServerInfo:(NSString *)serverID;
-//------//
+- (void) verifyLogin;
 
-//Add new
-- (void)completeRegistration:(NSString *)userID;
-- (void)enterGame:(NSString *)userID
+- (void) enterGame:(NSString *)userID
+       characterID:(NSString *)characterID
+     characterName:(NSString *)characterName
+        serverInfo:(NSString *)serverInfo;
+
+- (void) createNewCharacter:(NSString *)serverId
+                  andRoleId:(NSString *)roleId
+                andRoleName:(NSString *)roleName;
+
+- (void) startTutorial:(NSString *)userID
+        andCharacterID:(NSString *)characterID
+      andCharacterName:(NSString *)characterName
+         andServerInfo:(NSString *)serverID;
+
+- (void) completeTutorial:(NSString *)userID
+           andCharacterID:(NSString *)characterID
+         andCharacterName:(NSString *)characterName
+            andServerInfo:(NSString *)serverID;
+
+- (void) levelUp:(NSString *)userID
+     characterID:(NSString *)characterID
+      serverInfo:(NSString *)serverInfo
+           level:(NSInteger)level;
+
+- (void) vipUp:(NSString *)userID
+   characterID:(NSString *)characterID
+    serverInfo:(NSString *)serverInfo
+      vipLevel:(NSInteger)vipLevel;
+
+- (void) useItem:(NSString *)userID
+     characterID:(NSString *)characterID
+      serverInfo:(NSString *)serverInfo
+          itemID:(NSString *)itemID
+        quantity:(NSInteger)quantity;
+
+- (void) trackActivityResult:(NSString *)userID
                  characterID:(NSString *)characterID
-               characterName:(NSString *)characterName
-                  serverInfo:(NSString *)serverInfo;
-- (void)levelUp:(NSString *)userID
-              characterID:(NSString *)characterID
-               serverInfo:(NSString *)serverInfo
-                    level:(NSInteger)level;
+                  serverInfo:(NSString *)serverInfo
+                  activityID:(NSString *)activityID
+              activityResult:(NSString *)activityResult;
 
-- (void)vipUp:(NSString *)userID
-            characterID:(NSString *)characterID
-             serverInfo:(NSString *)serverInfo
-                vipLevel:(NSInteger)vipLevel;
+- (void) checkout:(NSString *)orderId
+     andProductId:(NSString *)productId
+        andAmount:(NSString *)amount
+      andCurrency:(NSString *)currency
+      andUsername:(NSString *)username;
 
-- (void)useItem:(NSString *)userID
-              characterID:(NSString *)characterID
-               serverInfo:(NSString *)serverInfo
-                   itemID:(NSString *)itemID
-                 quantity:(NSInteger)quantity;
+- (void) purchase:(NSString *)orderId
+     andProductId:(NSString *)productId
+        andAmount:(NSString *)amount
+      andCurrency:(NSString *)currency
+      andUsername:(NSString *)username;
 
-- (void)trackActivityResult:(NSString *)userID
-                          characterID:(NSString *)characterID
-                           serverInfo:(NSString *)serverInfo
-                           activityID:(NSString *)activityID
-                      activityResult:(NSString *)activityResult;
+- (void) purchase:(NSString *)orderId
+     andProductId:(NSString *)productId
+        andAmount:(NSString *)amount
+      andCurrency:(NSString *)currency
+      andUsername:(NSString *)username
+         andIsIAP:(BOOL) isIAP;
 
-- (void)logout;
+- (void) trackingCustomEvent:(NSString *)eventName
+                  withValues:(NSDictionary*)values;
+
+- (void) logout;
 
 + (CrashlyticsManager *) crashlytics;
 @end
