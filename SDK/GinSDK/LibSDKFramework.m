@@ -207,6 +207,7 @@
             }
             if(logoutDelegate) {
                 [logoutDelegate logoutSuccess];
+                [[GTrackingManager sharedInstance] logout];
             }
         } @catch (NSException *exception) {
             
