@@ -11,6 +11,7 @@
 #import <AdSupport/AdSupport.h>
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
 #import "GlobalVariable.h"
+#import "SdkHelper.h"
 
 static SdkConfig *sharedInstance;
 @implementation SdkConfig
@@ -125,6 +126,8 @@ static SdkConfig *sharedInstance;
 //    _airbridgeToken = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"AirbAppToken"];
     [self loadItsConfig];
     
+    [self loadLocalAppsflyerConfig];
+    
     NSString *GameClientID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GameClientID"];
     NSString *GameSdkSignature = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GameSdkSignature"];
     if(GameClientID && [GameClientID length] > 0 )
@@ -230,10 +233,18 @@ static SdkConfig *sharedInstance;
     //NSLog(@"loadItsConfig");
     if(_itsWritekey == NULL) {
         _itsWritekey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ItsWriteKey"];
-        _itsWritekey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ItsWriteKey"];
         _itsSigningKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ItsSigningKey"];
         _itsEnv = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ItsMode"];
         
+    }
+}
+
+- (void)loadLocalAppsflyerConfig
+{
+    NSLog(@"SdkConfig -> loadLocalAppsflyerConfig");
+    if(_appsflyerKey == NULL) {
+        _appsflyerKey = [SdkHelper getAppsflyerDevKey];
+        _appsflyerAppleID =[[NSBundle mainBundle] objectForInfoDictionaryKey:@"AppsflyerAppleID"];
     }
 }
 
@@ -392,5 +403,21 @@ static SdkConfig *sharedInstance;
 - (NSString *)getSDKVersionName {
     return @G_SDK_VERSION_NAME;
 }
+
+-(void) setFeatureWithOption:(SdkOption *) option {
+    self->_enableIts = option.enableIts;
+    self->_enableFirebase = option.enableFirebase;
+    self->_enableAppsflyer = option.enableAppsflyer;
+}
+- (BOOL) isEnableIts {
+    return _enableIts;
+}
+- (BOOL) isEnableAppsflyer {
+    return _enableAppsflyer;
+}
+- (BOOL) isEnableFirebase {
+    return _enableFirebase;
+}
+
 @end
 

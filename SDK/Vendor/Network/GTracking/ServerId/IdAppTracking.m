@@ -43,6 +43,7 @@ static IdAppTracking *sharedInstance;
 {
     NSLog(@"idAppTrackingOpen = %@", self->_logOpenURL);
     id<ServerConnectionDelegate> connect = [[SdkConfig sharedInstance] apiConnect];
+    
     [connect idAppTrackingOpen];
 }
 - (void) idAppTrackingInstall:(UIApplication *)application

@@ -9,9 +9,12 @@
 #import "MainViewController.h"
 //for SDK
 #import "GosuSDK.h"
+#import "SdkOption.h"
 #import <UserNotifications/UserNotifications.h>
 #import "FirebaseManager.h"
 #import "GosuBridge.h"
+#import <AdSupport/AdSupport.h>
+
 @import FBSDKLoginKit;
 
 @interface AppDelegate ()<FIRMessagingDelegate, UNUserNotificationCenterDelegate>
@@ -23,6 +26,8 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    NSString *idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSLog(@"[Test] IDFV for test AppsFlyer on this simulator : %@", idfv);
     
     MainViewController *mc = [[MainViewController alloc]initWithNibName:@"MainViewController" bundle:nil];
     _navigationcontroller = [[UINavigationController alloc]initWithRootViewController:mc];
@@ -35,7 +40,17 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
     
     //GosuSDK
     [UIApplication.sharedApplication registerForRemoteNotifications];
-    [[GosuSDK sharedInstance] initSDK];
+    SdkOption *options = [SdkOption builderWithDefaultOption];
+    options.enableAppsflyer = YES;
+    
+    [[GosuSDK sharedInstance] initSdkWithOption:options andInitStatus:^(NSString *initStatus) {
+        NSLog(@"initStatus = %@", initStatus);
+        if ([initStatus isEqual:@"success"]) {
+            NSLog(@"GosuSDK init success");
+        } else {
+            NSLog(@"GosuSDK init faild");
+        }
+    }];
     [[GosuSDK sharedInstance] applicationDelegate:self andApplication:application didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }

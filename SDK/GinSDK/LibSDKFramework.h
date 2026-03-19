@@ -10,7 +10,7 @@
 #import "IAPDelegate.h"
 #import "IAPDataRequest.h"
 #import "AppleIAP.h"
-
+#import "SdkOption.h"
 #import "FirebaseManager.h"
 #import "FacebookManager.h"
 #import "GTrackingManager.h"
@@ -25,8 +25,8 @@
 + (FacebookManager *) Facebook;
 
 //with delegate
-- (void) initSDK;
-- (void) onlyInitSDK;
+- (void) initSdk:(void(^)(NSString *)) initStatus;
+- (void) initSdkWithOption:(SdkOption *) sdkOption andInitStatus:(void(^)(NSString *)) initStatus;
 - (void) showSignIn;
 - (void) showIAP:(IAPDataRequest *) iapData andMainView:(UIViewController *)mainView;
 - (void) logout;
