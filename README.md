@@ -192,12 +192,18 @@
 3. Add didFinishLaunchingWithOptions
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //your code
+    SdkOption *option = [SdkOption alloc];
+    option.enableIts       = YES;  // Enable ITS tracking
+    option.enableFirebase  = YES;  // Enable Firebase tracking
+    option.enableAppsflyer = YES;  // Enable AppsFlyer tracking
     
-    // Use onlyInitSDK to initialize the SDK for better ATT control
-    [[GosuSDK sharedInstance] onlyInitSDK];
-    // Or use initSDK to initialize the SDK and display the LoginView.
-    //[[GosuSDK sharedInstance] initSDK];
+    [[GosuSDK sharedInstance] initSdkWithOption:option andInitStatus:^(NSString *initStatus) {
+          if ([initStatus isEqual:@"success"]) {
+              NSLog(@"GosuSDK init success");
+          } else {
+              NSLog(@"GosuSDK init failed");
+          }
+      }];
 
     [[GosuSDK sharedInstance] applicationDelegate:self andApplication:application didFinishLaunchingWithOptions:launchOptions];
     return YES;
@@ -287,27 +293,18 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 ```objectivec
 #import "GosuSDK.h"
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //Had removed in version 1.2.0
-    // Use onlyInitSDK to initialize the SDK for better ATT control
-    //[[GosuSDK sharedInstance] onlyInitSDK];
-    // Or use initSDK to initialize the SDK and display the LoginView.
-    // [[GosuSDK sharedInstance] initSDK];
-
-     //new in version 1.2.0
     SdkOption *option = [SdkOption alloc];
-    option.enableIts = YES;
-    option.enableFirebase = YES;
-    option.enableAppsflyer =YES;
+    option.enableIts       = YES;  // Enable ITS tracking
+    option.enableFirebase  = YES;  // Enable Firebase tracking
+    option.enableAppsflyer = YES;  // Enable Appsflyer tracking
     
     [[GosuSDK sharedInstance] initSdkWithOption:option andInitStatus:^(NSString *initStatus) {
-          NSLog(@"initStatus = %@", initStatus);
           if ([initStatus isEqual:@"success"]) {
               NSLog(@"GosuSDK init success");
           } else {
-              NSLog(@"GosuSDK init faild");
+              NSLog(@"GosuSDK init failed");
           }
       }];
-    
 }
 ```
 
@@ -410,8 +407,16 @@ Using the new GAppsflyer module for attribution tracking:
 Using module GTracking, example:
 
 ```objectivec
-// Registration tracking
-[[GosuSDK GTracking] completeRegistration:@"user_id"];
+// Tracking Event In-Game
+[[GosuSDK GTracking] createNewCharacter:@"server_info" andRoleId:@"char_id" andRoleName:@"char_name"];
+[[GosuSDK GTracking] enterGame:@"user_id" characterID:@"char_id" characterName:@"char_name" serverInfo:@"server_info"];
+[[GosuSDK GTracking] startTutorial: @"user_id" andCharacterID:@"char_id" andCharacterName:@"char_name" andServerInfo:@"server_info"];
+[[GosuSDK GTracking] completeTutorial: @"user_id" andCharacterID:@"char_id" andCharacterName:@"char_name" andServerInfo:@"server_info"];
+[[GosuSDK GTracking] levelUp:@"user_id" characterID:@"char_id" serverInfo:@"server_info" level:level];
+[[GosuSDK GTracking] vipUp:@"user_id" characterID:@"char_id" serverInfo:@"server_info" vipLevel:vip_level];
+
+// Tracking Custom Event
+[[GosuSDK GTracking] trackingCustomEvent:@"event_name" withValues:@{@"key": @"value"}];
 ```
 
 For detailed information on tracking events and ITS analytics integration, please refer to the [Tracking Guide](./TRACKING_GUIDE.md).
