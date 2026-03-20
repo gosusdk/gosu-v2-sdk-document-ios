@@ -1,5 +1,5 @@
 # iOS GosuSDK
-> **⚠️ BREAKING CHANGES in v1.1.0**: AppsFlyer and Airbridge tracking modules have been removed. New ITS tracking module integrated.
+> **🆕 NEW in v1.2.0**: AppsFlyer integration module has been re-added with enhanced functionality and improved analytics capabilities alongside existing ITS tracking.
 
 [![Platforms](https://img.shields.io/cocoapods/p/FBSDKCoreKit.svg)]()
 
@@ -7,16 +7,18 @@
   - The GosuSDK Core
   - Third-party framework: 
       - GoogleSignin SDK, Firebase SDK, Facebook SDK
-      - ITS SDK (New analytics and tracking framework)
+      - AppsFlyer SDK (Re-integrated with enhanced capabilities)
+      - ITS SDK (Analytics and tracking framework)
       - Grpc Framework (GRPCClient, ProtoBuf, ProtoRPC, RxLibrary, ...)
-      - Download at: [Required Frameworks](https://drive.google.com/file/d/1ceQ8zDDSZ0w0imZy1rICJx7d86tLhdvW/view?usp=sharing)
+      - Download at: [Required Frameworks](https://drive.google.com/file/d/1dnjHs_hhpPoHvI7sv2cmRcqH4s8Iw6ur/view?usp=drive_link)
   - iOS version support: 13+
   
 ### FEATURES:
   - Login: Authenticate people with their server ID, Google and Facebook credentials
   - Payment IAP: Pay to buy products from in-app purchases
-  - Track Events: Track events with ITS analytics framework
-  - You will need some included keys: GameClientID, GameSdkSignature, GoogleAppID, FacebookAppID, FacebookClientToken, ITS configuration keys, and GoogleService-Info.plist file
+  - Track Events: Track events with ITS analytics framework and AppsFlyer attribution
+  - Attribution & Deep Linking: Enhanced attribution tracking with AppsFlyer integration
+  - You will need some included keys: GameClientID, GameSdkSignature, GoogleAppID, FacebookAppID, ITS configuration keys, AppsFlyer keys, and GoogleService-Info.plist file
 
 # Try It Out
 
@@ -73,6 +75,13 @@
   <string>your_its_signing_key</string>
   <key>ItsWriteKey</key>
   <string>your_its_write_key</string>
+  ```
+
+### Configure AppsFlyer SDK in your project (default info.plist)
+- Configure AppsFlyer SDK for advanced attribution and analytics tracking. Keys will be provided privately via email
+  ```xml
+  <key>AppsflyerAppleID</key>
+  <string>your_appsflyer_app_id</string>
   ```
 
 ### Configure GoogleSignIn in your project (default info.plist)
@@ -278,11 +287,27 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 ```objectivec
 #import "GosuSDK.h"
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //Had removed in version 1.2.0
     // Use onlyInitSDK to initialize the SDK for better ATT control
-    [[GosuSDK sharedInstance] onlyInitSDK];
-
+    //[[GosuSDK sharedInstance] onlyInitSDK];
     // Or use initSDK to initialize the SDK and display the LoginView.
     // [[GosuSDK sharedInstance] initSDK];
+
+     //new in version 1.2.0
+    SdkOption *option = [SdkOption alloc];
+    option.enableIts = YES;
+    option.enableFirebase = YES;
+    option.enableAppsflyer =YES;
+    
+    [[GosuSDK sharedInstance] initSdkWithOption:option andInitStatus:^(NSString *initStatus) {
+          NSLog(@"initStatus = %@", initStatus);
+          if ([initStatus isEqual:@"success"]) {
+              NSLog(@"GosuSDK init success");
+          } else {
+              NSLog(@"GosuSDK init faild");
+          }
+      }];
+    
 }
 ```
 
@@ -361,15 +386,27 @@ IAPDataRequest *iapData = [[IAPDataRequest alloc]
 //andMainView: use as main view controller
 ```
 
-# API Tracking Events (New ITS Integration)
+# API Tracking Events (ITS & AppsFlyer Integration)
 
 ```
-USAGE TRACKING WITH ITS
---------------------
-The SDK now supports enhanced tracking through the ITS analytics framework. To use it, implement the tracking methods as shown below.
+USAGE TRACKING WITH ITS & APPSFLYER
+------------------------------------
+The SDK now supports enhanced tracking through both ITS analytics framework and AppsFlyer attribution. 
+This dual-tracking approach provides comprehensive analytics and attribution capabilities.
 ```
 
-## Basic Tracking Events
+## AppsFlyer Tracking Events
+Using the new GAppsflyer module for attribution tracking:
+
+```objectivec
+// Track custom events with AppsFlyer
+[[GAppsflyer shared] trackEvent:@"purchase" withValues:@{@"revenue": @"10.99", @"currency": @"USD"}];
+
+// Track app launches and user sessions
+[[GAppsflyer shared] trackAppLaunch];
+```
+
+## Basic Tracking Events (ITS)
 Using module GTracking, example:
 
 ```objectivec
