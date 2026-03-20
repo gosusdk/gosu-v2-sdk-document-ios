@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AppsflyerAppleID</key>
+	<string>Please_contact_support</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
-	<string>GosuDemo V1.1.0</string>
+	<string>GosuDemo V1.2.0</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -46,9 +48,9 @@
 	<key>GIDClientID</key>
 	<string>599125603004-1ro52uln95jfuc59bku4tapv5iah29jf.apps.googleusercontent.com</string>
 	<key>GameClientID</key>
-	<string>sample_value</string>
+	<string>Please_contact_support</string>
 	<key>GameSdkSignature</key>
-	<string>3729073mffk0ffos38</string>
+	<string>Please_contact_support</string>
 	<key>ItsSigningKey</key>
 	<string>sample_value</string>
 	<key>ItsWriteKey</key>

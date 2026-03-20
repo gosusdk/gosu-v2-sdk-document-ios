@@ -31,9 +31,24 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
     //init SDK
     NSLog(@"DEMLOG = 1");
     
-    //GosuSDK
-    [[GosuSDK sharedInstance] initSDK];
-    [[GosuSDK sharedInstance] onlyInitSDK];
+    //Upgrade from 1.1.0 -> 1.2.0
+    //[[GosuSDK sharedInstance] initSDK];
+    
+    //
+    SdkOption *option = [SdkOption alloc];
+    option.enableIts = YES;
+    option.enableFirebase = YES;
+    option.enableAppsflyer =YES;
+    
+    [[GosuSDK sharedInstance] initSdkWithOption:option andInitStatus:^(NSString *initStatus) {
+          NSLog(@"initStatus = %@", initStatus);
+          if ([initStatus isEqual:@"success"]) {
+              NSLog(@"GosuSDK init success");
+          } else {
+              NSLog(@"GosuSDK init faild");
+          }
+      }];
+    
     [[GosuSDK sharedInstance] applicationDelegate:self andApplication:application didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }
