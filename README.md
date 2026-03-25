@@ -383,7 +383,7 @@ IAPDataRequest *iapData = [[IAPDataRequest alloc]
 //andMainView: use as main view controller
 ```
 
-# API Tracking Events (ITS & AppsFlyer Integration)
+# API Tracking Events (ITS & AppsFlyer & Firebase Integration)
 
 ```
 USAGE TRACKING WITH ITS & APPSFLYER
@@ -392,18 +392,7 @@ The SDK now supports enhanced tracking through both ITS analytics framework and 
 This dual-tracking approach provides comprehensive analytics and attribution capabilities.
 ```
 
-## AppsFlyer Tracking Events
-Using the new GAppsflyer module for attribution tracking:
-
-```objectivec
-// Track custom events with AppsFlyer
-[[GAppsflyer shared] trackEvent:@"purchase" withValues:@{@"revenue": @"10.99", @"currency": @"USD"}];
-
-// Track app launches and user sessions
-[[GAppsflyer shared] trackAppLaunch];
-```
-
-## Basic Tracking Events (ITS)
+## USAGE GOSU TRACKING SDK
 Using module GTracking, example:
 
 ```objectivec
