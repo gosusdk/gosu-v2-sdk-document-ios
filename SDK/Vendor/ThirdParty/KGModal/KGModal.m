@@ -106,6 +106,29 @@ NSString *const KGModalDidHideNotification = @"KGModalDidHideNotification";
     self.window.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     self.window.opaque = NO;
     
+    // fix UnityGame can not showing this view
+    if (@available(iOS 13.0, *)) {
+        UIWindowScene *activeScene = nil;
+        for (UIWindowScene *scene in [UIApplication sharedApplication].connectedScenes) {
+            if (scene.activationState == UISceneActivationStateForegroundActive) {
+                activeScene = scene;
+                break;
+            }
+        }
+        
+        if (activeScene) {
+            self.window.windowScene = activeScene;
+            NSLog(@"[KGModal] ✅ Assigned windowScene: %@", activeScene);
+        } else {
+            NSLog(@"[KGModal] ⚠️ Warning: No active UIWindowScene found.");
+            UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+            if (keyWindow && keyWindow.windowScene) {
+                 self.window.windowScene = keyWindow.windowScene;
+                 NSLog(@"[KGModal] ✅ Assigned windowScene from keyWindow.scene as fallback.");
+             }
+        }
+    }
+    
     KGModalViewController *viewController = [[KGModalViewController alloc] init];
     self.window.rootViewController = viewController;
     self.viewController = viewController;
