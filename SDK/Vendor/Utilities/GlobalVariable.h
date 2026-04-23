@@ -25,7 +25,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:(float)alph]
 
 #define VERSION         @"1.0.3"
 #define AESKey          @"NeroPro2021"
-#define G_SDK_VERSION_NAME "1.2.0"
+#define G_SDK_VERSION_NAME "1.2.1"
 //GameInfoConfig
 #define IAP_PRODUCT_KEYS @"IAP_ProductID"
 #define IDAds_Key @"IDAds_App_Key"
