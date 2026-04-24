@@ -1,4 +1,5 @@
-# iOS GosuSDK
+# GosuSDK for iOS v1.2.1
+
 > **🆕 NEW in v1.2.0**: AppsFlyer integration module has been re-added with enhanced functionality and improved analytics capabilities alongside existing ITS tracking.
 
 [![Platforms](https://img.shields.io/cocoapods/p/FBSDKCoreKit.svg)]()
