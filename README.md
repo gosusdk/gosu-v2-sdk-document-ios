@@ -213,9 +213,7 @@
 4. Add applicationDidBecomeActive
 ```objectivec
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    
     [[GosuSDK sharedInstance] applicationDidBecomeActive:application];
-       
     application.applicationIconBadgeNumber = 0;
 }
 ```
@@ -228,7 +226,15 @@
 }
 ```
 
-6. Registration FCM token and message
+6. Add supportedInterfaceOrientationsForWindow
+```objectivec
+- (UIInterfaceOrientationMask)application:(UIApplication*)application supportedInterfaceOrientationsForWindow:(UIWindow*)window
+{
+    return (1 << UIInterfaceOrientationLandscapeRight) | (1 << UIInterfaceOrientationLandscapeLeft);
+}
+```
+
+7. Registration FCM token and message
 ```objectivec
 - (void)messaging:(FIRMessaging *)messaging didReceiveRegistrationToken:(NSString *)fcmToken {
     [[FirebaseManager sharedInstance] messaging:messaging didReceiveRegistrationToken:fcmToken];
