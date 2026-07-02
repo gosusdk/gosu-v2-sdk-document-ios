@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6206641F2F6C04CB009FF4E8 /* GosuSDK(1.2.0).xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6206641E2F6C04CB009FF4E8 /* GosuSDK(1.2.0).xcframework */; };
-		620664202F6C0503009FF4E8 /* GosuSDK(1.2.0).xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6206641E2F6C04CB009FF4E8 /* GosuSDK(1.2.0).xcframework */; };
-		620664212F6C0503009FF4E8 /* GosuSDK(1.2.0).xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6206641E2F6C04CB009FF4E8 /* GosuSDK(1.2.0).xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6213E4B42EB318EF0090228E /* SDKDataResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6213E4B22EB318EF0090228E /* SDKDataResource.bundle */; };
+		62B145712FF6736D00856158 /* GosuSDK(1.3.0).xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B145702FF6736D00856158 /* GosuSDK(1.3.0).xcframework */; };
 		8A5528C3211B324700F7E933 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5528C2211B324700F7E933 /* LaunchScreen.storyboard */; };
 		8A5528C5211B330000F7E933 /* ap_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A5528C4211B330000F7E933 /* ap_logo.png */; };
 		8A8334DD21006C00007200B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8334DC21006C00007200B0 /* AppDelegate.m */; };
@@ -36,7 +34,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				620664212F6C0503009FF4E8 /* GosuSDK(1.2.0).xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,8 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6206641E2F6C04CB009FF4E8 /* GosuSDK(1.2.0).xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "GosuSDK(1.2.0).xcframework"; sourceTree = "<group>"; };
 		6213E4B22EB318EF0090228E /* SDKDataResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SDKDataResource.bundle; sourceTree = "<group>"; };
+		62B145702FF6736D00856158 /* GosuSDK(1.3.0).xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "GosuSDK(1.3.0).xcframework"; sourceTree = "<group>"; };
 		8A5528C2211B324700F7E933 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A5528C4211B330000F7E933 /* ap_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ap_logo.png; sourceTree = "<group>"; };
 		8A8334D821006C00007200B0 /* TienKiemMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TienKiemMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,11 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE10E9D27E0918C00129EBC /* Accelerate.framework in Frameworks */,
-				6206641F2F6C04CB009FF4E8 /* GosuSDK(1.2.0).xcframework in Frameworks */,
 				8AB17D99239FCD6D0057AED5 /* AuthenticationServices.framework in Frameworks */,
 				8A9A52D0212D1C6D0097A25C /* MediaPlayer.framework in Frameworks */,
+				62B145712FF6736D00856158 /* GosuSDK(1.3.0).xcframework in Frameworks */,
 				8A83352A21006DDA007200B0 /* MobileCoreServices.framework in Frameworks */,
-				620664202F6C0503009FF4E8 /* GosuSDK(1.2.0).xcframework in Frameworks */,
 				8A83352821006DD4007200B0 /* SystemConfiguration.framework in Frameworks */,
 				8A83352621006DCC007200B0 /* MessageUI.framework in Frameworks */,
 			);
@@ -402,7 +398,7 @@
 		CEEB69FD2AB3174A006AECDC /* GosuSDK */ = {
 			isa = PBXGroup;
 			children = (
-				6206641E2F6C04CB009FF4E8 /* GosuSDK(1.2.0).xcframework */,
+				62B145702FF6736D00856158 /* GosuSDK(1.3.0).xcframework */,
 				6213E4B22EB318EF0090228E /* SDKDataResource.bundle */,
 				6213E4312EB30CA70090228E /* third-party */,
 			);
@@ -646,7 +642,7 @@
 					"$(PROJECT_DIR)/DemoSDK_AppStore/GSinSDK",
 				);
 				INFOPLIST_FILE = DemoSDK_AppStore/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "GosuDemo V.1.1.0";
+				INFOPLIST_KEY_CFBundleDisplayName = "GosuDemo V.1.3.0";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -709,7 +705,7 @@
 					"$(PROJECT_DIR)/DemoSDK_AppStore/GSinSDK",
 				);
 				INFOPLIST_FILE = DemoSDK_AppStore/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "GosuDemo V.1.1.0";
+				INFOPLIST_KEY_CFBundleDisplayName = "GosuDemo V.1.3.0";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -841,7 +837,7 @@
 					"$(PROJECT_DIR)/DemoSDK_AppStore/GSinSDK",
 				);
 				INFOPLIST_FILE = DemoSDK_AppStore/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "GosuDemo V.1.1.0";
+				INFOPLIST_KEY_CFBundleDisplayName = "GosuDemo V.1.3.0";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

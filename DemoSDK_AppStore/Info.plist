@@ -5,9 +5,9 @@
 	<key>AppsflyerAppleID</key>
 	<string>Please_contact_support</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>zh_CN</string>
+	<string>vi_VN</string>
 	<key>CFBundleDisplayName</key>
-	<string>GosuDemo V1.2.0</string>
+	<string>GosuDemo V1.3.0</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

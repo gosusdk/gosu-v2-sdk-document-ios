@@ -1,3 +1,12 @@
+## [1.3.0] = 2026-07-02
+
+### Changed
+- **Enhanced Error Management System**: Refactored the SDK alert and error messaging system for improved clarity and maintainability
+- **Improved Error Messages**: Enhanced error messaging for better clarity and understanding
+- **User-Friendly**: More intuitive and understandable error messages for end users
+
+
+
 # GosuSDK for iOS v1.2.1
 
 > **🆕 NEW in v1.2.0**: AppsFlyer integration module has been re-added with enhanced functionality and improved analytics capabilities alongside existing ITS tracking.
