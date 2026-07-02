@@ -15,5 +15,7 @@
 - (void) loadLangConfig;
 - (NSString *)translate:(NSString *)textCode;
 - (NSString *)translateWithCode:(NSString *)textCode andCode:(int)code;
+- (NSString *)getCurentLangCode;
+- (BOOL)hasKey:(NSString *)key;
 
 @end

@@ -29,6 +29,17 @@ static SdkLanguage *sharedInstance;
     return sharedInstance;
 }
 
+- (void) setLangCode:(NSString *)langCode
+{
+    if(langCode && [langCode length] > 0) {
+        _langCode = langCode;
+    }
+}
+
+- (NSString *) getCurentLangCode {
+    return _langCode;
+}
+
 - (void) loadLangConfig {
     /*
     NSString *gamesdkLanguage = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"gamesdk_language.plist"];
@@ -67,6 +78,10 @@ static SdkLanguage *sharedInstance;
         }
     }
     return tranText;
+}
+
+- (BOOL)hasKey:(NSString *)key {
+    return _langData && [_langData objectForKey:key] != nil;
 }
 @end
 

@@ -198,11 +198,10 @@
             [self moveToViewIndex:10];
             [self countdownRequestActiveResendOtp];
         } else {
-            [[SdkHelper sharedInstance]
-                    showAlertMessage:self
-             andWithTitle: [[SdkLanguage sharedInstance] translate:@"t_alert_001"]
-             andWithMessage:[[SdkLanguage sharedInstance] translate:@"t_account_054"]
-             andCallback:nil];
+            [[SdkHelper sharedInstance] showAlertMessage:self
+                                            andWithTitle:[[SdkLanguage sharedInstance] translate:@"t_alert_001"]
+                                          andWithMessage:userProfile.message
+                                             andCallback:nil];
         }
     }];
 }

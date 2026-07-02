@@ -57,6 +57,7 @@
         [self showProgress];
         id<ServerConnectionDelegate> connect = [[SdkConfig sharedInstance] apiConnect];
         [connect requestLoginById:[SdkConfig sharedInstance] andUsername:username andPassword:password andLoginResponseCallback:^(RequestLoginResponse *loginResponse) {
+            NSLog(@"MainUIController loginCallback = %@",loginResponse);
             if([loginResponse.status isEqualToString:@"success"]) {
                 [[SdkConfig sharedInstance] updateAccessToken:loginResponse.accessToken];
                 [[SdkConfig sharedInstance] setOldAccount:username];
@@ -65,6 +66,7 @@
                 [connect requestProfile:[SdkConfig sharedInstance] andAccessToken:loginResponse.accessToken andUserProfileCallback:^(UserProfileResponse *userProfile) {
                     [self userProfileResult:userProfile andUserProfileCallback:userProfileCallback];
                 }];
+                [self hideProgress];
             } else {
                 [self hideProgress];
                 [[SdkHelper sharedInstance]
@@ -75,6 +77,7 @@
                 
                 UserProfileResponse *userProfile = [[UserProfileResponse alloc] init];
                 userProfile.status = @"failed";
+                userProfile.message = loginResponse.message;
                 userProfileCallback(userProfile);
             }
         }];
@@ -93,9 +96,10 @@
             [connect requestProfile:[SdkConfig sharedInstance] andAccessToken:loginResponse.accessToken andUserProfileCallback:^(UserProfileResponse *userProfile) {
                 [self userProfileResult:userProfile andUserProfileCallback:userProfileCallback andNewAccount:YES];
             }];
+            [self hideProgress];
         } else {
             [self hideProgress];
-            NSString *message = [[SdkLanguage sharedInstance] translate:@"t_account_026"];
+            NSString *message = loginResponse.message.length > 0 ? loginResponse.message : [[SdkLanguage sharedInstance] translate:@"t_account_026"];
             if (loginResponse.code == -888) {
                 message = [[SdkLanguage sharedInstance] translate:@"t_account_027"];
             }
@@ -107,6 +111,7 @@
             
             UserProfileResponse *userProfile = [[UserProfileResponse alloc] init];
             userProfile.status = @"failed";
+            userProfile.message = loginResponse.message;
             userProfileCallback(userProfile);
         }
     }];
@@ -125,14 +130,19 @@
             }];
         } else {
             [self hideProgress];
+            NSString *message = loginResponse.message.length > 0 ? loginResponse.message : [[SdkLanguage sharedInstance] translate:@"t_account_026"];
+            if (loginResponse.code == -888) {
+                message = [[SdkLanguage sharedInstance] translate:@"t_account_027"];
+            }
             [[SdkHelper sharedInstance]
                     showAlertMessage:self
              andWithTitle: [[SdkLanguage sharedInstance] translate:@"t_alert_001"]
-             andWithMessage:loginResponse.message
+             andWithMessage:message
              andCallback:nil];
             
             UserProfileResponse *userProfile = [[UserProfileResponse alloc] init];
             userProfile.status = @"failed";
+            userProfile.message = loginResponse.message;
             userProfileCallback(userProfile);
         }
     }];
@@ -150,7 +160,7 @@
             }];
         } else {
             [self hideProgress];
-            NSString *message = [[SdkLanguage sharedInstance] translate:@"t_account_026"];
+            NSString *message = loginResponse.message.length > 0 ? loginResponse.message : [[SdkLanguage sharedInstance] translate:@"t_account_026"];
             if (loginResponse.code == -888) {
                 message = [[SdkLanguage sharedInstance] translate:@"t_account_027"];
             }
@@ -162,6 +172,7 @@
             
             UserProfileResponse *userProfile = [[UserProfileResponse alloc] init];
             userProfile.status = @"failed";
+            userProfile.message = loginResponse.message;
             userProfileCallback(userProfile);
         }
     }];
@@ -206,6 +217,7 @@
             
             UserProfileResponse *userProfile = [[UserProfileResponse alloc] init];
             userProfile.status = @"failed";
+            userProfile.message = loginResponse.message;
             userProfileCallback(userProfile);
         }
     }];
@@ -246,6 +258,7 @@
             
             UserProfileResponse *userProfile = [[UserProfileResponse alloc] init];
             userProfile.status = @"failed";
+            userProfile.message = loginResponse.message;
             userProfileCallback(userProfile);
         }
     };
@@ -270,6 +283,7 @@
         } else {
             //khong the gui ma kich hoat
             userProfile.status = @"failed";
+            userProfile.message = response.errMessage;
         }
         if(userProfileCallback) {
             userProfileCallback(userProfile);
@@ -362,7 +376,8 @@
             }];
         } else {
             [self hideProgress];
-            NSString *message = [[SdkLanguage sharedInstance] translate:@"t_account_026"];
+            NSString *message = loginResponse.message.length > 0 ? loginResponse.message : [[SdkLanguage sharedInstance] translate:@"t_account_026"];
+            
             if (loginResponse.code == -888) {
                 message = [[SdkLanguage sharedInstance] translate:@"t_account_027"];
             }
@@ -374,6 +389,7 @@
             
             UserProfileResponse *userProfile = [[UserProfileResponse alloc] init];
             userProfile.status = @"failed";
+            userProfile.message = loginResponse.message;
             userProfileCallback(userProfile);
         }
     }];
@@ -431,6 +447,7 @@
                 
                 UserProfileResponse *userProfile = [[UserProfileResponse alloc] init];
                 userProfile.status = @"failed";
+                userProfile.message = loginResponse.message;
                 userProfileCallback(userProfile);
             }
         }];
@@ -479,7 +496,8 @@
 - (void) userProfileResult:(UserProfileResponse *)userProfile andUserProfileCallback:(void (^)(UserProfileResponse *))userProfileCallback andNewAccount:(BOOL) isNewAccount
 {
     if (![userProfile.status isEqual:@"success"]) {
-        NSString *message = [[SdkLanguage sharedInstance] translate:@"t_account_024"];
+        NSString *message = userProfile.message.length > 0 ? userProfile.message : [[SdkLanguage sharedInstance] translate:@"t_account_024"];
+        
         if ([userProfile.status isEqual:@"locked"]) {
             message = [[SdkLanguage sharedInstance] translate:@"t_account_305"];
         }
@@ -510,8 +528,12 @@
     if([[SdkConfig sharedInstance].accesstoken length] > 0)
     {
         id<ServerConnectionDelegate> connect = [[SdkConfig sharedInstance] apiConnect];
-        [connect requestSignOut:[SdkConfig sharedInstance] andCallback:^(NSString *callback) {
-            
+        [connect requestLogout:[SdkConfig sharedInstance] andLogoutResponseCallback:^(RequestLogoutResponse *logoutResponse) {
+            if([logoutResponse.status isEqualToString:@"success"]) {
+                [self->_logoutDelegate logoutSuccess];
+            } else {
+                [self->_logoutDelegate logoutFail:logoutResponse.message];
+            }
         }];
     }
     if(signOutCallback) {
@@ -521,6 +543,8 @@
     if(_logoutDelegate) {
         [_logoutDelegate logoutSuccess];
     }
+    
+    [[GTrackingManager sharedInstance] logout];
 }
 
 - (BOOL) userValidate:(NSString *)name Pass:(NSString *)pwd

@@ -199,8 +199,8 @@
             if([[SdkConfig sharedInstance].accesstoken length] > 0)
             {
                 id<ServerConnectionDelegate> connect = [[SdkConfig sharedInstance] apiConnect];
-                [connect requestSignOut:[SdkConfig sharedInstance] andCallback:^(NSString *callback) {
-                    if([callback isEqual:@"success"]) {
+                [connect requestLogout:[SdkConfig sharedInstance] andLogoutResponseCallback:^(RequestLogoutResponse *logoutResponse) {
+                    if([logoutResponse.status isEqual:@"success"]) {
                         //[[SdkConfig sharedInstance] clearConfigFile];
                     }
                 }];

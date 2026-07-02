@@ -84,6 +84,7 @@
 		620662CA2F6BDC64009FF4E8 /* AppsFlyerLib.xcframework in appsflyer */ = {isa = PBXBuildFile; fileRef = 620662C42F6BDC17009FF4E8 /* AppsFlyerLib.xcframework */; };
 		62400D252F67BAD50092266B /* SdkOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 62400D242F67BAD50092266B /* SdkOption.m */; };
 		62891AD62F6931E400624946 /* SdkOption.h in header */ = {isa = PBXBuildFile; fileRef = 62891AD52F69313C00624946 /* SdkOption.h */; };
+		628E5A772FD6BCFB00414A71 /* RequestLogoutResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 628E5A762FD6BCFB00414A71 /* RequestLogoutResponse.m */; };
 		629428D42F67EC8E0095DC1E /* GAppsflyer.m in Sources */ = {isa = PBXBuildFile; fileRef = 629428D32F67EC8E0095DC1E /* GAppsflyer.m */; };
 		629428DC2F67F3CA0095DC1E /* AppsflyerException.m in Sources */ = {isa = PBXBuildFile; fileRef = 629428DB2F67F3CA0095DC1E /* AppsflyerException.m */; };
 		629514F52E9A36C400B705D8 /* RudderKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629514EE2E9A36B800B705D8 /* RudderKit.xcframework */; };
@@ -346,6 +347,8 @@
 		620662C42F6BDC17009FF4E8 /* AppsFlyerLib.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:6UQAD4B3U2:APPSFLYER LTD"; lastKnownFileType = wrapper.xcframework; path = AppsFlyerLib.xcframework; sourceTree = "<group>"; };
 		62400D242F67BAD50092266B /* SdkOption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SdkOption.m; sourceTree = "<group>"; };
 		62891AD52F69313C00624946 /* SdkOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SdkOption.h; sourceTree = "<group>"; };
+		628E5A752FD6BCD500414A71 /* RequestLogoutResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestLogoutResponse.h; sourceTree = "<group>"; };
+		628E5A762FD6BCFB00414A71 /* RequestLogoutResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestLogoutResponse.m; sourceTree = "<group>"; };
 		629428D22F67EC630095DC1E /* GAppsflyer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAppsflyer.h; sourceTree = "<group>"; };
 		629428D32F67EC8E0095DC1E /* GAppsflyer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GAppsflyer.m; sourceTree = "<group>"; };
 		629428D92F67F0DC0095DC1E /* GAppsflyerListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAppsflyerListener.h; sourceTree = "<group>"; };
@@ -501,6 +504,10 @@
 		CEA28B72298CE3E300E93CA1 /* oPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oPayViewController.m; sourceTree = "<group>"; };
 		CEB0B8712991F0EB00966F01 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		628E5A4E2FD2829000414A71 /* Err */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Err; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CE314EB327EEFD0A003C2DF5 /* Frameworks */ = {
@@ -790,6 +797,8 @@
 				CE3E035A2AA9C43000606C88 /* NulledResponse.m */,
 				CE3E035B2AA9C43000606C88 /* UserProfileResponse.m */,
 				CE3E035C2AA9C43000606C88 /* RequestForgotResponse.m */,
+				628E5A752FD6BCD500414A71 /* RequestLogoutResponse.h */,
+				628E5A762FD6BCFB00414A71 /* RequestLogoutResponse.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -806,6 +815,7 @@
 		CE3E03602AA9C43000606C88 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				628E5A4E2FD2829000414A71 /* Err */,
 				CE3E03612AA9C43000606C88 /* UserRequireData.h */,
 				CE3E03622AA9C43000606C88 /* SdkContainer.m */,
 				CE3E03632AA9C43000606C88 /* MD5.h */,
@@ -1195,6 +1205,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				628E5A4E2FD2829000414A71 /* Err */,
+			);
 			name = GosuSDK;
 			productName = GSinSDK;
 			productReference = CE9CA000299C7D2A00547216 /* libGosuSDK.a */;
@@ -1314,6 +1327,7 @@
 				CE43F96629B6D8870073AA98 /* GSGrpcApi.m in Sources */,
 				CE3E04122AA9C43100606C88 /* GoogleSignInManager.m in Sources */,
 				CE9CA00D299C810C00547216 /* LibSDKFramework.m in Sources */,
+				628E5A772FD6BCFB00414A71 /* RequestLogoutResponse.m in Sources */,
 				CE3E04002AA9C43100606C88 /* TripleDes.m in Sources */,
 				CE3E03FC2AA9C43100606C88 /* KOPopupView.m in Sources */,
 				629428DC2F67F3CA0095DC1E /* AppsflyerException.m in Sources */,

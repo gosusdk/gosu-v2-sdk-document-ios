@@ -20,6 +20,7 @@
 #import "RequestActiveResponse.h"
 #import "IAPDataRequest.h"
 #import "AppleLoginResponse.h"
+#import "RequestLogoutResponse.h"
 
 @interface GSGrpcApi : NSObject<ServerConnectionDelegate>
 
@@ -46,7 +47,7 @@
 - (void) requestActiveByUsername:(SdkConfig *)_sdkConfig andUserRequireData:(UserRequireData *)userRequireData  andResponseCallback:(void (^)(RequestActiveResponse *))responseCallback;
 
 - (void)requestProfile:(SdkConfig *)_sdkConfig andAccessToken:(NSString *)accessToken andUserProfileCallback:(void (^)(UserProfileResponse *))userProfileCallback;
-- (void) requestSignOut:(SdkConfig *)_sdkConfig andCallback:(void (^)(NSString *))logoutCallback;
+- (void) requestLogout:(SdkConfig *)SdkConfig andLogoutResponseCallback:(void (^)(RequestLogoutResponse *))logoutResponseCallback;
 - (void)checkGameStatus:(SdkConfig *)SdkConfig andGameStatusCallback:(void(^)(GameStatusResponse *))gameStatusCallback;
 -(void) resendOTP:(SdkConfig *)_sdkConfig andUserRequireData:(UserRequireData *)userRequireData andCallbackResult:(void(^)(ResendOtpResponse *))resendOtpCallback;
 //IAP

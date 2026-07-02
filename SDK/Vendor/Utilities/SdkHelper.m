@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SdkHelper.h"
+#import "SdkLanguage.h"
 
 static SdkHelper *sharedInstance;
 @implementation SdkHelper
@@ -27,7 +28,9 @@ static SdkHelper *sharedInstance;
               andCallback:(void (^)(UIAlertAction * _Nonnull action))withCallback
 {
     UIAlertController *_alertController = [UIAlertController alertControllerWithTitle:withTitle message:withMessage preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *_alertAction = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleDefault handler:withCallback];
+    UIAlertAction *_alertAction = [UIAlertAction actionWithTitle:[[SdkLanguage sharedInstance] translate:@"btn_close"]
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:withCallback];
     [_alertController addAction:_alertAction];
     UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
         [vc presentViewController:_alertController animated:YES completion:nil];
@@ -42,7 +45,9 @@ static SdkHelper *sharedInstance;
     [self runInMainThread:^{
         UIViewController *rootVC = [self topViewController:_UIViewController];
         UIAlertController *_alertController = [UIAlertController alertControllerWithTitle:withTitle message:withMessage preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *_alertAction = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleDefault handler:withCallback];
+        UIAlertAction *_alertAction = [UIAlertAction actionWithTitle:[[SdkLanguage sharedInstance] translate:@"btn_close"]
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:withCallback];
         [_alertController addAction:_alertAction];
         [rootVC presentViewController:_alertController animated:YES completion:nil];
     }];

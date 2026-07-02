@@ -13,5 +13,6 @@
 @property (nonatomic,strong) NSString *email;
 @property (nonatomic,strong) NSString *phoneNumber;
 @property (nonatomic,strong) NSString *transactionID;
+@property (nonatomic,strong) NSString *errMessage;
 
 @end

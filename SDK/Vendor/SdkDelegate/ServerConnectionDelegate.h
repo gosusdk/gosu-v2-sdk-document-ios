@@ -1,6 +1,7 @@
 
 #import "LoadServerConfigResponse.h"
 #import "RequestLoginResponse.h"
+#import "RequestLogoutResponse.h"
 #import "UserProfileResponse.h"
 #import "GameStatusResponse.h"
 #import "RequestForgotResponse.h"
@@ -34,7 +35,7 @@
 
 - (void) requestActiveByUsername:(SdkConfig *)_sdkConfig andUserRequireData:(UserRequireData *)userRequireData  andResponseCallback:(void (^)(RequestActiveResponse *))responseCallback;
 - (void)requestProfile:(SdkConfig *)_sdkConfig andAccessToken:(NSString *)accessToken andUserProfileCallback:(void (^)(UserProfileResponse *))userProfileCallback;;
-- (void) requestSignOut:(SdkConfig *)_sdkConfig andCallback:(void (^)(NSString *))logoutCallback;
+- (void) requestLogout:(SdkConfig *)_sdkConfig andLogoutResponseCallback:(void (^)(RequestLogoutResponse *))logoutResponseCallback;
 - (void)checkGameStatus:(SdkConfig *)_sdkConfig andGameStatusCallback:(void(^)(GameStatusResponse *))gameStatusCallback;
 -(void) resendOTP:(SdkConfig *)_sdkConfig andUserRequireData:(UserRequireData *)userRequireData andCallbackResult:(void(^)(id))resendOtpCallback;
 //iap

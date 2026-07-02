@@ -30,6 +30,7 @@ rm -rf build/derived_data/Build/Products/Debug-iphonesimulator
 # Clean xcframework directory before creating new one
 rm -rf build/GosuSDK/xcframework/GosuSDK.xcframework
 
+# Build SDKDataResource.bundle for device iphone
 xcodebuild build \
   -scheme SDKDataResource \
   -configuration Debug \
@@ -38,6 +39,16 @@ xcodebuild build \
   BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
 cp -r build/derived_data/Build/Products/Debug-iphoneos/SDKDataResource.bundle build/GosuSDK/iphoneos/SDKDataResource.bundle
+
+# Build SDKDataResource.bundle for device simulator
+xcodebuild build \
+  -scheme SDKDataResource \
+  -configuration Debug \
+  -derivedDataPath build/derived_data \
+  -sdk iphonesimulator \
+  BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+
+cp -r build/derived_data/Build/Products/Debug-iphonesimulator/SDKDataResource.bundle build/GosuSDK/simulators/SDKDataResource.bundle
 
 # Remove CFBundleExecutable key from SDKDataResource.bundle Info.plist to fix App Store validation
 echo "Fixing SDKDataResource.bundle Info.plist..."

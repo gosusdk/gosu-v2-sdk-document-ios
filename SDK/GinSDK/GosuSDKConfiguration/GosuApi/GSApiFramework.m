@@ -10,6 +10,7 @@
 #import "GSSDKGrpcServer-umbrella.h"
 #import <GRPCClient/GRPCTransport.h>
 #import "GlobalVariable.h"
+#import "ErrConstant.h"
 
 @interface GSApiFramework ()
 {
@@ -60,17 +61,25 @@ grpcMobileGatewayService *_service;
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(SdkInit_Response *response, NSError *error){
         GDLog(@"sdkInit gosu response = %@", response);
         id data = response.initData;
-        if(response.returnCode == 200)
-        {
+        if(response.returnCode == 200) {
             sdkInitCallback(@{
                 @"status": @"success",
                 @"data": data
             });
         } else {
-            sdkInitCallback(@{
-                @"status": @"failed",
-                @"code": [NSString stringWithFormat:@"%u", response.returnCode]
-            });
+            if (response) {
+                sdkInitCallback(@{
+                    @"code": [NSString stringWithFormat:@"%u", response.returnCode],
+                    @"message": response.msgCode,
+                    @"status": @"failed"
+                });
+            } else {
+                sdkInitCallback(@{
+                    @"code": [NSString stringWithFormat:@"%u", ERR_RESPONSE_DATA],
+                    @"message": @"",
+                    @"status": @"failed"
+                });
+            }
         }
         
     } responseDispatchQueue:nil];
@@ -101,10 +110,19 @@ grpcMobileGatewayService *_service;
     installGameLog.adsid = IDFA;
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(Empty_Response *response, NSError *error) {
         GDLog(@"installGameLog response = %@", response);
-        if(installGameCallback){
-            installGameCallback(@{
-                @"code": [NSString stringWithFormat:@"%u", response.returnCode]
-            });
+        if(installGameCallback) {
+            if(response) {
+                installGameCallback(@{
+                    @"code": [NSString stringWithFormat:@"%u", response.returnCode],
+                    @"message": response.msgCode
+                });
+            } else {
+                installGameCallback(@{
+                    @"status": @"failed",
+                    @"code": [NSString stringWithFormat:@"%u", ERR_RESPONSE_DATA],
+                    @"message": @""
+                });
+            }
         }
         
     } responseDispatchQueue:nil];
@@ -117,9 +135,18 @@ grpcMobileGatewayService *_service;
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(Empty_Response *response, NSError *error) {
         GDLog(@"writeOpenGameLogWithUsername response = %@", response);
         if(openGameCallback){
-            openGameCallback(@{
-                @"code": [NSString stringWithFormat:@"%u", response.returnCode]
-            });
+            if(response) {
+                openGameCallback(@{
+                    @"code": [NSString stringWithFormat:@"%u", response.returnCode],
+                    @"message": response.msgCode
+                });
+            } else {
+                openGameCallback(@{
+                    @"status": @"failed",
+                    @"code": [NSString stringWithFormat:@"%u", ERR_RESPONSE_DATA],
+                    @"message": @""
+                });
+            }
         }
         
     } responseDispatchQueue:nil];
@@ -152,9 +179,17 @@ grpcMobileGatewayService *_service;
 - (void) openGameLogWithUsername:(NSString *)username andClientId:(NSString *)clientId andSdkVersion:(NSString *)sdkVersion andDeviceId:(NSString *)deviceId andGameId:(NSString *)gameId andGameVersion:(NSString *)gameVersion andFirebaseFCMToken:(NSString *)fcmToken andPlatform:(NSString *)platform andPlatformVersion:(NSString *)platformVersion andDeviceBrand:(NSString *)deviceBrand andDeviceModel:(NSString *)deviceModel andMacAddress:(NSString *)macAddress andExtraInfo:(NSString *)ExtraInfo andCallback:(void (^)(NSDictionary<NSString *, NSString *> *))installGameCallback {
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(Empty_Response *response, NSError *error) {
         GDLog(@"gamelog response = %@", response);
-        installGameCallback(@{
-            @"code": [NSString stringWithFormat:@"%u", response.returnCode]
-        });
+        if(response) {
+            installGameCallback(@{
+                @"code": [NSString stringWithFormat:@"%u", response.returnCode]
+            });
+        } else {
+            installGameCallback(@{
+                @"status": @"failed",
+                @"code": [NSString stringWithFormat:@"%u", ERR_RESPONSE_DATA],
+                @"message": @""
+            });
+        }
     } responseDispatchQueue:nil];
     OpenGameLog_Request *openGameLogData = [OpenGameLog_Request message];
     openGameLogData.clientId = clientId;
@@ -190,10 +225,17 @@ grpcMobileGatewayService *_service;
     
     GDLog(@"loginData = %@", loginData);
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(Login_Response *response, NSError *error) {
-        if(loginCallback){
+        if(response) {
             loginCallback(@{
                 @"code": [NSString stringWithFormat:@"%d", response.returnCode],
-                @"accessToken": response.accessToken
+                @"accessToken": response.accessToken,
+                @"message": response.msgCode,
+            });
+        } else {
+            loginCallback(@{
+                @"status": @"failed",
+                @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                @"message": @"",
             });
         }
     } responseDispatchQueue:nil];
@@ -247,11 +289,20 @@ grpcMobileGatewayService *_service;
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(Register_Response *response, NSError *error) {
         GDLog(@"gosu:registerData:response = %@", response);
         if(registerCallback){
-            registerCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode],
-                @"transactionId": response.transactionId,
-                @"accessToken": response.accessToken
-            });
+            if (response) {
+                registerCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", response.returnCode],
+                    @"transactionId": response.transactionId,
+                    @"accessToken": response.accessToken,
+                    @"message": response.msgCode
+                });
+            } else {
+                registerCallback(@{
+                    @"status": @"failed",
+                    @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                    @"message": @""
+                });
+            }
         }
     } responseDispatchQueue:nil];
     
@@ -273,14 +324,23 @@ grpcMobileGatewayService *_service;
     GDLog(@"requestActive = %@", requestActive);
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(RequestActive_Response *response, NSError *error) {
         GDLog(@"RequestActive_Response = %@", response);
-        if(requestActiveCallback){
-            requestActiveCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode],
-                @"contentFlag": response.contentFlag,
-                @"email": response.email,
-                @"phoneNumber": response.phoneNumber,
-                @"transactionId": response.transactionId
-            });
+        if(requestActiveCallback) {
+            if(response) {
+                requestActiveCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", response.returnCode],
+                    @"contentFlag": response.contentFlag,
+                    @"email": response.email,
+                    @"phoneNumber": response.phoneNumber,
+                    @"transactionId": response.transactionId,
+                    @"message": response.msgCode
+                });
+            } else {
+                requestActiveCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                    @"status": @"failed",
+                    @"message": @""
+                });
+            }
         }
     } responseDispatchQueue:nil];
     
@@ -306,10 +366,19 @@ grpcMobileGatewayService *_service;
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(ActiveAccount_Response *response, NSError *error) {
         GDLog(@"register activation = %@", response);
         if(registerActivationCallback){
-            registerActivationCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode],
-                @"accessToken": response.accessToken
-            });
+            if(response) {
+                registerActivationCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", response.returnCode],
+                    @"accessToken": response.accessToken,
+                    @"message": response.msgCode
+                });
+            } else {
+                registerActivationCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                    @"status": @"failed",
+                    @"message": @""
+                });
+            }
         }
     } responseDispatchQueue:nil];
     
@@ -329,16 +398,25 @@ grpcMobileGatewayService *_service;
     
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(GetProfile_Response *response, NSError *error) {
         GDLog(@"SDK:profile:response = %@", response);
-        if(userProfileCallback){
-            userProfileCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode],
-                @"status": [NSString stringWithFormat:@"%d", response.status],
-                @"phoneStatus": [NSString stringWithFormat:@"%d", response.phoneStatus],
-                @"customerID": response.customerId,
-                @"username": response.userName,
-                @"email": response.email,
-                @"platform": @"ios"
-            });
+        if(userProfileCallback) {
+            if (response) {
+                userProfileCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", response.returnCode],
+                    @"status": [NSString stringWithFormat:@"%d", response.status],
+                    @"phoneStatus": [NSString stringWithFormat:@"%d", response.phoneStatus],
+                    @"customerID": response.customerId,
+                    @"username": response.userName,
+                    @"email": response.email,
+                    @"platform": @"ios",
+                    @"message": response.msgCode
+                });
+            } else {
+                userProfileCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                    @"status": @"failed",
+                    @"message": @"",
+                });
+            }
         }
     } responseDispatchQueue:nil];
     
@@ -357,12 +435,21 @@ grpcMobileGatewayService *_service;
     GDLog(@"SDK:token:request = %@", loginData);
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(LoginByAccessToken_Response *response, NSError *error) {
         GDLog(@"SDK:token:response = %@", response);
-        if(loginCallback){
-            loginCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode],
-                @"refreshToken": response.refreshAccessToken,
-                @"platform": @"ios"
-            });
+        if(loginCallback) {
+            if (response) {
+                loginCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", response.returnCode],
+                    @"refreshToken": response.refreshAccessToken,
+                    @"platform": @"ios",
+                    @"message": response.msgCode
+                });
+            } else {
+                loginCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                    @"status": @"failed",
+                    @"message": @"",
+                });
+            }
         }
     } responseDispatchQueue:nil];
     
@@ -386,57 +473,59 @@ grpcMobileGatewayService *_service;
     GDLog(@"resendOTPData = %@", resendOTPData);
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(ResendOTP_Response *response, NSError *error) {
         GDLog(@"resendOTP1 response = %@", response);
-        if(resendCallback){
-            resendCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode],
-                @"contentFlag": response.contentFlag,
-                @"email": response.email,
-                @"phoneNumber": response.phoneNumber
-            });
+        if(resendCallback) {
+            if(response) {
+                resendCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", response.returnCode],
+                    @"contentFlag": response.contentFlag,
+                    @"email": response.email,
+                    @"phoneNumber": response.phoneNumber,
+                    @"message": response.msgCode,
+                });
+            } else {
+                resendCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                    @"status": @"failed",
+                    @"message": @"",
+                });
+            }
         }
     } responseDispatchQueue:nil];
     
     GRPCUnaryProtoCall *call = [[self grpcService] resendOTPWithMessage:resendOTPData responseHandler:handler callOptions:nil];
     [call start];
 }
-- (void) logOut:(NSString *)accessToken andCallback:(void (^)(NSDictionary<NSString *, id> *))logoutCallback
-{
-    Logout_Request *logoutData = [Logout_Request message];
-    logoutData.accessToken = accessToken;
-    
-    GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(Empty_Response *response, NSError *error) {
-        GDLog(@"resendOTP response = %@", response);
-        if(logoutCallback){
-            logoutCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode]
-            });
-        }
-    } responseDispatchQueue:nil];
-    
-    GRPCUnaryProtoCall *call = [[self grpcService] logoutWithMessage:logoutData responseHandler:handler callOptions:nil];
-    [call start];
-}
-- (void) logOutWithAccount:(NSString *)username andAccessToken:(NSString *)accessToken andDeviceId:(NSString *)deviceId andGameId:(NSString *)gameId andSdkSignature:(NSString *)sdkSignature  andCallback:(void (^)(NSDictionary<NSString *, id> *))logoutCallback
+
+- (void) logOut:(NSString *)accessToken andDeviceID:deviceID andUserName:userName andSignature:signature andCallback:(void (^)(NSDictionary<NSString *, id> *))logoutCallback
 {
     Logout_Request *logoutData = [Logout_Request message];
     logoutData.accessToken = accessToken;
     logoutData.clientId = _clientKey;
-    logoutData.deviceId = deviceId;
-    logoutData.userName = username;
-    logoutData.signature = sdkSignature;
+    logoutData.userName = userName;
+    logoutData.deviceId = deviceID;
+    logoutData.signature = signature;
     
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(Empty_Response *response, NSError *error) {
         GDLog(@"resendOTP response = %@", response);
-        if(logoutCallback){
-            logoutCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode]
-            });
+        if(logoutCallback) {
+            if(response) {
+                logoutCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", response.returnCode]
+                });
+            } else {
+                logoutCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                    @"status": @"failed",
+                    @"message": @"",
+                });
+            }
         }
     } responseDispatchQueue:nil];
     
     GRPCUnaryProtoCall *call = [[self grpcService] logoutWithMessage:logoutData responseHandler:handler callOptions:nil];
     [call start];
 }
+
 - (void) recoveryPasswordRequest:(NSString *)username andClientId:(NSString *)clientId andDeviceId:(NSString *)deviceId andGameId:(NSString *)gameId andSdkSignature:(NSString *)sdkSignature andNewPassword:(NSString *)newPassword andFirebaseFCMToken:(NSString *)fcmToken andOTPNetwork:(NSString *)otpNetwork andSign:(NSString *)sign andCallback:(void (^)(NSDictionary<NSString *, id> *))recoveryCallback
 {
     RecoveryPasswordRequest_Request *recoveryData = [RecoveryPasswordRequest_Request message];
@@ -453,14 +542,23 @@ grpcMobileGatewayService *_service;
     GDLog(@"recoveryData = %@", recoveryData);
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(RecoveryPasswordRequest_Response *response, NSError *error) {
         GDLog(@"recoveryPasswordRequest response = %@", response);
-        if(recoveryCallback){
-            recoveryCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode],
-                @"transactionId": response.transactionId,
-                @"email": response.email,
-                @"phone": response.phoneNumber,
-                @"otpNetwork": otpNetwork
-            });
+        if(recoveryCallback) {
+            if(response) {
+                recoveryCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", response.returnCode],
+                    @"transactionId": response.transactionId,
+                    @"message": response.msgCode,
+                    @"email": response.email,
+                    @"phone": response.phoneNumber,
+                    @"otpNetwork": otpNetwork
+                });
+            } else {
+                recoveryCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                    @"status": @"failed",
+                    @"message": @""
+                });
+            }
         }
     } responseDispatchQueue:nil];
     
@@ -481,10 +579,19 @@ grpcMobileGatewayService *_service;
     
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(Empty_Response *response, NSError *error) {
         GDLog(@"recoveryPasswordSubmit response = %@", response);
-        if(recoveryCallback){
-            recoveryCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode]
-            });
+        if(recoveryCallback) {
+            if (response) {
+                recoveryCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", response.returnCode],
+                    @"message": response.msgCode
+                });
+            } else {
+                recoveryCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                    @"status": @"failed",
+                    @"message": @""
+                });
+            }
         }
     } responseDispatchQueue:nil];
     
@@ -508,12 +615,22 @@ grpcMobileGatewayService *_service;
     
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(LinkAccount_Response *response, NSError *error) {
         GDLog(@"linkAccount response = %@", response);
-        if(linkAccountCallback){
-            linkAccountCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode],
-                @"transactionId": response.transactionId,
-                @"accessToken": accessToken
-            });
+        if(linkAccountCallback) {
+            if(response) {
+                linkAccountCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", response.returnCode],
+                    @"transactionId": response.transactionId,
+                    @"message": response.msgCode,
+                    @"accessToken": accessToken,
+                    @"platform": @"ios"
+                });
+            } else {
+                linkAccountCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                    @"status": @"failed",
+                    @"message": @""
+                });
+            }
         }
     } responseDispatchQueue:nil];
     
@@ -582,11 +699,20 @@ grpcMobileGatewayService *_service;
                 
             }
             if(iapCallback){
-                iapCallback(@{
-                    @"code": [NSString stringWithFormat:@"%d", response.returnCode],
-                    @"data": initDataArray
-    //                @"orderId": response.orderId
-                });
+                if (response) {
+                    iapCallback(@{
+                        @"code": [NSString stringWithFormat:@"%d", response.returnCode],
+                        @"data": initDataArray,
+                        @"message": response.msgCode
+        //                @"orderId": response.orderId
+                    });
+                } else {
+                    iapCallback(@{
+                        @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                        @"status": @"failed",
+                        @"message": @""
+                    });
+                }
             }
         } @catch (NSException *exception) {
             iapCallback(@{
@@ -644,8 +770,7 @@ grpcMobileGatewayService *_service;
                 if(response.returnCode != 200) {
                     @throw [NSException exceptionWithName:@"Error IAP verify" reason:[NSString stringWithFormat:@"error code: %d", response.returnCode] userInfo:nil];
                 }
-            } @catch (NSException *error)
-            {
+            } @catch (NSException *error) {
                 @try {
                     [self sdkLog:clientId andActiveKey:@G_IAP_VERIFY_ERROR andData:@{
                         @"request": @{
@@ -670,7 +795,7 @@ grpcMobileGatewayService *_service;
                     NSLog(@"nero error =%@", exception.description);
                 }
             }
-            if(iapCallback){
+            if(iapCallback) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     iapCallback(@{
                         @"code": [NSString stringWithFormat:@"%d", returnCode]
@@ -697,11 +822,19 @@ grpcMobileGatewayService *_service;
     GDLog(@"SDK:deleteAccount:request = %@", userData);
     GRPCUnaryResponseHandler *handler = [[GRPCUnaryResponseHandler alloc] initWithResponseHandler:^(Empty_Response *response, NSError *error) {
         GDLog(@"SDK:deleteAccount:response = %@", response);
-        if(deleteCallback){
-            deleteCallback(@{
-                @"code": [NSString stringWithFormat:@"%d", response.returnCode],
-                @"messafe": response.msgCode
-            });
+        if(deleteCallback) {
+            if (response) {
+                deleteCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", response.returnCode],
+                    @"message": response.msgCode
+                });
+            } else {
+                deleteCallback(@{
+                    @"code": [NSString stringWithFormat:@"%d", ERR_RESPONSE_DATA],
+                    @"message": @"",
+                    @"status": @"failed"
+                });
+            }
         }
     } responseDispatchQueue:nil];
     

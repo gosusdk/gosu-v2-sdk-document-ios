@@ -11,6 +11,7 @@
 #import <sys/utsname.h>
 #import "GSApiFramework.h"
 #import "GlobalVariable.h"
+#import "ErrManager.h"
 
 GSApiFramework *_gssdkGrpcApi;
 
@@ -74,17 +75,13 @@ GSApiFramework *_gssdkGrpcApi;
             NSString *fbAllow = [NSString stringWithFormat:@"%@", [jsonConfig objectForKey:@"facebookAllow"]];
             cf.isFbAllow = [fbAllow isEqual:@"1"];
         } else {
-            NSString *message = [initCallback objectForKey:@"message"];
-            if(!message){
-                message =@"Lỗi tải dữ liệu";
-            }
             cf.status = @"failed";
-            cf.message = [NSString stringWithFormat:@"%@(SV%d)", message, code];
-            
-            if (code == 305) {
-                cf.status = @"locked";
-                cf.message = [[SdkLanguage sharedInstance] translate:@"t_account_305"];
+            NSString * remoteMessage = [initCallback objectForKey:@"message"];
+            if(!remoteMessage || [remoteMessage isEqual:[NSNull null]]) {
+                remoteMessage = @"";
             }
+            cf.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.SdkInit andErrCode:code andRemoteMessage:remoteMessage];
+            [[ErrManager sharedInstance] showErrDialogWithErrGroup:ErrCodeGroup.SdkInit andErrCode:code andRemoteMessage:remoteMessage andCallback:nil];
         }
         
         GDLog(@"cf.status = %@", cf.status);
@@ -108,11 +105,15 @@ GSApiFramework *_gssdkGrpcApi;
     sign = [MD5 md5:sign];
     [[self serverApi] loginById:username andPassword:md5Password andClientId:_sdkConfig.clientID andDeviceId:deviceID andGameId:_sdkConfig.gameId andSdkSignature:sdkSignature andSecurityCode:hashCode andSign:sign andCallback:^(NSDictionary<NSString *,id> *loginCallback) {
         NSString *code = [loginCallback objectForKey:@"code"];
-        GDLog(@"loginCallback = %@",loginCallback);
+        GDLog(@"GSGrpcApi loginCallback = %@",loginCallback);
         RequestLoginResponse *loginResponse = [[RequestLoginResponse alloc] init];
         if (![code isEqualToString:@"200"]) {
             loginResponse.status = @"failed";
-            loginResponse.message = [[SdkLanguage sharedInstance] translate:@"t_account_022"];
+            NSString *remoteMsg = [loginCallback objectForKey:@"message"];
+            if(!remoteMsg || [remoteMsg isEqual:[NSNull null]]){
+                remoteMsg = @"";
+            }
+            loginResponse.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.Login andErrCode:[code intValue] andRemoteMessage:remoteMsg];
         } else {
             NSString *accessToken = [loginCallback objectForKey:@"accessToken"];
             loginResponse.status = @"success";
@@ -151,7 +152,11 @@ GSApiFramework *_gssdkGrpcApi;
             lr.transactionID = [registerCallback objectForKey:@"transactionId"];
         } else {
             lr.status = @"failed";
-            lr.message = [[SdkLanguage sharedInstance] translateWithCode:@"t_account_048" andCode:[code intValue]];
+            NSString *remoteMsg = [registerCallback objectForKey:@"message"];
+            if(!remoteMsg || [remoteMsg isEqual:[NSNull null]]){
+                remoteMsg = @"";
+            }
+            lr.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.Register andErrCode:[code intValue] andRemoteMessage:remoteMsg];
         }
         loginResponseCallback(lr);
     }];
@@ -173,6 +178,11 @@ GSApiFramework *_gssdkGrpcApi;
             rq.transactionID = [responseData objectForKey:@"transactionId"];
         } else {
             rq.status = @"failed";
+            NSString * remoteMessage = [responseData objectForKey:@"message"];
+            if(!remoteMessage || [remoteMessage isEqual:[NSNull null]]){
+                remoteMessage =@"";
+            }
+            rq.errMessage = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.RequestActive andErrCode:[code intValue] andRemoteMessage:remoteMessage];
         }
         if(responseCallback){
             responseCallback(rq);
@@ -201,11 +211,12 @@ GSApiFramework *_gssdkGrpcApi;
         } else {
             lr.status = @"failed";
             lr.message = [[SdkLanguage sharedInstance] translateWithCode:@"t_account_055" andCode:[code intValue]];
-            if ([code isEqual:@"201"]) {
-                lr.message = [[SdkLanguage sharedInstance] translateWithCode:@"t_account_055_201" andCode:[code intValue]];
-            } else if ([code isEqual:@"202"]) {
-                lr.message = [[SdkLanguage sharedInstance] translateWithCode:@"t_account_055_202" andCode:[code intValue]];
+
+            NSString * remoteMessage = [activeCallback objectForKey:@"message"];
+            if(!remoteMessage || [remoteMessage isEqual:[NSNull null]]) {
+                remoteMessage = @"";
             }
+            lr.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.ActiveAccount andErrCode:[code intValue] andRemoteMessage:remoteMessage];
         }
         if(userRequireData.callback){
             userRequireData.callback(lr);
@@ -245,8 +256,12 @@ GSApiFramework *_gssdkGrpcApi;
             lr.refreshToken = nil;
             [_sdkConfig setUsername:username];
         } else {
+            NSString * remoteMessage = [registerCallback objectForKey:@"message"];
+            if(!remoteMessage || [remoteMessage isEqual:[NSNull null]]){
+                remoteMessage =@"";
+            }
+            lr.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.Register andErrCode:[code intValue] andRemoteMessage:remoteMessage];
             lr.status = @"failed";
-            lr.message = [NSString stringWithFormat:@"Loi %@", code];
         }
         loginResponseCallback(lr);
     }];
@@ -280,8 +295,12 @@ GSApiFramework *_gssdkGrpcApi;
             lr.refreshToken = nil;
             [_sdkConfig setUsername:username];
         } else {
+            NSString * remoteMessage = [registerCallback objectForKey:@"message"];
+            if(!remoteMessage || [remoteMessage isEqual:[NSNull null]]){
+                remoteMessage =@"";
+            }
+            lr.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.Register andErrCode:[code intValue] andRemoteMessage:remoteMessage];
             lr.status = @"failed";
-            lr.message = [NSString stringWithFormat:@"Loi %@", code];
         }
         loginResponseCallback(lr);
     }];
@@ -316,8 +335,12 @@ GSApiFramework *_gssdkGrpcApi;
             lr.refreshToken = nil;
             [_sdkConfig setUsername:username];
         } else {
+            NSString * remoteMessage = [registerCallback objectForKey:@"message"];
+            if(!remoteMessage || [remoteMessage isEqual:[NSNull null]]){
+                remoteMessage =@"";
+            }
+            lr.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.Register andErrCode:[code intValue] andRemoteMessage:remoteMessage];
             lr.status = @"failed";
-            lr.message = [NSString stringWithFormat:@"Loi %@", code];
         }
         loginResponseCallback(lr);
     }];
@@ -353,8 +376,12 @@ GSApiFramework *_gssdkGrpcApi;
             lr.refreshToken = nil;
             [_sdkConfig setUsername:username];
         } else {
+            NSString * remoteMessage = [registerCallback objectForKey:@"message"];
+            if(!remoteMessage || [remoteMessage isEqual:[NSNull null]]){
+                remoteMessage =@"";
+            }
+            lr.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.Register andErrCode:[code intValue] andRemoteMessage:remoteMessage];
             lr.status = @"failed";
-            lr.message = [NSString stringWithFormat:@"Loi %@", code];
         }
         loginResponseCallback(lr);
     }];
@@ -385,8 +412,12 @@ GSApiFramework *_gssdkGrpcApi;
             lr.refreshToken = nil;
             [_sdkConfig setUsername:username];
         } else {
+            NSString * remoteMessage = [registerCallback objectForKey:@"message"];
+            if(!remoteMessage || [remoteMessage isEqual:[NSNull null]]){
+                remoteMessage =@"";
+            }
+            lr.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.Register andErrCode:[code intValue] andRemoteMessage:remoteMessage];
             lr.status = @"failed";
-            lr.message = [NSString stringWithFormat:@"Loi %@", code];
         }
         loginResponseCallback(lr);
     }];
@@ -428,12 +459,15 @@ GSApiFramework *_gssdkGrpcApi;
                 userProfile.email = email;
             }
         } else {
+            NSString *remoteMsg = [profileCallback objectForKey:@"message"];
+            if(!remoteMsg || [remoteMsg isEqual:[NSNull null]]){
+                remoteMsg = @"";
+            }
+            userProfile.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.GetProfile andErrCode:[code intValue] andRemoteMessage: remoteMsg];
             userProfile.status = @"failed";
-            userProfile.message = [NSString stringWithFormat:@"S%@", code];
             
             if ([code isEqual:@"305"]) {
                 userProfile.status = @"locked";
-                userProfile.message = [[SdkLanguage sharedInstance] translate:@"t_account_305"];
             }
             @try {
                 [self sdkLog:_sdkConfig.clientID andActiveKey:@G_GETPROFILE_SERVER_ERROR andData:profileCallback andUsername:username];
@@ -464,7 +498,16 @@ GSApiFramework *_gssdkGrpcApi;
             loginResponse.refreshToken = refreshToken;
         } else {
             loginResponse.status = @"failed";
-            loginResponse.message = [NSString stringWithFormat:@"Loi %@", code];
+            
+            NSString *remoteMsg = [loginCallback objectForKey:@"message"];
+            if(!remoteMsg || [remoteMsg isEqual:[NSNull null]]){
+                remoteMsg = @"";
+            }
+            NSString *message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.LoginByAccessToken andErrCode:[code intValue] andRemoteMessage:remoteMsg];
+            loginResponse.message = message;
+            
+            [[ErrManager sharedInstance] showErrDialogWithErrGroup:ErrCodeGroup.LoginByAccessToken andErrCode:[code intValue] andRemoteMessage:remoteMsg andCallback:nil];
+            
             @try {
                 [self sdkLog:_sdkConfig.clientID andActiveKey:@G_LOGIN_BYTOKEN_SV_ERROR andData:loginCallback];
             } @catch (NSException *exception) {
@@ -515,7 +558,11 @@ GSApiFramework *_gssdkGrpcApi;
             userRequireData.transactionID = [recoveryPasswordCallback objectForKey:@"transactionId"];
         } else {
             forgotResponse.status = @"failed";
-            message = [[SdkLanguage sharedInstance] translateWithCode:@"t_alert_forgotpass" andCode:code];
+            NSString *remoteMsg = [recoveryPasswordCallback objectForKey:@"message"];
+            if(!remoteMsg || [remoteMsg isEqual:[NSNull null]]) {
+                remoteMsg = @"";
+            }
+            message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.RecoveryPasswordRequest andErrCode:code andRemoteMessage:remoteMsg];
         }
         forgotResponse.message = message;
         if(forgotResponseCallback)
@@ -540,7 +587,11 @@ GSApiFramework *_gssdkGrpcApi;
             forgotResponse.message = [[SdkLanguage sharedInstance] translate:@"t_account_035"];
         } else {
             forgotResponse.status = @"failed";
-            forgotResponse.message = [NSString stringWithFormat:@"%@ (SV %d)",[[SdkLanguage sharedInstance] translate:@"t_account_036"], code];
+            NSString *remoteMsg = [recoveryCallback objectForKey:@"message"];
+            if(!remoteMsg || [remoteMsg isEqual:[NSNull null]]) {
+                remoteMsg = @"";
+            }
+            forgotResponse.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.RecoveryPasswordSubmit andErrCode:code andRemoteMessage:remoteMsg];
         }
         if(forgotResponseCallback){
             forgotResponseCallback(forgotResponse);
@@ -583,22 +634,11 @@ GSApiFramework *_gssdkGrpcApi;
                 
             }
             bindAccount.status = @"failed";
-            // tai khoan lien ket bi trung
-            // message = [[SdkLanguage sharedInstance] translate:@"t_account_042"];
-            // email ko hop le
-            // message = [[SdkLanguage sharedInstance] translate:@"t_account_044"];
-            // tk choi ngay da duoc lien ket hoac ko ton tai
-            // message = [[SdkLanguage sharedInstance] translate:@"t_account_045"];
-            if (code == 201) {// tai khoan lien ket bi trung
-                message = [[SdkLanguage sharedInstance] translate:@"t_account_045"];
-            } else if (code == 203) {// tai khoan lien ket bi trung
-                message = [[SdkLanguage sharedInstance] translate:@"t_account_058"];
-            } else if (code == 204) {// địa chỉ email đã tồn tại
-                message = [[SdkLanguage sharedInstance] translate:@"t_account_059"];
-            } else {
-                message = [[SdkLanguage sharedInstance] translate:@"t_account_046"];
+            NSString *remoteMsg = [linkAccountCallback objectForKey:@"message"];
+            if(!remoteMsg || [remoteMsg isEqual:[NSNull null]]) {
+                remoteMsg = @"";
             }
-            message = [NSString stringWithFormat:@"%@ (S%d)",message, code];
+            message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.LinkAccount andErrCode:code andRemoteMessage:remoteMsg];
         }
         bindAccount.message = message;
         bindResponseCallback(bindAccount);
@@ -655,7 +695,11 @@ GSApiFramework *_gssdkGrpcApi;
             iapData.transactionData = [iapCallback objectForKey:@"data"];
         } @catch (NSException *exception) {
             iapData.status = @"failed";
-            iapData.message = [[SdkLanguage sharedInstance] translateWithCode:@"t_grpc_iap_002" andCode:code];
+            NSString *remoteMsg = [iapCallback objectForKey:@"message"];
+            if(!remoteMsg || [remoteMsg isEqual:[NSNull null]]) {
+                remoteMsg = @"";
+            }
+            iapData.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.IAPInit andErrCode:code andRemoteMessage:remoteMsg];
             @try {
                 [self sdkLog:clientId andActiveKey:@G_IAP_INIT_ERROR andData:@{
                     @"request": @{
@@ -710,7 +754,11 @@ GSApiFramework *_gssdkGrpcApi;
             iapData.message =[[SdkLanguage sharedInstance] translate:@"t_iap_008"];
         } else {
             iapData.status = @"failed";
-            iapData.message = [[SdkLanguage sharedInstance] translateWithCode:@"t_iap_009" andCode:code];
+            NSString *remoteMsg = [response objectForKey:@"message"];
+            if(!remoteMsg || [remoteMsg isEqual:[NSNull null]]) {
+                remoteMsg = @"";
+            }
+            iapData.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.FinalizeIAP andErrCode:code andRemoteMessage:remoteMsg];
         }
         if(userRequireData.callback){
             userRequireData.callback(iapData);
@@ -744,7 +792,11 @@ GSApiFramework *_gssdkGrpcApi;
             otpResponse.message =[NSString stringWithFormat:@"%@%@%@", [[SdkLanguage sharedInstance] translate:@"t_account_052"], msg1, msg2];
         } else {
             otpResponse.status = @"failed";
-            otpResponse.message = [[SdkLanguage sharedInstance] translateWithCode:@"t_account_051" andCode:code];
+            NSString *remoteMsg = [response objectForKey:@"message"];
+            if(!remoteMsg || [remoteMsg isEqual:[NSNull null]]) {
+                remoteMsg = @"";
+            }
+            otpResponse.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.ResendOTP andErrCode:code andRemoteMessage:remoteMsg];
         }
         if(resendOtpCallback){
             resendOtpCallback(otpResponse);
@@ -752,8 +804,6 @@ GSApiFramework *_gssdkGrpcApi;
             GDLog(@"resendOTP response = %@", otpResponse);
         }
     }];
-    
-    
 }
 
 - (void)checkGameStatus:(SdkConfig *)_sdkConfig andGameStatusCallback:(void(^)(GameStatusResponse *))gameStatusCallback
@@ -762,25 +812,34 @@ GSApiFramework *_gssdkGrpcApi;
     gameStatus.status = @"open";
     gameStatusCallback(gameStatus);
 }
-- (void) requestSignOut:(SdkConfig *)_sdkConfig andCallback:(void (^)(NSString *))logoutCallback
+
+- (void) requestLogout:(SdkConfig *)_sdkConfig andLogoutResponseCallback:(void (^)(RequestLogoutResponse *))logoutResponseCallback
 {
     NSString *deviceID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     deviceID = [deviceID stringByReplacingOccurrencesOfString:@"-" withString:@""];
     deviceID = [deviceID lowercaseString];
+    
     NSString *sign = [NSString stringWithFormat:@"%@%@%@", _sdkConfig.clientID, _sdkConfig.username, _sdkConfig.secrectKey];
     sign = [MD5 md5:sign];
     
-    [[self serverApi] logOutWithAccount:_sdkConfig.username andAccessToken:_sdkConfig.accesstoken andDeviceId:deviceID andGameId:_sdkConfig.gameId andSdkSignature:sign andCallback:^(NSDictionary<NSString *,id> *_logoutCallback) {
-        @try {
-            int code = [[_logoutCallback objectForKey:@"code"] intValue];
-            if(code != 200) {
-                NSException *exception = [NSException exceptionWithName:@"Error" reason:@"error" userInfo:nil];
-                [exception raise];
+    [[self serverApi] logOut:_sdkConfig.accesstoken andDeviceID:deviceID andUserName:_sdkConfig.username andSignature:sign andCallback:^(NSDictionary<NSString *,id> *logoutCallback) {
+        NSString *code = [logoutCallback objectForKey:@"code"];
+        
+        GDLog(@"logoutCallback = %@",logoutCallback);
+        RequestLogoutResponse *logoutResponse = [[RequestLogoutResponse alloc] init];
+        if (![code isEqualToString:@"200"]) {
+            logoutResponse.status = @"failed";
+            NSString *remoteMsg = [logoutCallback objectForKey:@"message"];
+            if(!remoteMsg || [remoteMsg isEqual:[NSNull null]]){
+                remoteMsg = @"";
             }
-            logoutCallback(@"success");
-        } @catch (NSException *exception) {
-            logoutCallback(@"failed");
+            logoutResponse.message = [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.Logout andErrCode:[code intValue] andRemoteMessage:remoteMsg];
+        } else {
+            logoutResponse.status = @"success";
+            logoutResponse.message = @"";
+            [_sdkConfig setAccesstoken:@""];
         }
+        logoutResponseCallback(logoutResponse);
     }];
 }
 
@@ -807,6 +866,17 @@ GSApiFramework *_gssdkGrpcApi;
     
     [[self serverApi] writeOpenGameLogWithUsername:[SdkConfig sharedInstance].username andCustomerId:[SdkConfig sharedInstance].userID andClientId:clientID andSdkVersion:sdkVersion andDeviceId:deviceID andGameId:gameId andGameVersion:gameVersion andFirebaseFCMToken:appToken andPlatform:platform andPlatformVersion:platformVersion andDeviceBrand:deviceBrand andDeviceModel:deviceModel andMacAddress:macAddress andServerID:serverID andRoleId:roleID andNationalId:nationalId andExtraInfo:extraInfo andIDFA:idfa andCallback:^(NSDictionary<NSString *,NSString *> *callback) {
         
+        int code = [[callback objectForKey:@"code"] intValue];
+        NSString *remoteMsg = [callback objectForKey:@"message"];
+        if(remoteMsg == nil || [remoteMsg isEqual:[NSNull null]]) {
+            remoteMsg = @"";
+        }
+        if(code != 200) {
+            GDLog(@"Error idAppTrackingOpen: %@",
+                  [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.OpenGameLog
+                                                                      andErrCode:code
+                                                                andRemoteMessage:remoteMsg]);
+        }
     }];
 }
 
@@ -833,6 +903,17 @@ GSApiFramework *_gssdkGrpcApi;
     
     [[self serverApi] writeOpenGameLogWithUsername:[SdkConfig sharedInstance].username andCustomerId:[SdkConfig sharedInstance].userID andClientId:clientID andSdkVersion:sdkVersion andDeviceId:deviceID andGameId:gameId andGameVersion:gameVersion andFirebaseFCMToken:appToken andPlatform:platform andPlatformVersion:platformVersion andDeviceBrand:deviceBrand andDeviceModel:deviceModel andMacAddress:macAddress andServerID:@"" andRoleId:@"" andNationalId:nationalId andExtraInfo:extraInfo andIDFA:idfa andCallback:^(NSDictionary<NSString *,NSString *> *callback) {
         
+        int code = [[callback objectForKey:@"code"] intValue];
+        NSString *remoteMsg = [callback objectForKey:@"message"];
+        if(remoteMsg == nil || [remoteMsg isEqual:[NSNull null]]) {
+            remoteMsg = @"";
+        }
+        if(code != 200) {
+            GDLog(@"Error idAppTrackingOpen: %@",
+                  [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.OpenGameLog
+                                                                      andErrCode:code
+                                                                andRemoteMessage:remoteMsg]);
+        }
     }];
 }
 - (void) idAppTrackingInstall:(SdkConfig *)_sdkConfig andAppVersion:(NSString *)appVersion
@@ -858,6 +939,17 @@ GSApiFramework *_gssdkGrpcApi;
     
     [[self serverApi] writeInstallGameLog:clientID andClientName:clientName andSdkVersion:sdkVersion andDeviceID:deviceID andGameID:gameId andGameVersion:gameVersion andFirebaseFcmToken:appToken andPlatform:platform andPlatformVersion:platformVersion andDeviceBrand:deviceBrand andDeviceModel:deviceModel andMacAddress:macAddress andNationalId:nationalId andIDFA:idfa andExtraInfo:extraInfo andCallback:^(NSDictionary<NSString *,NSString *> *callback) {
         
+        int code = [[callback objectForKey:@"code"] intValue];
+        NSString *remoteMsg = [callback objectForKey:@"message"];
+        if(remoteMsg == nil || [remoteMsg isEqual:[NSNull null]]) {
+            remoteMsg = @"";
+        }
+        if(code != 200) {
+            GDLog(@"Error idAppTrackingInstall: %@",
+                  [[ErrManager sharedInstance] getContentErrMessageWithCodeGroup:ErrCodeGroup.InstallGameLog
+                                                                      andErrCode:code
+                                                                andRemoteMessage:remoteMsg]);
+        }
     }];
 }
 - (void) sdkLog:(NSString *)clientID andActiveKey:(NSString *)activeKey andData:(NSDictionary *)data
